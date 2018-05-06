@@ -39,6 +39,8 @@ Thumbs.db
 # IntelliJ IDEA files#
 ######################
 dsa.iml
+.idea/
 
-# exception to the rule
+# exception to the rule#
+########################
 !*.java
