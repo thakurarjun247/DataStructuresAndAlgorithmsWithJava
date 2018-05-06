@@ -1,11 +1,6 @@
 package dp;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Queue;
-import java.util.Set;
+import java.util.*;
 import java.util.stream.Collectors;
 
 /// <param name="A">weight of people</param>
@@ -16,66 +11,68 @@ import java.util.stream.Collectors;
 /// <returns></returns>
 
 public class LiftCarade {
-	class Person {
-		int weight;
+    class Person {
+        int weight;
 
-		@Override
-		public String toString() {
-			return "weight: " + this.weight + " floor: " + this.floor;
-		}
+        @Override
+        public String toString() {
+            return "weight: " + this.weight + " floor: " + this.floor;
+        }
 
-		public int getWeight() {
-			return weight;
-		}
+        public int getWeight() {
+            return weight;
+        }
 
-		public int getFloor() {
-			return floor;
-		}
+        public int getFloor() {
+            return floor;
+        }
 
-		int floor;
+        int floor;
 
-		Person() {
-		}
+        Person() {
+        }
 
-		Person(int weight, int floor) {
-			this.weight = weight;
-			this.floor = floor;
-		}
-	}
+        Person(int weight, int floor) {
+            this.weight = weight;
+            this.floor = floor;
+        }
+    }
 
-	public int solution(int[] weight, int[] floor, int totalFloors, int maxPerson, int maxWeight) {
-		Queue<Person> q = new LinkedList<>();
+    public int solution(int[] weight, int[] floor, int totalFloors, int maxPerson, int maxWeight) {
+        Queue<Person> q = new LinkedList<>();
 
-		for (int i = 0; i < weight.length; i++) {
-			q.add(new Person(weight[i], floor[i]));
-		}
-		int numberOfFloors = 0;
-		int weightInCurrentTrip = 0;
-		int numberPersonInCurretTrip = 0;
-		List<Person> pessengers = new ArrayList<Person>();
-		//take people from q and insert in pessangers one by one
-		while (!q.isEmpty()) {
+        for (int i = 0; i < weight.length; i++) {
+            q.add(new Person(weight[i], floor[i]));
+        }
+        int numberOfFloors = 0;
+        int weightInCurrentTrip = 0;
+        int numberPersonInCurretTrip = 0;
+        List<Person> pessengers = new ArrayList<Person>();
+        //take people from q and insert in pessangers one by one
+        while (!q.isEmpty()) {
 
-			Person person = q.peek();
-			while ((weightInCurrentTrip + person.weight) < maxWeight && numberPersonInCurretTrip < maxPerson) {
-				pessengers.add(q.poll());
-				weightInCurrentTrip += person.weight;
-				numberPersonInCurretTrip++;
-				if(q.isEmpty()) {break;}
-				person=q.peek();
-			}
+            Person person = q.peek();
+            while ((weightInCurrentTrip + person.weight) < maxWeight && numberPersonInCurretTrip < maxPerson) {
+                pessengers.add(q.poll());
+                weightInCurrentTrip += person.weight;
+                numberPersonInCurretTrip++;
+                if (q.isEmpty()) {
+                    break;
+                }
+                person = q.peek();
+            }
 
-			Set<Integer> floors = new HashSet<>();
-			floors = pessengers.stream().map(p -> p.getFloor()).collect(Collectors.toSet());
-			Set<Integer> uniqueFloors = new HashSet<>(floors);
-			numberOfFloors += uniqueFloors.size() + 1;
-			floors.clear();
-			uniqueFloors.clear();
-			pessengers.clear();
-			weightInCurrentTrip=0;
-			numberPersonInCurretTrip=0;
-		}
+            Set<Integer> floors = new HashSet<>();
+            floors = pessengers.stream().map(p -> p.getFloor()).collect(Collectors.toSet());
+            Set<Integer> uniqueFloors = new HashSet<>(floors);
+            numberOfFloors += uniqueFloors.size() + 1;
+            floors.clear();
+            uniqueFloors.clear();
+            pessengers.clear();
+            weightInCurrentTrip = 0;
+            numberPersonInCurretTrip = 0;
+        }
 
-		return numberOfFloors;
-	}
+        return numberOfFloors;
+    }
 }
