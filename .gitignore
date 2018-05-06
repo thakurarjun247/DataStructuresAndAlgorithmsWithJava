@@ -35,3 +35,8 @@
 .Trashes
 ehthumbs.db
 Thumbs.db
+
+# IntelliJ IDEA files#
+######################
+.idea/
+dsa.iml
