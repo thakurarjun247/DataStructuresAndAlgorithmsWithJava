@@ -22,4 +22,7 @@ git clone git@github.com:thakurarjun247/dsa.git<p/>
 <b>How to run?</b></p>
 In your IDE go to src folder and right click any application file, it should run as a Java application. </p>
 
+<b>How to contribute to the code?</b></p>
+Request you to create a 'pull request' or 'merge request' so that your branch can be reviewed before merging to master.</p>
+
 <b>Got a better way to setup the project? Please email me to thakurarjun247@gmail.com </b></p>
