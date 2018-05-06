@@ -1,6 +1,6 @@
 package arraystring.fun;
 
-public class BasicStringArray {
+public class Basic {
     // removes a given character c from a given string s, sequentially
     public String remove(String s, char c) {
         char[] array = s.toCharArray();

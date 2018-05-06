@@ -1,11 +1,11 @@
 package arraystring.app;
 
-import arraystring.fun.BasicStringArray;
+import arraystring.fun.Basic;
 
-public class BasicTrickyProgramsApp {
+public class BasicApp {
     public static void main(String[] args) {
 
-        BasicStringArray trickyTasks = new BasicStringArray();
+        Basic basic = new Basic();
         String string = "you may be asked to write two version to solve this coding exercise ";
         // replace method can replace a char as well as set of chars
         String newS = string.replace('a', '@');
@@ -25,9 +25,9 @@ public class BasicTrickyProgramsApp {
         System.out.println(string);
 
         // remove a char from a given string iteratively and recursively
-        System.out.println(trickyTasks.remove(string, 'y'));
+        System.out.println(basic.remove(string, 'y'));
 
-        System.out.println("is 9 a prime number " + trickyTasks.isPrime(9));
+        System.out.println("is 9 a prime number " + basic.isPrime(9));
 
     }
 }

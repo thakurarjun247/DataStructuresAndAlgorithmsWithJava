@@ -1,6 +1,7 @@
 package arraystring.app;
 
 import arraystring.fun.Recursion;
+import util.Util;
 
 import java.util.List;
 import java.util.Scanner;
@@ -25,20 +26,19 @@ public class RecursionApp {
                     break;
 
                 case 1:
-                    recursion.printArray(array);
+                    Util.printArray(array);
                     System.out.println(recursion.reverseArray(array, 0));
                     break;
                 case 2:
-                    recursion.printArray(array);
+                    Util.printArray(array);
                     System.out.println(recursion.reverseArrayNew(array, 0));
                     break;
                 case 3:
-                    recursion.printArray(array);
-
+                    Util.printArray(array);
                     System.out.println(recursion.reverseArrayIteratively(array));
                     break;
                 case 4:
-                    System.out.println("deprecated, used option/case 7 instead");
+                    System.out.println("deprecated, use option/case 7 instead");
                     break;
                 case 5:
                     System.out.println("calculate factorial : enter a number ");

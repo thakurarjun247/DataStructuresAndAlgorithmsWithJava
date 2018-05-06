@@ -1,4 +1,4 @@
-package arraystring.fun;
+package javaspecific;
 
 public class Lambda {
 

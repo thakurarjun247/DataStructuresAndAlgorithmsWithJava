@@ -143,14 +143,6 @@ public class Recursion {
 
         }
     }
-
-    public void printArray(char[] array) {
-        for (int i = 0; i < array.length; i++) {
-            System.out.print(array[i]);
-        }
-        System.out.println("");
-    }
-
     public int nthNumberInFiboSeries(int number) {
         if (number < 1) {
             throw new IndexOutOfBoundsException("");
