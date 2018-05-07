@@ -21,4 +21,11 @@ public class Util {
         System.out.println("");
     }
 
+    public static <T> T[] swapArrayElements(T[] a, int i, int j){
+        T temp=a[i];
+        a[i]=a[j];
+        a[j]=temp;
+        return a;
+    }
+
 }

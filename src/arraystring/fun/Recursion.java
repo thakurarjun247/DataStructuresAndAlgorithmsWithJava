@@ -87,21 +87,14 @@ public class Recursion {
 
     }
 
-    //TODO: make me work
-    public String reverseStringIteratively(String string) {
-        int length = string.length();
-        String reversed = "";
-        if (length <= 1)
-            return string;
-        for (int i = 0; i < length; i++) {
-            String substring = string.substring(0, length - i);
-            reversed = string.charAt(length - 1) + substring;
-        }
-        return reversed;
+     public String reverseStringIteratively(String s) {
+        StringBuilder sb = new StringBuilder();
+        for(int i = s.length() - 1; i >= 0; i--)
+            sb.append(s.charAt(i));
+        return sb.toString();
     }
 
     public String reverseStringRecursive(String str) {
-
         //time complexity O(n)
         //space complexity O(n*n)
         //in the worst case you will have to store n substrings, each of length 0 to n
@@ -109,11 +102,10 @@ public class Recursion {
             return str;
         }
         return str.charAt(str.length() - 1) + reverseStringRecursive(str.substring(0, str.length() - 1));
-
     }
 
     public int factorialRecursive(int number) {
-        //time and space complexities O(n), O(n)
+        //time and space complexities O(n), O(n) not sure
         if (number < 2) {
             return 1;
         } else {

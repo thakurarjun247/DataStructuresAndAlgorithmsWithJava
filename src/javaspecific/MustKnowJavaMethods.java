@@ -1,5 +1,7 @@
 package javaspecific;
 
+import util.Util;
+
 import java.util.Arrays;
 
 public class MustKnowJavaMethods {
@@ -16,6 +18,11 @@ public class MustKnowJavaMethods {
         string.charAt(index);
         string.substring(beginIndex, excludingEndIndex);
         string.indexOf(character);
+        string.isEmpty();
+        //NPE when isEmpty called on null string
+        String s1="";
+        String s2=new String("");
+        System.out.print(s1.isEmpty()+""+s2.isEmpty());
 
         //ArrayBasics
         int length = array.length;  //final variable and not a method
@@ -24,6 +31,9 @@ public class MustKnowJavaMethods {
         //String <----> Array
         string.toCharArray();
         Arrays.toString(array);
+
+        //Declare array
+        boolean[] a = new boolean[256];
 
 
     }
