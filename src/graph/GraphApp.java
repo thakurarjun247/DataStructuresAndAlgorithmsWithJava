@@ -42,15 +42,26 @@ public class GraphApp {
                 case 5:
                     graph.getVertices().forEach(
                             vertex -> System.out.println(vertex.data + " "));
+                case 6:
+                    graph.getVertices().forEach(vertex -> vertex.setVisitStatus(VisitStatus.UNVISITED));
+                    System.out.print("dfs recursive...");
+                    graphOperations.dfsRecursive(graph.getVertices().get(0), graph);
+                    break;
+                case 7:
+                    graph.getVertices().forEach(vertex -> vertex.setVisitStatus(VisitStatus.UNVISITED));
+                    System.out.print("dfsNew with Stack...");
+                    graphOperations.dfsNewWithStack(graph.getVertices().get(0), graph);
+
                 default:
                     break;
             }
             // sample graph
-            /*                     0
-			 *
+            /*                        0
+			 *                 /           \
 			 * 				1				2
+			 * 			 /      \         /    \
 			 * 			3		4	  	5		6
-			 * 
+			 *                           |
 			 * 							7
 			 * 						
 			 * dfs = 0 1 3 4 2 5 7 6 

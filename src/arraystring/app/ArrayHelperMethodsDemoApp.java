@@ -30,7 +30,7 @@ public class ArrayHelperMethodsDemoApp {
         //create list from the array
         List<Integer> list= Arrays.asList(a);
 
-        Arrays.compare(a,arr); //dont know
+       // Arrays.compare(a,arr); //dont know
 
         //do a bin search and return the index, return -1 if nnot found
         int index=Arrays.binarySearch(a,2);
