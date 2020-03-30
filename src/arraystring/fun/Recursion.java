@@ -70,6 +70,25 @@ public class Recursion {
         }
 
     }
+    public int[] reverseArraySimple(int a[]){
+   if(a.length==0) return a;
+   else return  reverseArraySimpleRec(a, 0, a.length-1);
+
+       // printArray(reverseArraySimpleRec(a,0, a.length-1));
+       // printArray(reverseArraySimpleRec(b,0, b.length-1));
+       // printArray(reverseArraySimpleRec(c,0, c.length-1));
+
+    }
+    int[] reverseArraySimpleRec(int[] a, int start, int end){
+        if(end>=start) return a;
+        int temp=a[end];
+        a[end]=a[start];
+        a[start]=temp;
+        return reverseArraySimpleRec(a,start+1, end-1);
+    }
+    public void printArray(int[] a){
+        for(int i=0;i<a.length;i++) System.out.print(a[i]+" ");
+    }
 
     public char[] reverseArrayNew(char[] array, int i) {
 

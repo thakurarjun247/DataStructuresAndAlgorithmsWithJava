@@ -11,6 +11,7 @@ public class HashMapCustom<K, V> {
         HashMapCustom<Integer, String> customMap = new HashMapCustom<>();
         customMap.put(1, "one");
         customMap.put(2, "two");
+        //map.containsKey()
         System.out.println(customMap.get(1));
         customMap.display();
     }

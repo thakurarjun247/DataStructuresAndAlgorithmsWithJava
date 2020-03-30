@@ -9,7 +9,7 @@ public class DutchNationalFlag {
         int high = a.length - 1;
         int mid = 0;
         int i = 0;
-        while (i < high) {
+        while (i <= high) {
             switch (a[i]) {
                 case 1:
                     swap(a, low++, i++);
@@ -40,9 +40,12 @@ public class DutchNationalFlag {
         System.out.println("String.valueOf(array)" + String.valueOf(array));
         Arrays.sort(array);
         System.out.println(array);
-        Integer[] a = {1, 3, 2, 2, 3, 1, 1, 1, 3, 2, 2, 1, 1};
+        Integer[] a = {3,1,2,2,1};
         DutchNationalFlag.dnf(a);
         System.out.println(Arrays.toString(a));
+        Integer arr[] = { 1, 1, 1, 2,  3};
+        DutchNationalFlag.dnf(arr);
+        System.out.println(Arrays.toString(arr));
 
     }
 

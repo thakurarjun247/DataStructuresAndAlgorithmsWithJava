@@ -1,5 +1,6 @@
 package btbst.fun;
 
+import btbst.LCNode;
 import btbst.TreeNode;
 
 import java.util.*;
@@ -32,7 +33,9 @@ public class BT {
         System.out.println("15: lowestCommonAncestor");
         System.out.println("16: [TODO]maxDiffBetweenANodeAndAncestor");
         System.out.println("17: [TODO]printPathsWithASumAsGivenValue");
-        System.out.println("============================================================");
+        System.out.println("==========================Leet code New 2020 ========================");
+        System.out.println(" 18: lever order");
+        System.out.println(" 19 create tree from LC input with nulls");
         System.out.println();
     }
 
@@ -227,6 +230,8 @@ public class BT {
 
     }
 
+
+
     private String printNTabs(int n) {
 
         StringBuilder builder = new StringBuilder();
@@ -370,6 +375,92 @@ public class BT {
     public int maxDiffBetweenANodeAndAncestor(TreeNode root) {
 
         return Integer.MIN_VALUE;
+    }
+
+    //////////////////// New 2020 ////////////////////////////
+    public LCNode insertLC(LCNode root, Integer data) {
+
+        if (root == null) {
+            root = new LCNode(data);
+        } else {
+            if (root.left == null)
+                root.left = insertLC(root.left, data);
+            else
+                root.right = insertLC(root.right, data);
+        }
+        return root;
+    }
+
+
+
+    public void levelOrderLC(LCNode root) {
+
+        Queue<LCNode> queue = new LinkedList<>();
+        queue.add(root);
+        int level = 1;
+        int totalItemsPrinted = 1;
+        int numberOfItemsPrintedInLastLevel = 1;
+        int numberOfTabs = 8;
+
+        System.out.print(level + ":  " + printNTabs(numberOfTabs));
+
+        while (queue.size() != 0) {
+            LCNode node = queue.poll();
+            if (node != null) {
+                // uncomment below for printing only odd levels
+                // if(level%2!=0){
+                System.out.print(node.key + "\t");
+                // }
+                totalItemsPrinted++;
+                if (totalItemsPrinted == numberOfItemsPrintedInLastLevel * 2) {
+                    System.out.println("");
+                    // for formatting after every level
+                    System.out.print(++level + ":  " + printNTabs(--numberOfTabs));
+                    numberOfItemsPrintedInLastLevel = totalItemsPrinted;
+                }
+
+                queue.add(node.left);
+                queue.add(node.right);
+            }
+        }
+
+    }
+
+    //both working good
+    public void levelOrder1(TreeNode n){
+        if(n==null) return;
+        Queue<TreeNode> q=new LinkedList<>();
+        q.add(n);
+        while(!q.isEmpty()){
+            TreeNode node= q.poll();
+            System.out.print(node+" ");
+            if(node.left!=null) q.add(node.left);
+            if(node.right!=null) q.add(node.right);
+        }
+
+    }
+
+    public void levelOrder2(TreeNode n){
+        if(n!=null) {
+            Queue<TreeNode> q = new LinkedList<>();
+            q.add(n);
+            q.add(null);
+            while (!q.isEmpty()) {
+
+                TreeNode node = q.poll();
+                if(node==null) {
+                    if(q.isEmpty()) return;
+                    System.out.println();
+                    q.add(null);
+
+                }
+                else{
+                    System.out.print(node+" ");
+                    if (node.left != null) q.add(node.left);
+                    if (node.right != null) q.add(node.right);
+                }
+            }
+        }
     }
 
 }

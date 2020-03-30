@@ -8,7 +8,7 @@ public class SortingSearchingApp {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        int[] array = {5, 4, 3, 2};
+        int[] array = {3,2,4,-10,6,9,7};//{3,2,4,1,6,9,7};
         //int[] array = { 1 , 2,  3,  4,  5,  6,  7,  8,  9  };
         int[] sortedArray = {-3, -1, 0, 2, 3, 5, 7, 8};
         SortingSearching sortingSearching = new SortingSearching();
@@ -62,6 +62,7 @@ public class SortingSearchingApp {
                     break;
                 case 10:
                     System.out.println("before ");
+
                     sortingSearching.traverseArray(array);
                     sortingSearching.quickSort(array, 0, array.length - 1);
                     System.out.println("after ");

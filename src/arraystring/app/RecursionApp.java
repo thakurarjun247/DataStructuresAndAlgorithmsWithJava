@@ -26,7 +26,12 @@ public class RecursionApp {
                     break;
 
                 case 1:
-                    Util.printArray(array);
+                    int[] a ={};
+                    int[] b ={1,2,3,4};
+                    int[] c ={1,2,3,4,5};
+                    recursion.printArray(recursion.reverseArraySimple(a));
+                    recursion.printArray(recursion.reverseArraySimple(b));
+                    recursion.printArray(recursion.reverseArraySimple(c));
                     System.out.println(recursion.reverseArray(array, 0));
                     break;
                 case 2:

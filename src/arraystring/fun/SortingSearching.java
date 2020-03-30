@@ -160,10 +160,10 @@ public class SortingSearching {
             for (int i = j + 1; i < a.length; i++) {
                 if (a[i] < temp) {
                     temp = a[i];
-
+                    a[i] = a[j];
+                    a[j] = temp;
                 }
-                a[i] = a[j];
-                a[j] = temp;
+
 
             }
         }
@@ -281,10 +281,11 @@ public class SortingSearching {
         {
             return;
         }
-        int pivot = arr[(left + right) / 2];
-        int index = partition(arr, left, right, pivot);
-        quickSort(arr, left, index - 1);
-        quickSort(arr, index, right);
+        //pivot is the time at mid position
+        int pivotItem = arr[(left + right) / 2];
+        int pivotIndexAfterPartition = partition(arr, left, right, pivotItem);
+        quickSort(arr, left, pivotIndexAfterPartition - 1);
+        quickSort(arr, pivotIndexAfterPartition, right);
 
     }
 

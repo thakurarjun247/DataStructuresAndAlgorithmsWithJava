@@ -1,5 +1,6 @@
 package btbst.app;
 
+import btbst.LCNode;
 import btbst.TreeNode;
 import btbst.fun.BT;
 
@@ -11,6 +12,7 @@ import java.util.Scanner;
 public class BTApp {
     public static void main(String[] args) throws Exception {
         TreeNode root = null;
+        LCNode lcRoot=null;
         TreeNode newRoot = null;
         TreeNode root1 = null;
         TreeNode root2 = null;
@@ -108,7 +110,32 @@ public class BTApp {
                 case 17:
                     System.out.println("input the sum");
                     System.out.println(printPathsWithASumAsGivenValue(root, scanner.nextInt()));
-
+                case 18:
+                    binaryTree.levelOrder1(root);
+                    binaryTree.levelOrder2(root);
+                case 19:
+                    System.out.println("enter the array");
+                    String s = scanner.next();
+                    String[] arrString = s
+                            .substring(1, s.length() - 1)
+                            .split(",");
+                    Integer[] arr = new Integer[arrString.length];
+                    for (i = 0; i < arrString.length; i++) {
+                        System.out.println(i);
+                        if (arrString[i].equals("null")) {
+                            System.out.println("yay");
+                            arr[i] = null;
+                        } else {
+                            String str = arrString[i];
+                            arr[i] = Integer.parseInt(str);
+                        }
+                        //[1,2,null,null,3,4]
+                    }
+                    // Integer[] arr= {1,2,3,4,5,6};
+                    for (i = 0; i < arr.length; i++) {
+                        lcRoot = binaryTree.insertLC(lcRoot, arr[i]);
+                    }
+                    binaryTree.levelOrderLC(lcRoot);
                 default:
                     System.out.println("invalid choise, retry");
 
