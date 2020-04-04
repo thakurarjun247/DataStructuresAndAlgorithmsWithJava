@@ -35,13 +35,18 @@ class MaxHeapUtil {
         int largest = i;
         int left = 2 * i + 1;
         int right = 2 * i + 2;
+
+        //find the index of max among the this item, it's left and right child
+        //if left child present
         if (left < heapSize)
+            //compare it with parent
             if (list.get(left) > list.get(i))
                 largest = left;
 
         if (right < heapSize)
             if (list.get(right) > list.get(largest))
                 largest = right;
+            //parent is not the largest
         if (largest != i) {
             Collections.swap(list, largest, i);
             maxHeapyfy(list, largest);
@@ -61,6 +66,7 @@ class MaxHeapUtil {
             System.out.print(heapExtractMax(list));
     }
 
+    //remove, delete
     int heapExtractMax(List<Integer> list) {
         if (list.isEmpty())
             throw new NoSuchElementException("empty heap, can't extract max");

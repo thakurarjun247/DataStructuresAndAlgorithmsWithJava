@@ -3,7 +3,7 @@ package clrs.greedy;
 import java.util.*;
 
 public class Greedy {
-   ;
+
 
     public static void main(String sw[]) {
   /*      PriorityQueue<Integer> pq=new PriorityQueue<>();
@@ -14,7 +14,7 @@ public class Greedy {
         pq.add(30);
         pq.forEach(System.out::print);*/
 
-
+        //start and finish times
         int[] s1 = {1, 3, 0, 5, 8, 5};
         int[] f1 = {2, 4, 6, 7, 9, 9};
 

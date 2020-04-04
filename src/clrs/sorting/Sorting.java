@@ -7,16 +7,32 @@ import static util.Util.printArray;
 
 public class Sorting {
     public static void main(String[] s) {
-        int[] a = {5, 4, 5, 4, 3, 4, 0, 2, 1, -90, -80, 200};
+        int[] x = {6, 3, 5, 4, 2, 0, 1};
+        int[] y = x;
+        // qsort(y);
+        // System.out.println(Arrays.toString(y));;
+        System.out.println(Arrays.toString(x));
+
+        System.out.println();
+        int[] a = {5, 4, 5, 4, 3, 4, 0, 2, 1, 200};
         int[] b = a;
         int[] c = a;
-        printArray(a);
-        qsort(a);
+        // printArray(a);
+        // qsort(a);
         //mergesort(a);
-        printArray(a);
 
-        // int[] output = countingSort(a, 5);
-        //System.out.println(output);
+        int k = 5;
+        int[] input = new int[20];
+
+        Random random = new Random();
+        for (int i = 0; i < input.length; i++) {
+            input[i] = random.nextInt(k);
+        }
+
+
+        System.out.println(Arrays.toString(input));
+        int[] output = countingSort(input, k);
+        System.out.println(Arrays.toString(output));
     }
 
     public static void qsort(int[] a) {
@@ -30,13 +46,13 @@ public class Sorting {
 
         //the index, it should be called pivot index
         //all items on left of index < item at index < all items on right of index.
-        int index = swapAroundPivot(a, l, h);
+        int index = swapAroundPivotOrPartition(a, l, h);
         //repeat on both halves
         qsort(a, l, index - 1);
         qsort(a, index, h);
     }
 
-    static int swapAroundPivot(int[] a, int l, int h) {
+    static int swapAroundPivotOrPartition(int[] a, int l, int h) {
         //pivot is the middle element, not the middle index.
         //or even better choose it randomly,
         //much better if you choose it to be median
@@ -44,7 +60,7 @@ public class Sorting {
         //and almost the mid element
         //int pivot = a[(l + h) / 2];
         ;
-        int pivot =a[new Random().nextInt(h+1)];
+        int pivot = a[(l + h) / 2];
         while (l <= h) {
             while (a[l] < pivot) {
                 l++;
@@ -113,18 +129,38 @@ public class Sorting {
         int[] count = new int[k + 1];
         Arrays.fill(count, 0);
         for (int i = 0; i < arr.length; i++) {
-            count[arr[i]] += 1;
+            count[arr[i]]++;
         }
-        for (int i = 1; i < k; ++i) {
+
+        for (int i = 1; i < k; i++) {
             count[i] = count[i] + count[i - 1];
         }
         for (int j = arr.length - 1; j >= 0; j--) {
-            output[count[arr[j]] - 1] = arr[j];
-            count[arr[j]] -= 1;
+            output[--count[arr[j]]] = arr[j];
+
         }
 
         return output;
+        //TODO improvement: rewrite last two for loops as below,  it will be more intuitive e.g.
+        /*
+        int[] index=new int[count.length];
+             for (int i = 1; i < k; i++) {
+                index[i] = count[i] + index[i - 1];
+            }
+              for (int i = arr.length - 1; i >= 0; i--) {
+            output[--index[arr[i]]] = arr[i];
+            //count[arr[j]] -= 1;
+        }
+
+         */
+
+    }
+
+    public static int randomizedQuickSelectFindKthSmallestElement(int[] arr, int low, int high, int k) {
+        if (low == high) return arr[low];
+        int partitionIndex = swapAroundPivotOrPartition(arr, low, high);
+        if (k == partitionIndex) return arr[partitionIndex];
+        if (k < partitionIndex) return randomizedQuickSelectFindKthSmallestElement(arr, low, partitionIndex - 1, k);
+        else return randomizedQuickSelectFindKthSmallestElement(arr, partitionIndex + 1, high, k);
     }
 }
-
-

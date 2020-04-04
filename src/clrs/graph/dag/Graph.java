@@ -23,7 +23,7 @@ class GraphApp {
         g.addEdge(list.get(4),list.get(3));
         //g.addEdge(list.get(1),list.get(0));
         g.unvisitAll();
-        Stack<Vertex> result = g.topSort(list);
+        Stack<Vertex> result = g.topologicalSort(list);
         while(!result.isEmpty()){
             System.out.println(result.pop().key);
         }
@@ -56,12 +56,14 @@ public class Graph {
 
     }
 
-    public Stack<Vertex> topSort(List<Vertex> vertices) {
+    //https://www.youtube.com/watch?v=ddTC4Zovtbc
+    public Stack<Vertex> topologicalSort(List<Vertex> vertices) {
         Stack<Vertex> stack = new Stack<>();
         Set<Vertex> visited = new HashSet<>();
         for (Vertex vertex : vertices) {
+            //if visited contains the vertex already do nothing else
             if (!visited.contains(vertex))
-            topSortUtil(vertex,stack,visited);
+             topSortUtil(vertex,stack,visited);
         }
         return stack;
     }
@@ -73,6 +75,8 @@ public class Graph {
             if(!visited.contains(childVertex))
             topSortUtil(childVertex,stack,visited);
         }
+        //a vertex is put on stack only when it is
+        //fully explored that is there are no children of it unexplored
         stack.push(vertex);
     }
     void unvisitAll() {

@@ -7,15 +7,17 @@ public class Main {
         int[] a = {4, -1, 2, 4, -3, 0, 3, -2, 9};
         int[] a1 = {-4, -5, 8, 4, -1, 2, 4, -3, 0, 3, -2, 9};
         int[] arr={-4, -5 };
+        int[] a3={1,-4,1,1,1 -5,99 };
         int[] empty={};
-        MaxContinuousSubArrayDevideConquer.Bound b = m.findMaxSubArray(0, a1.length - 1, a1);
+        MaxContinuousSubArrayDevideConquer.Bound b = m.findMaxSubArray(0, a3.length - 1, a3);
+        System.out.println(b.sum+b.leftMost+b.rightMost);
         //System.out.println(b.sum);
        // System.out.println(k.kadanseRecursive(a1, 0, Integer.MIN_VALUE, Integer.MIN_VALUE));
        // System.out.println(k.kadanseRecursive(a, 0, Integer.MIN_VALUE, Integer.MIN_VALUE));
       // System.out.println(k.kadanseIterative(a1, Integer.MIN_VALUE, Integer.MIN_VALUE));
        // System.out.println(k.kadanseRecursive(a, 0, Integer.MIN_VALUE, Integer.MIN_VALUE));
         // System.out.println(k.kadanseRecursive(a, 0, Integer.MIN_VALUE, Integer.MIN_VALUE));
-        System.out.println(k.kadanseIterative(empty, Integer.MIN_VALUE, Integer.MIN_VALUE));
+      //  System.out.println(k.kadanseIterative(empty, Integer.MIN_VALUE, Integer.MIN_VALUE));
      //   System.out.println(k.kadanseIterative(a1, Integer.MIN_VALUE, Integer.MIN_VALUE));
      //   System.out.println(k.kadanseIterative(a, Integer.MIN_VALUE, Integer.MIN_VALUE));
     }

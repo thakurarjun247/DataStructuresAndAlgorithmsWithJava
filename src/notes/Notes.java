@@ -74,6 +74,7 @@ public class Notes {
         //String intern
         //Array and 2D array declare, initialize.
         int[] array={0, 1, 3, 4, 2, 5, 7, 6};
+        //the list we get from Arrays.asList are fixed size, beware
         Arrays.asList(1,2,45).forEach(System.out::print);
         List<String> messages = Arrays.asList("Hello", "World!", "How", "Are", "You");
         messages.forEach(System.out::println);
@@ -90,7 +91,7 @@ public class Notes {
         int givenIndex=0;
         int item=10;
         int index1= 1;
-        //swap values at two given indexes
+        //swap values at two given indexes, only for list
         Collections.swap(list, index2, index1);
         //read element from list
         Integer max = list.get(0);
@@ -100,6 +101,18 @@ public class Notes {
         list.set(givenIndex, item);
         //remove item from given index and do shifting if needed
         list.remove(givenIndex);
+        //traverse a list
+        System.out.println("traverse a list...");
+        list.forEach(member -> System.out.print(member));
+        //multiple statement
+        list.forEach(member -> {
+            member++;
+            System.out.print(member+" ");
+        });
+        //traditional
+        for (Integer integer : list) {
+            System.out.print(integer+" ");
+        }
 
         int size =10;
         int value=-1;
@@ -127,6 +140,56 @@ public class Notes {
         int min=4;
         int maximum=7;
         int randomBetweenMinMax=min+random.nextInt(maximum+1);
+        /*
+        * Bellman ford (single source shortest path)
+            DP
+            Always works on negative edge graphs, unless there is a negative weight cycle
+            Relax edges one bye one, n-1 times at most
+            Returns false if there is a negative weight cycle
+            If it relaxes even after n-1 time we know that there is a negative weight cycle
+            for fully connected graph time complexity is n^3 for others it's n^2
+
+          Dijkstra (single source shortest path)
+            Greedy
+            May or may not work on negative edge graph
+            Process vertices one by one
+            if a vertex has multiple destination vertices, choose the one with least value/weight
+            O(n^2)
+
+          Shortest path in DAG (single source shortest path, for topologically sorted DAG)
+          Arrange in topological order using topological sort.
+          Proceed like Dijkstra in order of topology
+          Less time complexity, it's linear
+
+          Fyodd Warshall (all source shortest path)
+          DP
+          Create a matrix
+          Create n number of matrices progressively, for n vertices.
+          E.g. 1st matrix will try to insert vertex v1 between every pair of vertices (x, y), and check
+          if  (weight(x, v1) + weight(v1, y) > weight (x,y))
+                weight (x,y) = weight(x, v1) + weight(v1, y)
+          else
+                do nothing
+
+          Prims  - Minimum Spanning Tree (Only for connected graph) https://www.youtube.com/watch?v=4ZlRH0eK-qQ
+          Initialize a solution/answer to an empty set (set of edges )
+          Take an edge with min weight. (x,y)
+          pick up new edge such that the edge creates a connected component / tree with the edges in solution.
+          In other words, the solution should always stay connected.
+          If there are multiple candidate edges eligible for the solution, choose the one with min weight
+          Stop when all the vertices are connected, i.e. num of edges == (num of vertices -1)
+
+
+          Kruskal's (intuitive) - Minimum Spanning Tree (Only for connected graph) https://www.youtube.com/watch?v=4ZlRH0eK-qQ
+          Arrange all the edges in ascending order, or keep in minHeap
+          Initialize a solution/answer to an empty set (set of edges )
+          For each edge
+            If adding an edge forms a cycle leave it else add it to solution.
+            Stop when all the vertices are connected, i.e. num of edges == (num of vertices -1)
+
+
+        * */
+
     }
 
 }

@@ -10,12 +10,18 @@ class BSTApp {
 
         Node root = bst.create(a, 0, a.length - 1);
 
-        System.out.println(bst.getMin(root).key);
+       // System.out.println(bst.getMin(root).key);
         Node max=bst.getMax(root);
-       System.out.println(max.key);
+      // System.out.println(max.key);
        bst.insert(root, new Node(200));
         bst.insert(root, new Node(35));
-        bst.inorder(root);
+       // bst.inorder(root);
+        System.out.println(bst.search(root,new Node(10)));
+        System.out.println(bst.search(root, new Node(200)));
+        System.out.println(bst.search(root, new Node(35)));
+        System.out.println(bst.search(root, new Node(280)));
+        System.out.println(bst.search(root, new Node(-30)));
+        System.out.println(bst.search(root, new Node(15)));
     }
 
 
@@ -51,6 +57,16 @@ class Node {
 
 public class BinarySearchTree {
 
+   public boolean search(Node root, Node node){
+        if(node==null) return true;
+        if(root==null) return false;
+        if(root.key==node.key)
+            return true;
+        if(root.key>node.key)
+            return search(root.left, node);
+        else
+            return search(root.right, node);
+    }
 
     public Node create(int[] a, int l, int h) {
         if (l > h)

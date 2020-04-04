@@ -20,6 +20,7 @@ public class FindPivotInIncreasingThenDescreasing {
             else
                 return h;
         }
+        //three or more items
         int m = (h + l) / 2;
         int middle = a[m];
         int left = a[m - 1];
@@ -33,7 +34,6 @@ public class FindPivotInIncreasingThenDescreasing {
         if (left > middle && middle > right)
             return f(a, l, m - 1);
             //search right
-            // if (left < middle && middle < right)
         else
             return f(a, m + 1, h);
 

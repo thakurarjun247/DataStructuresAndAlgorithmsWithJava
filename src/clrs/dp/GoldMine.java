@@ -1,6 +1,6 @@
-package clrs.matrix;
+package clrs.dp;
 
-public class Playground {
+ class Playground {
     public static void main(String[] args) {
         //, {3, 4, 5}, {0, 3, 0}, {9, 0, 20}
         int[][] grid = {{1, 0, 7}, {2, 0, 6}};
