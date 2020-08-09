@@ -1,5 +1,9 @@
 package util;
 
+import java.util.HashSet;
+import java.util.Random;
+import java.util.Set;
+
 public class Util {
     public static <T> void  println(T t){
         System.out.println(t);
@@ -17,6 +21,21 @@ public class Util {
         int temp = a[i];
         a[i] = a[j];
         a[j] = temp;
+    }
+
+    public static int[] generateArray() {
+        return generateArray(10, false, 9, false);
+    }
+
+    public static int[] generateArray(Integer arraySize, Boolean negativesAllowed, Integer upperBound, Boolean uniqueNumbers) {
+        Random random = new Random();
+        Set<Integer> set=new HashSet<>();
+        int[] a = new int[arraySize];
+        for (int i = 0; i < arraySize; i++) {
+            a[i] = random.nextInt(10) - (negativesAllowed ? 2 : 0);
+        }
+        return a;
+
     }
 
 

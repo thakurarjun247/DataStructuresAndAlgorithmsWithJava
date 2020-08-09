@@ -7,7 +7,7 @@ public class RodCutting {
         int price[] = {0, 1, 5, 8, 9, 10, 17, 17, 20, 24, 30};
 /*
 For testing
-here are expected revenues aka r for a given rodsize aka s
+here are expected revenues aka r for a given rod size aka s
 s r
 0 0
 1 1

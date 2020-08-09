@@ -69,6 +69,7 @@ public class Notes {
 //        stack.remove(3);
         stack.peek();
         stack.isEmpty();
+        //comparator at IntervalCovering class
         //TODO: String methods, Array Utils, comparable, comparator, syntax of class, function, interface, abstract class
         //TODO: Java scope when to use public private or default with class, method, variables.
         //String intern
@@ -78,7 +79,8 @@ public class Notes {
         Arrays.asList(1,2,45).forEach(System.out::print);
         List<String> messages = Arrays.asList("Hello", "World!", "How", "Are", "You");
         messages.forEach(System.out::println);
-
+        //print array
+        System.out.println(Arrays.toString(array));
         //TODO empty check on array
 
         //List ops
@@ -121,7 +123,7 @@ public class Notes {
         //takes an array and value to be filled returns nothing
         Arrays.fill(memo, value);
         //for hashcode and equals
-        //see LCS.java in dp package
+        //see LCS.java in clrs.dp package
 
         //TODO: code from notepad to ide: common errors
         // different variable names used.
@@ -140,6 +142,31 @@ public class Notes {
         int min=4;
         int maximum=7;
         int randomBetweenMinMax=min+random.nextInt(maximum+1);
+        //Maps
+      Map<Character, Integer> map=new HashMap<>();
+      for(int i=97;i<102;i++){
+          //ascii value 97 is 'a'
+
+          map.put((char) i, i);
+
+      }
+      //traverse map
+        /**
+         * map.get(key) :
+         * Returns the value to which the specified key is mapped,
+         * or {@code null} if this map contains no mapping for the key.
+         */
+        map.keySet().forEach(key-> System.out.println(key+"->"+map.get(key)));
+        map
+                .entrySet()
+                .forEach(e-> System.out.println(e.getKey()+"->"+e.getValue()));
+
+        //Doubly LinkedList
+        //Doubly-linked list implementation of the {@code List} and {@code Deque}
+        // * interfaces.  Implements all optional list operations, and permits all
+        // * elements (including {@code null}).
+        List<Integer> dll=new LinkedList<>();
+
         /*
         * Bellman ford (single source shortest path)
             DP

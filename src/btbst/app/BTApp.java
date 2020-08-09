@@ -18,6 +18,9 @@ public class BTApp {
         TreeNode root2 = null;
         Scanner scanner = new Scanner(System.in);
         BT binaryTree = new BT();
+
+
+
         for (int i = 0; i < 100; i++) {
 
             binaryTree.displayChoice();
@@ -27,14 +30,21 @@ public class BTApp {
                     System.exit(0);
                     break;
                 case 0:
-                    System.out.println("enter the number of nodes to be inserted");
+
+                    System.out.println("Autocreating a BT with 15 nodes..");
+                    for (int j = 0; j < 15; j++)
+                        root = binaryTree.insert(root, j);
+                    binaryTree.levelOrder(root);
+                    //TODO: uncomment below later
+
+              /*      System.out.println("enter the number of nodes to be inserted");
                     int number = scanner.nextInt();
                     for (int j = 0; j < number; j++) {
 
                         System.out.println("enter data value");
                         int data = scanner.nextInt();
                         root = binaryTree.insert(root, data);
-                    }
+                    }*/
                     break;
                 case 1:
                     int size = binaryTree.inOrder(root);
@@ -136,6 +146,23 @@ public class BTApp {
                         lcRoot = binaryTree.insertLC(lcRoot, arr[i]);
                     }
                     binaryTree.levelOrderLC(lcRoot);
+                case 20:
+                   // System.out.println("enter the number of nodes to be inserted");
+                    //int number = 10;
+                    for (int j = 0; j < 10; j++) {
+
+                     //   System.out.println("enter data value");
+                       // int data = scanner.nextInt();
+                        root = binaryTree.insert(root, j);
+                    }
+                    binaryTree.naturalView(root);
+                    break;
+                case 21:
+                    binaryTree.naturalView(root);
+                case 22:
+                    binaryTree.zigZag(root);
+
+
                 default:
                     System.out.println("invalid choise, retry");
 
@@ -152,3 +179,15 @@ public class BTApp {
     }
 
 }
+    /*
+                                    11           //32
+
+                     12                                    13
+
+              3               4                     9               4
+
+          1       5      7         6            1       5      7         6
+
+
+
+    */

@@ -1,5 +1,7 @@
 package clrs.sorting;
 
+import util.Util;
+
 import java.util.Arrays;
 import java.util.Random;
 
@@ -7,7 +9,17 @@ import static util.Util.printArray;
 
 public class Sorting {
     public static void main(String[] s) {
+        for (int i = 0; i < 5; i++) {
+            int[] a = Util.generateArray(3,false, 10, true );
+            System.out.println("before sort:" + Arrays.toString(a) + " ");
+            insertionSort(a);
+            //qsort(a);
+            System.out.println("after  sort:" + Arrays.toString(a) + " ");
+            System.out.println();
+        }
+
         int[] x = {6, 3, 5, 4, 2, 0, 1};
+        System.out.println("kth smallest element" + randomizedQuickSelectFindKthSmallestElement(x, 0, x.length - 1, 3));
         int[] y = x;
         // qsort(y);
         // System.out.println(Arrays.toString(y));;
@@ -54,14 +66,19 @@ public class Sorting {
 
     static int swapAroundPivotOrPartition(int[] a, int l, int h) {
         //pivot is the middle element, not the middle index.
-        //or even better choose it randomly,
+        //or just choose it randomly,
         //much better if you choose it to be median
         //during the interviews it is easier to demo if you choose it random
         //and almost the mid element
         //int pivot = a[(l + h) / 2];
-        ;
+        //pivot element and partitionIndex are different
+        //pivot element is what we choose at randomm better if you choose it to be median
+        //pivot index is the final position of l, that's what we return.
+
         int pivot = a[(l + h) / 2];
         while (l <= h) {
+            //we can even cross the pivot, pivot can be 1st element as well.
+            //continue to progress from both the ends until l and h meet
             while (a[l] < pivot) {
                 l++;
             }
@@ -162,5 +179,18 @@ public class Sorting {
         if (k == partitionIndex) return arr[partitionIndex];
         if (k < partitionIndex) return randomizedQuickSelectFindKthSmallestElement(arr, low, partitionIndex - 1, k);
         else return randomizedQuickSelectFindKthSmallestElement(arr, partitionIndex + 1, high, k);
+    }
+
+    public static void insertionSort(int[] a) {
+        for (int j = 1; j < a.length; j++) {
+            int i = j - 1;
+            int key = a[j];
+            //todo: careful of the order of the conditions below.
+            while (i >= 0 && a[i] > key ) {
+                a[i+1]=a[i];
+                i--;
+            }
+            a[i+1]=key;
+        }
     }
 }

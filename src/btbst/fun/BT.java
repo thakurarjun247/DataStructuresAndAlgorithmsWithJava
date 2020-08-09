@@ -33,9 +33,9 @@ public class BT {
         System.out.println("15: lowestCommonAncestor");
         System.out.println("16: [TODO]maxDiffBetweenANodeAndAncestor");
         System.out.println("17: [TODO]printPathsWithASumAsGivenValue");
-        System.out.println("==========================Leet code New 2020 ========================");
-        System.out.println(" 18: lever order");
-        System.out.println(" 19 create tree from LC input with nulls");
+        System.out.println("18: lever order");
+        System.out.println("19 create tree from LC input with nulls");
+        System.out.println("20: create and show me a tree");
         System.out.println();
     }
 
@@ -231,12 +231,55 @@ public class BT {
     }
 
 
+    public void naturalView(TreeNode root) {
+
+        Queue<TreeNode> queue = new LinkedList<>();
+        queue.add(root);
+        int level = 1;
+        int totalItemsPrinted = 1;
+        int numberOfItemsPrintedInLastLevel = 1;
+        int numberOfTabs = 8;
+        int numberOfWhiteSpaces=32;
+
+        System.out.print(level + ":  " + printNTabs(numberOfWhiteSpaces));
+
+
+        while (queue.size() != 0) {
+            TreeNode node = queue.poll();
+            if (node != null) {
+                // uncomment below for printing only odd levels
+                // if(level%2!=0){
+                System.out.print(node.key + printNTabs(1));
+                // }
+                totalItemsPrinted++;
+                if (totalItemsPrinted == numberOfItemsPrintedInLastLevel * 2) {
+                    System.out.println("");
+                    // for formatting after every level
+                    System.out.print(++level + ":  " + printNTabs(numberOfTabs-2));
+                    numberOfItemsPrintedInLastLevel = totalItemsPrinted;
+                }
+
+                queue.add(node.left);
+                queue.add(node.right);
+            }
+        }
+
+    }
+
 
     private String printNTabs(int n) {
 
         StringBuilder builder = new StringBuilder();
         for (int i = 0; i < n; i++) {
             builder.append("\t");
+        }
+        return builder.toString();
+    }
+    private String printNWhiteSpaces(int n) {
+
+        StringBuilder builder = new StringBuilder();
+        for (int i = 0; i < n; i++) {
+            builder.append(" ");
         }
         return builder.toString();
     }
@@ -345,6 +388,7 @@ public class BT {
 
     }
 
+    //LCA
     public TreeNode lowestCommonAncestor(TreeNode root, TreeNode one, TreeNode two) {
 
         // assuming that both one and two exist in the tree
@@ -459,6 +503,27 @@ public class BT {
                     if (node.left != null) q.add(node.left);
                     if (node.right != null) q.add(node.right);
                 }
+            }
+        }
+    }
+    //aka zigzag spiral traversal
+    public void zigZag(TreeNode root){
+        if(root!=null){
+            Queue<TreeNode> q= new LinkedList<>();
+            q.add(root);
+            int level=1;
+            while(!q.isEmpty()){
+                System.out.println("level "+level);
+                int size=q.size();
+                for(int i=0;i<size;i++){
+                    TreeNode polled = q.poll();
+                    System.out.print(polled.key+" ");
+                    if(polled.left!=null)
+                        q.add(polled.left);
+                    if(polled.right!=null)
+                        q.add(polled.right);
+                }
+                //if(level%2==0)
             }
         }
     }

@@ -1,0 +1,4 @@
+Factory
+ Strategy pattern
+ Singleton. If you understand the nuances of Singleton scopes in a multi-threaded environment, and you can explain why it is so difficult to correctly destruct singletons during termination of a C++ program, you may pass my interview.
+ builder pattern
