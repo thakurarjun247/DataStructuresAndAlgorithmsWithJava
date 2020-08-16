@@ -1,4 +1,4 @@
-package javaspecific;
+package javabasics;
 
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;

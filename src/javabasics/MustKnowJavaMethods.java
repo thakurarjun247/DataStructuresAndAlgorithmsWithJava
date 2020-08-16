@@ -1,4 +1,4 @@
-package javaspecific;
+package javabasics;
 
 import util.Util;
 

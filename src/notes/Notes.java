@@ -176,7 +176,7 @@ public class Notes {
             If it relaxes even after n-1 time we know that there is a negative weight cycle
             for fully connected graph time complexity is n^3 for others it's n^2
 
-          Dijkstra (single source shortest path)
+          DijkstraGeeksForGeeks (single source shortest path)
             Greedy
             May or may not work on negative edge graph
             Process vertices one by one
@@ -185,7 +185,7 @@ public class Notes {
 
           Shortest path in DAG (single source shortest path, for topologically sorted DAG)
           Arrange in topological order using topological sort.
-          Proceed like Dijkstra in order of topology
+          Proceed like DijkstraGeeksForGeeks in order of topology
           Less time complexity, it's linear
 
           Fyodd Warshall (all source shortest path)

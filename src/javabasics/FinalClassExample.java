@@ -1,4 +1,4 @@
-package javaspecific;
+package javabasics;
 
 import java.util.HashMap;
 import java.util.Iterator;
