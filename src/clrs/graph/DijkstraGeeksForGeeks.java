@@ -23,19 +23,20 @@ Given a graph and a source vertex in the graph, find shortest paths from source 
  // A Java program for DijkstraGeeksForGeeks's single source shortest path algorithm.
 // The program is for adjacency matrix representation of the graph
 import java.lang.*;
+import java.util.Arrays;
 
 public class DijkstraGeeksForGeeks {
     // A utility function to find the vertex with minimum distance value,
     // from the set of vertices not yet included in shortest path tree
     static final int V = 9;
-    int getMinDistanceVertex(int dist[], Boolean sptSet[])
+    int getMinDistanceVertex(int distancesToAllVertices[], Boolean isVertexProcessed[])
     {
         // Initialize min value
         int min = Integer.MAX_VALUE, min_index = -1;
 
         for (int v = 0; v < V; v++)
-            if (sptSet[v] == false && dist[v] <= min) {
-                min = dist[v];
+            if (isVertexProcessed[v] == false && distancesToAllVertices[v] <= min) {
+                min = distancesToAllVertices[v];
                 min_index = v;
             }
 
@@ -72,8 +73,9 @@ public class DijkstraGeeksForGeeks {
         // isVetexProcessed[i] will true if vertex i is included in shortest
         // path tree or shortest distance from source to i is finalized
         Boolean isVetexProcessed[] = new Boolean[V];
-
-        // Initialize all distances as INFINITE and stpSet[] as false
+       // Arrays.fill(isVetexProcessed,false);
+//or
+        // Initialize all distances as INFINITE and isVetexProcessed[] as false
         for (int i = 0; i < V; i++) {
             isVetexProcessed[i] = false;
         }
@@ -83,22 +85,22 @@ public class DijkstraGeeksForGeeks {
         // Find shortest path for all vertices
         for (int i = 0; i < V - 1; i++) {
             // Pick the minimum distance vertex from the set of vertices
-            // not yet processed. minDistanceVertex is always equal to source in first
+            // not yet processed. minDistanceVertexIndex is always equal to source in first
             // iteration.
-            int minDistanceVertex = getMinDistanceVertex(distancesToAllVertices, isVetexProcessed);
+            int minDistanceVertexIndex = getMinDistanceVertex(distancesToAllVertices, isVetexProcessed);
 
             // Mark the picked vertex as processed
-            isVetexProcessed[minDistanceVertex] = true;
+            isVetexProcessed[minDistanceVertexIndex] = true;
 
             // Update distancesToAllVertices value of the adjacent vertices of the
             // picked vertex.
             for (int v = 0; v < V; v++)
                 //relax
                 // Update distancesToAllVertices[v] only if is not in isVetexProcessed, there is an
-                // edge from minDistanceVertex to v, and total weight of path from source to
-                // v through minDistanceVertex is smaller than current value of distancesToAllVertices[v]
-                if (!isVetexProcessed[v] && graph[minDistanceVertex][v] != 0 && distancesToAllVertices[minDistanceVertex] != Integer.MAX_VALUE && distancesToAllVertices[minDistanceVertex] + graph[minDistanceVertex][v] < distancesToAllVertices[v])
-                    distancesToAllVertices[v] = distancesToAllVertices[minDistanceVertex] + graph[minDistanceVertex][v];
+                // edge from minDistanceVertexIndex to v, and total weight of path from source to
+                // v through minDistanceVertexIndex is smaller than current value of distancesToAllVertices[v]
+                if (!isVetexProcessed[v] && graph[minDistanceVertexIndex][v] != 0 && distancesToAllVertices[minDistanceVertexIndex] != Integer.MAX_VALUE && distancesToAllVertices[minDistanceVertexIndex] + graph[minDistanceVertexIndex][v] < distancesToAllVertices[v])
+                    distancesToAllVertices[v] = distancesToAllVertices[minDistanceVertexIndex] + graph[minDistanceVertexIndex][v];
         }
 
         // print the constructed distance array

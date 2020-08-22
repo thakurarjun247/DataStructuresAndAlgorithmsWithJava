@@ -31,7 +31,12 @@ public class Sorting {
         int[] c = a;
         // printArray(a);
         // qsort(a);
-        //mergesort(a);
+        System.out.println("mergesort");
+
+
+        System.out.println(Arrays.toString(a));
+        mergesort(a);
+        System.out.println(Arrays.toString(a));
 
         int k = 5;
         int[] input = new int[20];
@@ -56,12 +61,12 @@ public class Sorting {
         if (l >= h) return;
 
 
-        //the index, it should be called pivot index
-        //all items on left of index < item at index < all items on right of index.
-        int index = swapAroundPivotOrPartition(a, l, h);
+        //the pivotIndex, it should be called pivot pivotIndex
+        //all items on left of pivotIndex < item at pivotIndex < all items on right of pivotIndex.
+        int pivotIndex = swapAroundPivotOrPartition(a, l, h);
         //repeat on both halves
-        qsort(a, l, index - 1);
-        qsort(a, index, h);
+        qsort(a, l, pivotIndex - 1);
+        qsort(a, pivotIndex, h);
     }
 
     static int swapAroundPivotOrPartition(int[] a, int l, int h) {
@@ -79,6 +84,8 @@ public class Sorting {
         while (l <= h) {
             //we can even cross the pivot, pivot can be 1st element as well.
             //continue to progress from both the ends until l and h meet
+
+            //pivot is the middle element, not the middle index.
             while (a[l] < pivot) {
                 l++;
             }
@@ -104,7 +111,8 @@ public class Sorting {
 
     public static void mergesort(int[] a) {
         if (a.length < 2) return;
-        int[] helper = new int[a.length];
+       //new int[a.length];
+        int[] helper =  Arrays.copyOf(a, a.length);
         mergesort(a, helper, 0, a.length - 1);
     }
 

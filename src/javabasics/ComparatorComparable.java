@@ -87,7 +87,7 @@ class Employee implements Comparable<Employee> {
     @Override
     public boolean equals(Object obj) {
         Employee emp = null;
-        if (obj instanceof Employee) {
+          if (obj instanceof Employee) {
             emp = (Employee) obj;
         }
         // TODO Auto-generated method stub

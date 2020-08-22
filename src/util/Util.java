@@ -67,4 +67,8 @@ public class Util {
         a[j]=temp;
         return a;
     }
+
+    public static boolean isStringNullOrEmpty(String s){
+        return s==null || s.isEmpty();
+    }
 }

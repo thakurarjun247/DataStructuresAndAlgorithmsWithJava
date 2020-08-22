@@ -3,6 +3,8 @@ package javabasics.map;
 import java.util.*;
 import java.util.stream.Collectors;
 
+import static java.util.Map.Entry.comparingByValue;
+
 public class MapOperations {
     public static void main(String[] args) {
         Map<Integer, String> numberToWords = new HashMap<>();
@@ -46,9 +48,32 @@ public class MapOperations {
                 .entrySet()
                 .stream()
                 .collect(Collectors.toMap(e->e.getKey(), e-> e.getKey()*2));
+
+        //notice the keyset and values are collections hence these ops are applicable on collections as well
         int sumOfKeys = numberTo2xNumber.keySet().stream().reduce(0, Integer::sum);
         int sumOfValues=numberTo2xNumber.values().stream().reduce(0 ,Integer::sum );
         System.out.println(sumOfKeys+" "+sumOfValues);
+
+        //sort map in descending order of values
+
+
+
+//        .sorted(comparingByValue())
+
+
+        Map<Integer, Integer> ascendingOrderOfMapValues=numberTo2xNumber
+                .entrySet()
+                .stream()
+                .sorted(comparingByValue())
+                .collect( Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue, (e1, e2) -> e2, LinkedHashMap::new));
+
+        ascendingOrderOfMapValues.forEach((k,v)-> System.out.println(k+"->"+v));
+        Map<Integer, Integer> reverseOrderOfMapValues=numberTo2xNumber
+                .entrySet()
+                .stream()
+                .sorted(Collections.reverseOrder(comparingByValue()))
+                .collect( Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue, (e1, e2) -> e2, LinkedHashMap::new));
+        reverseOrderOfMapValues.forEach((k,v)-> System.out.println(k+"->"+v));
 
     }
 }

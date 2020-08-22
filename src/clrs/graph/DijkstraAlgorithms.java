@@ -46,6 +46,8 @@ public class DijkstraAlgorithms {
             allVertices.add(i);
         allVertices.forEach(v->vertexToDistanceFromSource.put(v, Integer.MAX_VALUE));
         vertexToDistanceFromSource.put(sourceVertex, 0);
+        vertexToDistanceFromSource.put(1, 4);
+        vertexToDistanceFromSource.put(7, 8);
         Set<Integer> selectedVertices = new HashSet<>();
         selectedVertices.add(sourceVertex);
         int currentVertex = sourceVertex;
@@ -55,6 +57,11 @@ public class DijkstraAlgorithms {
             int vertexWithMinimumDistance = getVertexWithMinimumDistance(adjMatrix, selectedVertices, allVertices, currentVertex);
            selectedVertices.add(vertexWithMinimumDistance);
             //relax
+            System.out.println("currentVertex "+currentVertex+" vertexWithMinimumDistance "+vertexWithMinimumDistance+" vertexToDistanceFromSource.get(currentVertex) "+vertexToDistanceFromSource.get(currentVertex)+" adjMatrix[currentVertex][vertexWithMinimumDistance] "+ adjMatrix[currentVertex][vertexWithMinimumDistance]);
+            if(currentVertex==6)
+            {
+                System.out.println("debug");
+            }
             int edgeWeightAfterRelaxing =vertexToDistanceFromSource.get(currentVertex)+ adjMatrix[currentVertex][vertexWithMinimumDistance];
             if(vertexToDistanceFromSource.get(vertexWithMinimumDistance)< Integer.MAX_VALUE &&
                     vertexToDistanceFromSource.get(vertexWithMinimumDistance) > edgeWeightAfterRelaxing){
