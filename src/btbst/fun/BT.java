@@ -392,9 +392,7 @@ public class BT {
     public TreeNode lowestCommonAncestor(TreeNode root, TreeNode one, TreeNode two) {
 
         // assuming that both one and two exist in the tree
-        if (root == null)
-            return null;
-        if (root == one || root == two)
+        if (root == null || root == one || root == two)
             return root;
         boolean isOneOnLeft = contains(root.left, one);
         boolean isTwoOnLeft = contains(root.left, two);

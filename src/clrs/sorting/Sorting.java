@@ -10,11 +10,12 @@ import static util.Util.printArray;
 public class Sorting {
     public static void main(String[] s) {
         for (int i = 0; i < 5; i++) {
-            int[] a = Util.generateArray(3,false, 10, true );
+            int[] a = Util.generateArray(5,false, 10, true );
             System.out.println("before sort:" + Arrays.toString(a) + " ");
-            insertionSort(a);
-            //qsort(a);
+            //insertionSort(a);
+            qsort(a);
             System.out.println("after  sort:" + Arrays.toString(a) + " ");
+            System.out.println(isSorted(a));
             System.out.println();
         }
 
@@ -68,7 +69,13 @@ public class Sorting {
         qsort(a, l, pivotIndex - 1);
         qsort(a, pivotIndex, h);
     }
-
+    static boolean isSorted(int[] a){
+        for(int i=0;i<a.length-1;i++){
+            if(a[i]>a[i+1])
+                return false;
+        }
+        return true;
+    }
     static int swapAroundPivotOrPartition(int[] a, int l, int h) {
         //pivot is the middle element, not the middle index.
         //or just choose it randomly,
@@ -92,6 +99,8 @@ public class Sorting {
             while (a[h] > pivot) {
                 h--;
             }
+
+            // = is essential to properly move the pointers to the next index
             if (l <= h) {
                 swap(a, l, h);
                 l++;
