@@ -104,10 +104,13 @@ public class BTApp {
                     binaryTree.inOrder(treeNode);
                     break;
                 case 14:
-                    List<LinkedList<TreeNode>> list = new ArrayList<LinkedList<TreeNode>>();
-				/*list=*/
-                    binaryTree.levelWiseLLs(root, list, 0);
-                    //list.forEach(item-> System.out.println(item));
+                    for (int j = 0; j <=4; j++) {
+
+                        //   System.out.println("enter data value");
+                        // int data = scanner.nextInt();
+                        root = binaryTree.insert(root, j);
+                    }
+                    binaryTree.levelWiseLLs(root).forEach(item-> System.out.println(item));
                     break;
                 case 15:
                     System.out.println(binaryTree.lowestCommonAncestor(root, root.right, root.right.left));
@@ -124,8 +127,8 @@ public class BTApp {
                     binaryTree.levelOrder1(root);
                     binaryTree.levelOrder2(root);
                 case 19:
-                    System.out.println("enter the array");
-                    String s = scanner.next();
+                   // System.out.println("enter the array in format \"[0,1,2,3,4,5,6,7,8,9,10]\"");
+                    String s = "[0,1,2,3,4,5,6,7,8,9,10]";
                     String[] arrString = s
                             .substring(1, s.length() - 1)
                             .split(",");
@@ -161,6 +164,16 @@ public class BTApp {
                     binaryTree.naturalView(root);
                 case 22:
                     binaryTree.zigZag(root);
+                    break;
+                case 23:
+                    for (int j = 0; j <=4; j++) {
+
+                        //   System.out.println("enter data value");
+                        // int data = scanner.nextInt();
+                        root = binaryTree.insert(root, j);
+                    }
+                    System.out.println(binaryTree.rightSideView(root));
+                    break;
 
 
                 default:

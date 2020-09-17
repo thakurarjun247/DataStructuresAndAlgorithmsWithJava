@@ -36,6 +36,7 @@ public class BT {
         System.out.println("18: lever order");
         System.out.println("19 create tree from LC input with nulls");
         System.out.println("20: create and show me a tree");
+        System.out.println("23: create and show me Right view");
         System.out.println();
     }
 
@@ -364,24 +365,36 @@ public class BT {
 
     }
 
-    public /*List<LinkedList<TreeNode>> */ void levelWiseLLs(TreeNode root, List<LinkedList<TreeNode>> list, int level) {
-        Queue<TreeNode> queue = new LinkedList<>();
-        queue.add(root);
-        while (queue.size() != 0) {
-            int counter = queue.size();
-            while (counter > 0) {
-                counter--;
-                TreeNode node = queue.poll();
-
-                if (node != null) {
-                    //counter--;
-                    System.out.print(node.key + "\t");
-                    queue.add(node.left);
-                    queue.add(node.right);
-                }
+    public List<List<TreeNode>> levelWiseLLs(TreeNode root) {
+        List<List<TreeNode>> lists=new ArrayList<>();
+        List<TreeNode> currentLevelList = new ArrayList<>();
+        if (root == null)
+        {
+            return lists;}
+        Queue<TreeNode> q = new LinkedList<>();
+        q.add(root);
+        q.add(null);
+        while (!q.isEmpty()) {
+            TreeNode node = q.poll();
+            if (node == null) {
+                return lists;
             }
-            System.out.println("");
+            currentLevelList.add(node);
+            if (node.left != null)
+                q.add(node.left);
+            if (node.right != null)
+                q.add(node.right);
+            //it's a new level next
+            if (q.peek() == null) {
+                q.poll();
+                q.add(null);
+                currentLevelList.add(node);
+                lists.add(currentLevelList);
+                currentLevelList.clear();
+            }
         }
+
+        return lists;
     }
 
     public void inOrderSuccessor(TreeNode root, int key) {
@@ -509,7 +522,7 @@ public class BT {
         if(root!=null){
             Queue<TreeNode> q= new LinkedList<>();
             q.add(root);
-            int level=1;
+                int level=1;
             while(!q.isEmpty()){
                 System.out.println("level "+level);
                 int size=q.size();
@@ -526,4 +539,27 @@ public class BT {
         }
     }
 
+    public List<Integer> rightSideView(TreeNode root) {
+        List<Integer> list = new ArrayList<Integer>();
+        if (root == null) return list;
+        Queue<TreeNode> q = new LinkedList<>();
+        q.add(root);
+        q.add(null);
+        while (!q.isEmpty()) {
+            TreeNode node = q.poll();
+            if (node == null) {
+                return list;
+            }
+            if (node.left != null)
+                q.add(node.left);
+            if (node.right != null)
+                q.add(node.right);
+            if (q.peek() == null) {
+                q.poll();
+                q.add(null);
+                list.add(node.key);
+            }
+        }
+        return list;
+    }
 }

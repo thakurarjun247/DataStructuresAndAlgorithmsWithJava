@@ -1,5 +1,7 @@
 package clrs.devideandconquer;
 
+
+//buy sale stocks n times
 public class Main {
     public static void main(String[] args) {
         Kadanse k = new Kadanse();

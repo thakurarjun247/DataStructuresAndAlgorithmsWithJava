@@ -3,6 +3,7 @@ package javabasics.map;
 import java.util.*;
 import java.util.stream.Collectors;
 
+import static java.util.Map.Entry.comparingByKey;
 import static java.util.Map.Entry.comparingByValue;
 
 public class MapOperations {
@@ -66,6 +67,10 @@ public class MapOperations {
                 .stream()
                 .sorted(comparingByValue())
                 .collect( Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue, (e1, e2) -> e2, LinkedHashMap::new));
+//sort by keys
+      //  int[] sorted = numberTo2xNumber
+           //     .entrySet().toArray();
+
 
         ascendingOrderOfMapValues.forEach((k,v)-> System.out.println(k+"->"+v));
         Map<Integer, Integer> reverseOrderOfMapValues=numberTo2xNumber

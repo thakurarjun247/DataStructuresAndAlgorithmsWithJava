@@ -150,6 +150,8 @@ public class Notes {
           map.put((char) i, i);
 
       }
+
+
       //traverse map
         /**
          * map.get(key) :
@@ -166,6 +168,42 @@ public class Notes {
         // * interfaces.  Implements all optional list operations, and permits all
         // * elements (including {@code null}).
         List<Integer> dll=new LinkedList<>();
+
+
+       //xor
+                boolean x = false;
+                boolean y = false;
+                boolean xXorY = x ^ y;
+                System.out.println("false XOR false: "+xXorY);
+                x = false;
+                y = true;
+                xXorY = x ^ y;
+                System.out.println("false XOR true: "+xXorY);
+                x = true;
+                y = false;
+                xXorY = x ^ y;
+                System.out.println("true XOR false: "+xXorY);
+                x = true;
+                y = true;
+                xXorY = x ^ y;
+                System.out.println("true XOR true: "+xXorY);
+
+                //java data type conversion:
+        char c='c';
+        int charToInt=Character.getNumericValue(c);
+        System.out.println("charToInt \n"+charToInt);
+        System.out.println(Character.getNumericValue('9'));
+
+        //convert number to java array
+        int oneToFive=12345;
+        char[] A = Integer
+                .toString(oneToFive)
+                .toCharArray();
+
+        //convert string to integer
+        int oneToEight=Integer
+                .parseInt("12345678");
+        System.out.println("break");
 
         /*
         * Bellman ford (single source shortest path)

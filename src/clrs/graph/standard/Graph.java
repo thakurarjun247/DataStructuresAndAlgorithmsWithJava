@@ -5,6 +5,7 @@ import java.util.*;
 class GraphApp {
 
     public static void main(String[] args) {
+
         List<Vertex> list = new ArrayList<>();
         for (int i = 0; (i) < 8; i++) {
             list.add(new Vertex(i ));

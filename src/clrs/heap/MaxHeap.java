@@ -27,12 +27,25 @@ public class MaxHeap {
 
 class MaxHeapUtil {
 
+    //remove, delete
+    int heapExtractMax(List<Integer> list) {
+        if (list.isEmpty())
+            throw new NoSuchElementException("empty heap, can't extract max");
+        Integer max = list.get(0);
+        int lastIndex = list.size() - 1;
+        list.set(0, list.get(lastIndex));
+        list.remove(lastIndex);
+        maxHeapyfy(list, 0);
+        return max;
+
+    }
+
     //floats down the value at index i to appropriate place
     //when we have to delete the max element, we call maxHeapyfy(a, 0)
     void maxHeapyfy(List<Integer> list, int i) {
         if (i >= list.size()) return;
         int heapSize = list.size();
-        int largest = i;
+        int indexOfLargest = i;
         int left = 2 * i + 1;
         int right = 2 * i + 2;
 
@@ -41,15 +54,15 @@ class MaxHeapUtil {
         if (left < heapSize)
             //compare it with parent
             if (list.get(left) > list.get(i))
-                largest = left;
+                indexOfLargest = left;
 
         if (right < heapSize)
-            if (list.get(right) > list.get(largest))
-                largest = right;
-            //parent is not the largest
-        if (largest != i) {
-            Collections.swap(list, largest, i);
-            maxHeapyfy(list, largest);
+            if (list.get(right) > list.get(indexOfLargest))
+                indexOfLargest = right;
+            //parent is not the indexOfLargest
+        if (indexOfLargest != i) {
+            Collections.swap(list, indexOfLargest, i);
+            maxHeapyfy(list, indexOfLargest);
         }
     }
 
@@ -66,18 +79,7 @@ class MaxHeapUtil {
             System.out.print(heapExtractMax(list));
     }
 
-    //remove, delete
-    int heapExtractMax(List<Integer> list) {
-        if (list.isEmpty())
-            throw new NoSuchElementException("empty heap, can't extract max");
-        Integer max = list.get(0);
-        int lastIndex = list.size() - 1;
-        list.set(0, list.get(lastIndex));
-        list.remove(lastIndex);
-        maxHeapyfy(list, 0);
-        return max;
 
-    }
     //Bubble up  / Flow up
     //i is the index where we need to update the value
     void heapIncreaseKey(List<Integer> list, int i, int newValueForIndexI){
