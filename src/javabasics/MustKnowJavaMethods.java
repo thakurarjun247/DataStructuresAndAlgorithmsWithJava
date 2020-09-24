@@ -1,7 +1,5 @@
 package javabasics;
 
-import util.Util;
-
 import java.util.Arrays;
 
 public class MustKnowJavaMethods {
