@@ -1,4 +1,4 @@
-# dsa - Data Structures and Algorithms with Java
+# Data Structures and Algorithms with Java
 
 This repository contains implementation of standard data structures and algorithms in Java. There are around 140 programs in the initial commit.<p/>
 <b>How to download ? </b><p/>
