@@ -51,6 +51,7 @@ public class ComparatorComparable {
             }
 
         });
+      //  list.sort((e1,e2)-> e2.getEmail().compareTo(e1.getEmail()));
         System.out.println(list);
         // System.out.println(treeSet);
     }

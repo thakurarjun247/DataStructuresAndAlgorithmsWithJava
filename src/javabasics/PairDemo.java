@@ -1,9 +1,10 @@
 package javabasics;
 
-import javafx.util.Pair;
+///import javafx.util.Pair;
 import java.util.*;
 //Java 9 pair, like a SCALA tuple
 public class PairDemo {
+/*
     public static void main(String[] args) {
         Pair<Integer, String> one=new Pair<>(1,"one");
         Pair<Integer, String> zero=new Pair<>(0,"zero");
@@ -14,5 +15,6 @@ public class PairDemo {
         list.forEach(item->System.out.println(item.getKey()+" "+item.getValue()));
 
     }
+*/
 
 }
