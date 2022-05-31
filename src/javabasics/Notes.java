@@ -4,7 +4,7 @@ import java.util.*;
 
 public class Notes {
     /**
-     * Collection Heirarchy
+     *                            Collection Heirarchy
      * <p>
      *                              Collection(I)
      * <p>
@@ -35,8 +35,8 @@ public class Notes {
     public static void main(String[] a) {
 
         //Math.abs
-        System.out.println(Math.abs(-19));
-        System.out.println(Math.abs(19));
+        System.out.println(Math.abs(-19)); // prints 19
+        System.out.println(Math.abs(19));//same
 
         double x1=(double)1;
         double y1 =(double) 2;
@@ -53,27 +53,33 @@ public class Notes {
         //In Java Q doesn't have enqueue or dequeue methods, use the add and remove from COllections instead
 
         Queue<Integer> q = new LinkedList<>();
-        q.add(8);
-        q.add(38);
+       // q.add(8);
+        //q.add(38);
         q.isEmpty();
-
+        //pro tip: never use remove method in q, it's weired, just use peek or poll as both of them return null if the queue
+        //is empty.
         //peek()Retrieves, but does not remove, the head of this queue, or returns null if this queue is empty.
         Integer canBeNull=q.peek();
 
         //poll() Retrieves and removes the head of this queue, or returns null if this queue is empty.
         Integer mayBeNull = q.poll();
 
+
+
         //remove() Retrieves and removes the head of this queue.
         //This method differs from poll only in that it throws an NoSuchElementException if this queue is empty
-        q.remove();
+        //q.remove();
 
         //Stack
         Stack<Integer> stack=new Stack<>();
         //Stack has all the list and queue methods see below
+        //peek or pop don't return null, they will always throw exception.
+       // Integer popping = stack.pop(); // will throw emptystackexception think underflow
+        //Integer peeking = stack.peek();  // will throw emptystackexception think underflow.
         stack.push(3);
         stack.push(3);
         stack.push(3);
-        stack.pop();
+
         stack.add(3);
 //        stack.remove(3);
         stack.peek();
