@@ -1,12 +1,12 @@
 package datastructures.arraystring.fun;
 
-import utilityfunctions.Util;
+import util.GenericUtil;
 
 import java.util.Arrays;
 import java.util.Scanner;
 
 public class SortingSearching {
-    Util util = new Util();
+    GenericUtil genericUtil = new GenericUtil();
     Scanner scanner = new Scanner(System.in);
 
     public void displayChoice() {

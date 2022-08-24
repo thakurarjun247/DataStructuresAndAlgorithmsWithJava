@@ -1,7 +1,7 @@
 package datastructures.arraystring.app;
 
 import datastructures.arraystring.fun.Recursion;
-import utilityfunctions.Util;
+import util.GenericUtil;
 
 import java.util.List;
 import java.util.Scanner;
@@ -35,11 +35,11 @@ public class RecursionApp {
                     System.out.println(recursion.reverseArray(array, 0));
                     break;
                 case 2:
-                    Util.printArray(array);
+                    GenericUtil.printArray(array);
                     System.out.println(recursion.reverseArrayNew(array, 0));
                     break;
                 case 3:
-                    Util.printArray(array);
+                    GenericUtil.printArray(array);
                     System.out.println(recursion.reverseArrayIteratively(array));
                     break;
                 case 4:

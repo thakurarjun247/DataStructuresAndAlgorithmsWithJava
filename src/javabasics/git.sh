@@ -1,0 +1,2 @@
+cd D:
+git pull

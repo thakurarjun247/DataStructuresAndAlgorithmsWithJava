@@ -5,7 +5,7 @@ package problemsfrombooks.epi.ch06arrays;
 
 import java.util.Arrays;
 
-import static utilityfunctions.Util.swap;
+import static util.GenericUtil.swap;
 
 public class DutchNationalFlag {
     public static void main(String[] args) {

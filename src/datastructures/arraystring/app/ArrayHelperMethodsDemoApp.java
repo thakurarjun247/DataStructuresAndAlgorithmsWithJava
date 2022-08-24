@@ -1,6 +1,6 @@
 package datastructures.arraystring.app;
 
-import utilityfunctions.Util;
+import util.GenericUtil;
 
 import java.util.Arrays;
 import java.util.List;
@@ -18,11 +18,11 @@ public class ArrayHelperMethodsDemoApp {
         //copy upto given length, print first 5 elem in this case
             a=Arrays.copyOf(arr,5);
 
-        Util.printArray(a);
+        GenericUtil.printArray(a);
 
         //create string rep of array and return comma seprated,
         //squre bracket enclosed values [1,2,3]
-        Util.print(Arrays.toString(a));
+        GenericUtil.print(Arrays.toString(a));
 
         //Sorts array, the elements must be comparable
         Arrays.sort(a);

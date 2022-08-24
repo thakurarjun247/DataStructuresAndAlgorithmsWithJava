@@ -1,20 +1,20 @@
-package problemsfrombooks.clrs.sorting;
+package algorithms.sorting;
 
-import utilityfunctions.Util;
+import util.GenericUtil;
 
 import java.util.Arrays;
 import java.util.Random;
 
-import static utilityfunctions.Util.printArray;
+import static util.GenericUtil.printArray;
 
-public class Sorting {
+public class AllSorting {
     public static void main(String[] s) {
         for (int i = 0; i < 5; i++) {
-            int[] a = Util.generateArray(5,false, 10, true );
+            int[] a = GenericUtil.generateArray(5,false, 10, true );
             System.out.println("before sort:" + Arrays.toString(a) + " ");
             //insertionSort(a);
             qsort(a);
-            System.out.println("after  sort:" + Arrays.toString(a) + " ");
+            System.out.println("after qsort sort:" + Arrays.toString(a) + " ");
             System.out.println(isSorted(a));
             System.out.println();
         }
@@ -199,15 +199,15 @@ public class Sorting {
     }
 
     public static void insertionSort(int[] a) {
-        for (int j = 1; j < a.length; j++) {
-            int i = j - 1;
-            int key = a[j];
+        for (int i = 1; i < a.length; i++) {
+            int j = i - 1;
+            int key = a[i];
             //todo: careful of the order of the conditions below.
-            while (i >= 0 && a[i] > key ) {
-                a[i+1]=a[i];
-                i--;
+            while (j >= 0 && a[j] > key ) {
+                a[j+1]=a[j];
+                j--;
             }
-            a[i+1]=key;
+            a[j+1]=key;
         }
     }
 }
