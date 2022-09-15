@@ -44,3 +44,4 @@ dsa.iml
 # exception to the rule#
 ########################
 !*.java
+/out/

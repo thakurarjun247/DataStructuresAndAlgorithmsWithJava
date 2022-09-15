@@ -20,3 +20,10 @@ public class _2_1InsertionSort {
         }
     }
 }
+//Time complexity
+//worst: n^2
+//best: n
+//The best-case time complexity of insertion sort algorithm is O(n)
+// time complexity. Meaning that the time taken to sort a
+// list is proportional to the number of elements in the list;
+// this is the case when the list is already in the correct order.
