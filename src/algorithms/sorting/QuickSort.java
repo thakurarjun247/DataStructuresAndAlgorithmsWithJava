@@ -1,5 +1,5 @@
 package algorithms.sorting;
-
+import util.*;
 //https://www.youtube.com/watch?v=COk73cpQbFQ
 //select the min element by scanning the array
 //swap the min with the leftmost.
@@ -9,7 +9,7 @@ public class QuickSort {
     public static void main(String[] args) {
         int a[] = {5, 10, 3, 9};
         quickSort(a);
-        util.GenericUtil.printArray(a);
+       GenericUtil.printArray(a);
     }
 
     public static void quickSort(int[] a) {
