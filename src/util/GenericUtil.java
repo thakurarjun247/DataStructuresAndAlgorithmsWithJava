@@ -50,6 +50,14 @@ public class GenericUtil {
     }
 
     public static void printArray(int[] array) {
+        if(array==null){
+            System.out.println(array);
+            return;
+        }
+        if(array.length==0 ) {
+            System.out.println("[]");
+            return;
+        }
         System.out.print("[");
         for (int i = 0; i < array.length-1; i++) {
             System.out.print(array[i] + ", ");

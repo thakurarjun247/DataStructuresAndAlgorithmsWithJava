@@ -199,15 +199,15 @@ public class AllSorting {
     }
 
     public static void insertionSort(int[] a) {
-        for (int i = 1; i < a.length; i++) {
-            int j = i - 1;
-            int key = a[i];
+        for (int j = 1; j < a.length; j++) {
+            int i = j - 1;
+            int key = a[j];
             //todo: careful of the order of the conditions below.
-            while (j >= 0 && a[j] > key ) {
-                a[j+1]=a[j];
-                j--;
+            while (i >= 0 && a[i] > key ) {
+                a[i+1]=a[i];
+                i--;
             }
-            a[j+1]=key;
+            a[i+1]=key;
         }
     }
 }

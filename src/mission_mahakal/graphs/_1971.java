@@ -1,4 +1,4 @@
-package leetcode2022.graphs;
+package mission_mahakal.graphs;
 
 import java.util.*;
 
