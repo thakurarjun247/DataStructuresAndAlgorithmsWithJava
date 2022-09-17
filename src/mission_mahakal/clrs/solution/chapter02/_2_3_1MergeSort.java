@@ -1,4 +1,4 @@
-package mission_mahakal.clrs.chapter02;
+package mission_mahakal.clrs.solution.chapter02;
 
 public class _2_3_1MergeSort {
     public static void main(String[] arr){

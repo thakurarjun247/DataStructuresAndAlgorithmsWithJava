@@ -1,4 +1,4 @@
-package mission_mahakal.clrs.chapter04;
+package mission_mahakal.clrs.solution.chapter04;
 
 public class _4_1_MaxSubArrayDnC {
 
