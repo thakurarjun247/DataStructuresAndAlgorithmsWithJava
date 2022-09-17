@@ -2,22 +2,26 @@ package mission_mahakal.clrs.chapter02;
 
 public class _2_3_1MergeSort {
     public static void main(String[] arr){
-        int[] a={2,4,5,800,900};
-        mergeSort(a, 0, 4);
-        util.GenericUtil.printArray(a);
+        int[] a={62344,24,63,-4,-2352};
+        int[] auxillaryArray= new int[a.length];
+        mergeSort(a, auxillaryArray, 0, a.length-1);
+        util.GenericUtil.printArray(auxillaryArray);
+
     }
 
-    static void mergeSort(int[] a, int p, int r){
+    static void mergeSort(int[] a,int[] auxillaryArray, int p, int r){
         if(a==null || a.length==0 || p>=r)
             return;
         int q=(p+r)/2;
-        mergeSort(a, p, q);
-        mergeSort(a,q+1, r);
-       merge(a,p,q,r);
+        mergeSort(a,auxillaryArray, p, q);
+        mergeSort(a,auxillaryArray,q+1, r);
+
+        merge(a,auxillaryArray, 0, q,a.length-1);
+
 
     }
-    static void merge(int[] a, int p, int q, int r){
-        int[] auxillaryArray= new int[a.length];
+    static void merge(int[] a,int[] auxillaryArray, int p, int q, int r){
+
         int currentWriter=0;
         int left=p;
         int right =q+1;
@@ -51,8 +55,7 @@ public class _2_3_1MergeSort {
                currentWriter++;
            }
 
-           for(int i=0;i<a.length;i++)
-               a[i]=auxillaryArray[i];
+
 
 
     }

@@ -11,7 +11,7 @@ public class Main {
         int[] arr={-4, -5 };
         int[] a3={1,-4,1,1,1 -5,99 };
         int[] empty={};
-        MaxContinuousSubArrayDevideConquer.Bound b = m.findMaxSubArray(0, a3.length - 1, a3);
+        MaxContinuousSubArrayDevideConquer.Bound b = m.findMaxSubArray(0, a1.length - 1, a1);
         System.out.println(b.sum+b.leftMost+b.rightMost);
         //System.out.println(b.sum);
        // System.out.println(k.kadanseRecursive(a1, 0, Integer.MIN_VALUE, Integer.MIN_VALUE));
