@@ -42,7 +42,7 @@ class MaxHeapUtil {
 
     //floats down the value at index i to appropriate place
     //when we have to delete the max element, we call maxHeapyfy(a, 0)
-    void maxHeapyfy(List<Integer> list, int i) {
+    void  maxHeapyfy(List<Integer> list, int i) {
         if (i >= list.size()) return;
         int heapSize = list.size();
         int indexOfLargest = i;
