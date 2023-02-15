@@ -1,12 +1,14 @@
 package mission_mahakal.clrs.solution.chapter02;
 
+import util.ArrayUtil;
+
 public class _2_1InsertionSort {
     public static void main(String[] a){
-        int[] b={3,4,2,6,1};
+        Integer[] b={3,4,2,6,1};
         insertionSort(b);
-        util.GenericUtil.printArray(b);
+        ArrayUtil.printArray(b);
     }
-    static void insertionSort(int[] a){
+    static void insertionSort(Integer[] a){
         if(a==null || a.length==0)
             return;
         for(int j=1;j<a.length;j++){

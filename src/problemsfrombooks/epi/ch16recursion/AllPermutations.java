@@ -1,7 +1,5 @@
 package problemsfrombooks.epi.ch16recursion;
 
-import util.GenericUtil;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -18,7 +16,7 @@ public class AllPermutations {
     }
 
     static List<String> newPerm(String s, List<String> list) {
-        if (GenericUtil.isStringNullOrEmpty(s)) return list;
+        if (s == null || s.isEmpty()) return list;
         if (s.length() == 1)
             list.add(s);
 

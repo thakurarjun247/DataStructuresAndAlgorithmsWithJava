@@ -9,5 +9,14 @@ public class ListOperations {
             list.add(i);
         list
                 .forEach(System.out::println);
+        List<Integer> marks= Arrays.asList(1,2,3);
+        //average of list
+        Double average = marks
+                .stream()
+                .mapToDouble(a -> a)
+                .average()
+                .getAsDouble();
+        System.out.println(average);
+
     }
 }

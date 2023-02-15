@@ -7,16 +7,16 @@ import util.*;
 
 public class QuickSort {
     public static void main(String[] args) {
-        int a[] = {5, 10, 3, 9};
+        Integer a[] = {5, 10, 3, 9};
         quickSort(a);
-       GenericUtil.printArray(a);
+       ArrayUtil.printArray(a);
     }
 
-    public static void quickSort(int[] a) {
+    public static void quickSort(Integer[] a) {
         quickSort(a, 0, a.length - 1);
     }
 
-    private static void quickSort(int[] a, int low, int high) {
+    private static void quickSort(Integer[] a, int low, int high) {
         if (low >= high)
             return;
         int partitionIndex = getPartitionIndex(a, low, high, a[low + high] / 2);
@@ -24,7 +24,7 @@ public class QuickSort {
         quickSort(a, partitionIndex + 1, high);
     }
 
-    private static int getPartitionIndex(int[] a, int low, int high, int pivotValue) {
+    private static int getPartitionIndex(Integer[] a, int low, int high, int pivotValue) {
 
         int left = 1;
         int right = high;
