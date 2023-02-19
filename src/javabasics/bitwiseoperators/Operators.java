@@ -2,6 +2,28 @@ package javabasics.bitwiseoperators;
 
 public class Operators {
     public static void main(String[] args) {
+
+        //bitmasking
+        int n=3;
+
+                for (int i = (int)Math.pow(2, n); i < (int)Math.pow(2, n + 1); ++i) {
+                    // generate bitmask, from 0..00 to 1..11
+                    //System.out.println(Integer.toBinaryString(i));
+                    System.out.println(i);
+                    String bitmask = Integer.toBinaryString(i).substring(1);
+                    System.out.println(bitmask);
+
+                    // append subset corresponding to that bitmask
+                 /*
+                 * */
+                    //output.add(curr);
+                }
+        System.out.println("======");
+
+
+        //convert decimal to binary string
+
+        System.out.println(Integer.toBinaryString(5));
         //Initial values
         int a = 5; // 0101
         int b = 7;//0111
