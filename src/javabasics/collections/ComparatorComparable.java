@@ -1,4 +1,4 @@
-package javabasics;
+package javabasics.collections;
 
 import java.util.*;
 

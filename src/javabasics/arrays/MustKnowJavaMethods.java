@@ -1,4 +1,4 @@
-package javabasics;
+package javabasics.arrays;
 
 import java.util.Arrays;
 

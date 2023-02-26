@@ -1,4 +1,4 @@
-package javabasics;
+package javabasics.java8;
 
 public class Lambda {
 

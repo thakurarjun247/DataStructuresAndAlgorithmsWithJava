@@ -1,4 +1,4 @@
-package javabasics;
+package javabasics.Threads;
 
 public class RunnableWithLambda {
 

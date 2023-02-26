@@ -6,6 +6,7 @@ import util.*;
 
 
 public class QuickSort {
+
     public static void main(String[] args) {
         Integer a[] = {5, 10, 3, 9};
         quickSort(a);

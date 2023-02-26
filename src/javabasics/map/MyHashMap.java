@@ -1,4 +1,4 @@
-package javabasics;
+package javabasics.map;
 
 public class MyHashMap<K, V> {
 
