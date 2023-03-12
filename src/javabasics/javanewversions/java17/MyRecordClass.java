@@ -33,15 +33,15 @@ It's worth noting that although record classes are final, you can still implemen
 *
 * */
 //NOTE there is no class keyword here.
-public record  RecordClassDemo (String name, Integer age) {
+public record MyRecordClass(String name, Integer age) {
     public static void main(String[] args) {
         Record record; //abstract base class that is parent of all java records
 /*        public abstract class Record
                 extends Object
 This is the common base class of all Java language record classes.*/
-        RecordClassDemo r1=new RecordClassDemo("Arjun", 26);
-        RecordClassDemo r2=new RecordClassDemo("Arjun", 26);
-        RecordClassDemo r3=new RecordClassDemo("Yuvan", 6);
+        MyRecordClass r1=new MyRecordClass("Arjun", 26);
+        MyRecordClass r2=new MyRecordClass("Arjun", 26);
+        MyRecordClass r3=new MyRecordClass("Yuvan", 6);
         //only 0 arg or complete arg const.
         //not  partial ones.
        // RecordClassDemo r4=new RecordClassDemo("OnlyName");
