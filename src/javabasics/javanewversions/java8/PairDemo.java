@@ -1,5 +1,5 @@
 
-package javabasics.java8;
+package javabasics.javanewversions.java8;
 
 ///import javafx.util.Pair;
 //import datastructures.arraystring.fun.Pair;

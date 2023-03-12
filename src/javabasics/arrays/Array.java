@@ -2,11 +2,18 @@ package javabasics.arrays;
 
 import util.ArrayUtil;
 
-import java.util.Arrays;
+import java.util.*;
 
 public class Array {
     public static void main(String[] args) {
         Integer[] a = {20, 98, 12, 7, 35};
+
+        //array as key of a map
+
+        Map<int[], Integer> map=new HashMap<>();
+        map.put(new int[]{1,2}, 3);
+        map.put(new int[]{10,20}, 30);
+        System.out.println(map.containsKey(new int[]{1,2}));
 
 
 

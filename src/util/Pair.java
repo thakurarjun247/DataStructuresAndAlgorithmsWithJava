@@ -1,6 +1,9 @@
 package util;
 
 public class Pair<K,V> {
+    public static void main(String[] args) {
+
+    }
   K key;
   V value;
 
