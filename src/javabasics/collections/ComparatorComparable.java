@@ -9,7 +9,7 @@ public class ComparatorComparable {
         final Employee emp2 = new Employee("b");
         final Employee emp3 = new Employee("c");
 
-	/*	Map<String, String> map = new HashMap<>();
+		Map<String, String> map = new HashMap<>();
         map.put(null, null);
 		map.put(null, "empty");
 		Hashtable<String, String> hashTable = new Hashtable<String, String>();
@@ -25,7 +25,6 @@ public class ComparatorComparable {
 		System.out.println(emp1 == emp3);
 		System.out.println(emp1.getEmail());
 		System.out.println(emp1 == emp3);
-		*/
         Set<Employee> treeSet = new TreeSet<Employee>((Employee e1, Employee e2) -> {
             if (e1 == null || e2 == null || e1.getClass() != Employee.class || e2.getClass() != Employee.class) {
                 throw new ClassCastException("null");

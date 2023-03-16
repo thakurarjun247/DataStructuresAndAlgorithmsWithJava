@@ -1,4 +1,4 @@
-package javabasics.classic;
+package javabasics.classic_comp_sci_problems;
 
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;

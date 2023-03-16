@@ -27,7 +27,7 @@ public class MustKnowJavaMethods {
 
 
         //String <----> Array
-        string.toCharArray();
+        char[] charArray=string.toCharArray();
         Arrays.toString(array);
 
         //Declare array
