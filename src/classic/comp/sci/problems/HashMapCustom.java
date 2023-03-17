@@ -1,4 +1,4 @@
-package javabasics.classic_comp_sci_problems;
+package classic.comp.sci.problems;
 
 import java.util.HashMap;
 import java.util.Map;

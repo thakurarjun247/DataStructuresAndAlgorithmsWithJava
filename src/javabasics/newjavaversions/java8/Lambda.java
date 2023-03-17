@@ -1,4 +1,4 @@
-package javabasics.javanewversions.java8;
+package javabasics.newjavaversions.java8;
 
 public class Lambda {
 

@@ -1,6 +1,6 @@
 package javabasics.arrays;
 
-import javabasics.javanewversions.java17.RecordClassInAction;
+import javabasics.newjavaversions.java17.RecordClassInAction;
 import util.ArrayUtil;
 
 import java.util.*;

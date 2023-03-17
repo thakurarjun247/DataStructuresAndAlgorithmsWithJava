@@ -1,4 +1,4 @@
-package newjavaversions;
+package javabasics.newjavaversions.java11;
 
 
 public class Java11 {

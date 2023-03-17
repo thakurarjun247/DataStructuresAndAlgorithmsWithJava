@@ -1,4 +1,4 @@
-package javabasics.javanewversions.java17;
+package javabasics.newjavaversions.java17;
 
 public class Test {
     public static void main(String[] args) {
