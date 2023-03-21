@@ -3,16 +3,16 @@ package classic.comp.sci.problems;
 
 import java.util.*;
 public class NewLRUCacheFromScratch{
-    public static void main(String[] args) {
+    public static void main(int[] args) {
         NewLRUCache cache= new NewLRUCache(3);
-        cache.put("1", "Maata");
-        cache.put("0", "SGN");
-        cache.put("2", "HHM");
-        cache.put("4", "Jai Maata Di");
-        System.out.println(cache.get("0"));
-        System.out.println(cache.get("-1"));
-        System.out.println(cache.get("1"));
-        System.out.println(cache.get("4"));
+        cache.put(1, 1);
+        cache.put(0, 0);
+        cache.put(2, 2);
+        cache.put(4, 4);
+        System.out.println(cache.get(0));
+        System.out.println(cache.get(-1));
+        System.out.println(cache.get(1));
+        System.out.println(cache.get(4));
 
     }
 }
@@ -21,7 +21,7 @@ public class NewLRUCacheFromScratch{
     //remove O(1): keep track of the tail, to remove last
     //insert 0(1) add to head and map
     LinkedList<Node> linkedList;
-    Map<String, Node> map;
+    Map<Integer, Node> map;
     Node tail;
     Node head;
 
@@ -33,16 +33,16 @@ public class NewLRUCacheFromScratch{
     }
 
 
-   public void put(String key, String value){
+   public void put(int key, int value){
         if(map.size()==capacity)
             removeEldestEntry();
         Node node=new Node(key, value);
         map.put(key, node);
         linkedList.addFirst(node);
     }
-    public String get(String key){
+    public int get(int key){
         if(!map.containsKey(key))
-            return null;
+            return -1;
         Node node=map.get(key);
         moveToFront(node);
         return node.value();
@@ -50,7 +50,7 @@ public class NewLRUCacheFromScratch{
     }
 
     private void removeEldestEntry(){
-        String keyToRemove= linkedList.getLast().key();
+        int keyToRemove= linkedList.getLast().key();
         linkedList.removeLast();
         map.remove(keyToRemove);
 
@@ -62,4 +62,4 @@ public class NewLRUCacheFromScratch{
     }
 }
 
-record Node(String key, String value){}
+record Node(int key, int value){}
