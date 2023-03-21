@@ -45,7 +45,7 @@ This is the common base class of all Java language record classes.*/
         //only 0 arg or complete arg const.
         //not  partial ones.
        // RecordClassDemo r4=new RecordClassDemo("OnlyName");
-        System.out.println(r1==r2); //FALSE
+        System.out.println(r1==r2); //FALSE  //It should be true, but is false, hence can't use it as the hashmap key.
         System.out.println(r1.equals(r2)); //TRUE
         System.out.println(r1.hashCode()== r1.hashCode()); //TRUE
 
