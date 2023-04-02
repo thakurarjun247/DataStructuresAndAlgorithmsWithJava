@@ -1,8 +1,8 @@
 # Data Structures and Algorithms with Java
 
-This repository contains:
-The implementation of standard data structures and algorithms in Java.
-Java language features and syntax that help you solve leetcode problems.
+**This repository contains:**
+The implementation of standard data structures and algorithms in Java.</p>
+Java language features and syntax that help you solve leetcode problems.</p>
 Solutions to many of the classical problems of computer science.<p/>
 <b>How to download ? </b><p/>
 You can download the source code in either of the following two ways:<p/>
