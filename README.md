@@ -1,6 +1,9 @@
 # Data Structures and Algorithms with Java
 
-This repository contains implementation of standard data structures and algorithms in Java. There are around 140 programs in the initial commit.<p/>
+This repository contains:
+The implementation of standard data structures and algorithms in Java.
+Java language features and syntax that help you solve leetcode problems.
+Solutions to many of the classical problems of computer science.<p/>
 <b>How to download ? </b><p/>
 You can download the source code in either of the following two ways:<p/>
 Download the zip file from https://github.com/thakurarjun247/dsa/archive/master.zip<p/>
