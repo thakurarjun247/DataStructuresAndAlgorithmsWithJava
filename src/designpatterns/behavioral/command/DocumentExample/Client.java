@@ -1,6 +1,5 @@
-package designpatterns.behavioral.command;
+package designpatterns.behavioral.command.DocumentExample;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -11,6 +10,7 @@ public class Client {
         Command command1=new PasteCommand(document);
         List<Command> commandList= Arrays.asList(command, command1);
         commandList.forEach(cmd-> cmd.execute());
+        System.out.println(document.text    );
 
     }
 

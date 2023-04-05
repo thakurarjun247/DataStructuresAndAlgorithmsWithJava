@@ -1,4 +1,4 @@
-package designpatterns.behavioral.command;
+package designpatterns.behavioral.command.DocumentExample;
 
 public class CopyCommand implements Command {
     private Document document;

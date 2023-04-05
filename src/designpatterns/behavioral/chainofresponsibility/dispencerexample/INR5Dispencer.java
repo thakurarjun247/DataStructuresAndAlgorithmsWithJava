@@ -1,9 +1,9 @@
-package designpatterns.behavioral.chainofresponsibility;
+package designpatterns.behavioral.chainofresponsibility.dispencerexample;
 
 public class INR5Dispencer implements  Dispencer {
     Dispencer nextDispencer;
     @Override
-    public void setNextDispence(Dispencer nextDispencer) {
+    public void setNextDispencer(Dispencer nextDispencer) {
         this.nextDispencer=nextDispencer;
     }
 

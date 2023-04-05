@@ -1,4 +1,4 @@
-package designpatterns.behavioral.chainofresponsibility;
+package designpatterns.behavioral.chainofresponsibility.dispencerexample;
 
 public class Currency {
     int amount;
