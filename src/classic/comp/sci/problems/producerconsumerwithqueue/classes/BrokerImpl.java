@@ -19,12 +19,12 @@ public class BrokerImpl implements Broker {
         groupIdTolastIndexRead = new HashMap<>();
     }
 
-    public void addSub(Consumer sub) {
-        consumers.add(sub);
-        groupIdTolastIndexRead.put(sub.getGroupId(), -1);
+    public void registerNewConsumer(Consumer consumer) {
+        consumers.add(consumer);
+        groupIdTolastIndexRead.put(consumer.getGroupId(), -1);
     }
 
-    void removeSub(Consumer sub) {
+    void unregisterAConsumer(Consumer sub) {
         consumers.remove(sub);
     }
 

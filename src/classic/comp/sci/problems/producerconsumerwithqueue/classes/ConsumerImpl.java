@@ -24,7 +24,7 @@ public class ConsumerImpl implements Consumer {
 
     @Override
     public void register() {
-        broker.addSub(this);
+        broker.registerNewConsumer(this);
     }
 
 

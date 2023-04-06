@@ -5,6 +5,6 @@ public interface Broker {
 
     String consume(String groupId);
 
-    void addSub(Consumer sub);
+    void registerNewConsumer(Consumer consumer);
 
 }
