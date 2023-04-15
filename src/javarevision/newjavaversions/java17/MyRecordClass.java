@@ -1,6 +1,9 @@
 package javarevision.newjavaversions.java17;
 
 
+import java.util.HashSet;
+import java.util.Set;
+
 /*
 * In Java, a record class is a new feature introduced in Java 16 that provides a concise way to declare a class that is solely used to store data. Here are some pros and cons of using record classes in Java:
 
@@ -47,7 +50,10 @@ This is the common base class of all Java language record classes.*/
        // RecordClassDemo r4=new RecordClassDemo("OnlyName");
         System.out.println(r1==r2); //FALSE  //It should be true, but is false, hence can't use it as the hashmap key.
         System.out.println(r1.equals(r2)); //TRUE
-        System.out.println(r1.hashCode()== r1.hashCode()); //TRUE
-
+        System.out.println(r1.hashCode()== r2.hashCode()); //TRUE
+        Set<MyRecordClass> set= new HashSet<>();
+        set.add(r1);
+        System.out.println(set.add(r2));
+        System.out.println(set.add(r3));
     }
 }

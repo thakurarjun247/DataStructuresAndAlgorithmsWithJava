@@ -14,7 +14,7 @@ public class RecordClassInAction {
                 .forEach((k,v)-> System.out.println(k+" -> "+v));
 
         //ascending order of age
-        Map<MyRecordClass, Integer> map1= new TreeMap<>((x, y)->x.age()-y.age());
+        Map<MyRecordClass, Integer> map1= new TreeMap<>( (x, y)->x.age()-y.age());
         map1.putAll(map);
         map1
                 .forEach((k,v)-> System.out.println(k+" -> "+v));
