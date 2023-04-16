@@ -1,15 +1,17 @@
 package mission_mahakal.clrs.solution.chapter02;
 
+import util.ArrayUtil;
+
 public class _2_3_1MergeSort {
     public static void main(String[] arr){
-        int[] a={62344,24,63,-4,-2352};
-        int[] auxillaryArray= new int[a.length];
+        Integer[] a={62344,24,63,-4,-2352};
+        Integer[] auxillaryArray= new Integer[a.length];
         mergeSort(a, auxillaryArray, 0, a.length-1);
-        util.GenericUtil.printArray(auxillaryArray);
+        ArrayUtil.printArray(auxillaryArray);
 
     }
 
-    static void mergeSort(int[] a,int[] auxillaryArray, int p, int r){
+    static void mergeSort(Integer[] a,Integer[] auxillaryArray, int p, int r){
         if(a==null || a.length==0 || p>=r)
             return;
         int q=(p+r)/2;
@@ -20,7 +22,7 @@ public class _2_3_1MergeSort {
 
 
     }
-    static void merge(int[] a,int[] auxillaryArray, int p, int q, int r){
+    static void merge(Integer[] a,Integer[] auxillaryArray, int p, int q, int r){
 
         int currentWriter=0;
         int left=p;

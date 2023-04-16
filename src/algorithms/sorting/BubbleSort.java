@@ -3,12 +3,14 @@ package algorithms.sorting;
 //https://www.youtube.com/watch?v=p__ETf2CKY4
 
 
+import util.ArrayUtil;
+
 public class BubbleSort {
     public static void main(String[] args) {
-        int a[]={5,4,10,3,0,1,4,4,9};
-        util.GenericUtil.printArray(bubbleSort(a));
+        Integer a[]={5,4,10,3,0,1,4,4,9};
+        ArrayUtil.printArray(bubbleSort(a));
     }
-    public static int[] bubbleSort(int[] a){
+    public static Integer[] bubbleSort(Integer[] a){
         if(a.length<2)
             return a;
         for (int i = 0; i < a.length; i++) { //just to count the number of passes

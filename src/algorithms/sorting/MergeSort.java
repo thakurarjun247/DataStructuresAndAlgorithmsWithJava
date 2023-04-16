@@ -4,35 +4,35 @@ package algorithms.sorting;
 //select the min element by scanning the array
 //swap the min with the leftmost.
 
-import util.GenericUtil;
-import util.GenericUtil.*;
+import util.ArrayUtil;
+
 import java.util.Arrays;
 
 public class MergeSort {
     public static void main(String[] args) {
-        int a[] = {5,4,3,2};
+        Integer a[] = {5,4,3,2};
         mergeSort(a);
     }
 
-    public static void mergeSort(int[] a) {
+    public static void mergeSort(Integer[] a) {
         if (a.length < 2)
             return ;
-       int[] helper=Arrays.copyOf(a, a.length);
+       Integer[] helper=Arrays.copyOf(a, a.length);
          devide(a, helper, 0, a.length-1);
-        util.GenericUtil.printArray(helper);
+        ArrayUtil.printArray(helper);
     }
 
-    private static void devide(int[] a,int[] helper, int low, int high) {
+    private static void devide(Integer[] a,Integer[] helper, int low, int high) {
         if(high<=low)
             return  ;
         int mid=(low+high)/2;
         devide(a, helper, low, mid);
         devide(a, helper, mid+1, high);
-        merge(a, new int[a.length], low, mid, high);
+        merge(a, new Integer[a.length], low, mid, high);
 
     }
 
-    private static int[] merge(int[] a, int[] helper, int low, int mid, int high) {
+    private static Integer[] merge(Integer[] a, Integer[] helper, int low, int mid, int high) {
 
         helper=Arrays.copyOf(a, a.length);
         int left=low;
@@ -52,7 +52,7 @@ public class MergeSort {
             }
             helperIndex++;
         }
-        GenericUtil.printArray(helper);
+        ArrayUtil.printArray(helper);
         if(left>mid) {
             //copy from right to high
             for (int i = right; i <= high; i++) {

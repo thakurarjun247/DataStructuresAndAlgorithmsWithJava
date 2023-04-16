@@ -1,16 +1,15 @@
 package algorithms.sorting;
 
-import util.GenericUtil;
+import util.ArrayUtil;
 
 import java.util.Arrays;
 import java.util.Random;
 
-import static util.GenericUtil.printArray;
 
 public class AllSorting {
     public static void main(String[] s) {
         for (int i = 0; i < 5; i++) {
-            int[] a = GenericUtil.generateArray(5,false, 10, true );
+            int[] a = ArrayUtil.generateArray(5,false, 10, true );
             System.out.println("before sort:" + Arrays.toString(a) + " ");
             //insertionSort(a);
             qsort(a);

@@ -5,17 +5,17 @@ package problemsfrombooks.epi.ch06arrays;
 
 import java.util.Arrays;
 
-import static util.GenericUtil.swap;
+import static util.ArrayUtil.swap;
 
 public class DutchNationalFlag {
     public static void main(String[] args) {
-        int[] a = {1, 0, 2, 1, 1, 0, 0, 2, 1, 1, 0, 0, 2, 1, 1, 0, 0, 2, 1, 1, 0, 2, 1, 0, 2, 1,};
+        Integer[] a = {1, 0, 2, 1, 1, 0, 0, 2, 1, 1, 0, 0, 2, 1, 1, 0, 0, 2, 1, 1, 0, 2, 1, 0, 2, 1,};
         dnf(a, 1);
         System.out.println(Arrays.toString(a));
         ;
     }
 
-    static void dnf(int[] a, int pivot) {
+    static void dnf(Integer[] a, int pivot) {
         int low = 0;
         int counter = 0;
         //we don't use mid
