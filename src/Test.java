@@ -12,50 +12,17 @@ Inputs - 0: s = [ “{“, “[“, “<”, “>”, “]”, “}” ]
         Inputs - 5: s = { [ < > ] }  ⇒ Valid
         */
 
-import java.util.Stack;
+
+import util.Pair;
 
 public class Test {
 
     //“{“, “[“, “<”, “>”, “]”, “}”
     public static void main(String[] args) {
-        System.out.println(isValid(new String[]{"]"}));
-        System.out.println(isValid(new String[]{ "[", "<", ">", "]" }));
-        System.out.println(isValid(new String[]{"["}));
+        System.out.println("SGN");
 
     }
 
-       static boolean isValid(String[] a){
-            Stack<String> stack= new Stack<>();
-            for(String item: a){
-                switch (item){
-                    case ">" :
-                       if(!stack.isEmpty() && stack.peek()=="<")
-                           stack.pop();
-                       else
-                           return  false;
-                       break;
-                       case "]":
-                        if(!stack.isEmpty() && stack.peek()=="[")
-                            stack.pop();
-                        else
-                            return false;
-                        break;
-                    case "}":
-                        if(!stack.isEmpty() && stack.peek()=="{")
-                            stack.pop();
-                        else
-                            return  false;
-                        break;
-                    default:
-                        stack.push(item);
-
-
-                }
-            }
-            if(stack.empty()) return true;
-            else
-            return false;
-        }
 
         }
 
