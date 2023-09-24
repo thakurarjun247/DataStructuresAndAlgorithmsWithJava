@@ -19,8 +19,18 @@ public class Test {
 
     //“{“, “[“, “<”, “>”, “]”, “}”
     public static void main(String[] args) {
-        System.out.println("SGN");
+        int x =10;
+        for(int i=0;i<5;i++){
+            if(x==10)
+                System.out.println(x);
+        }
 
+        class LocalClass{}
+        System.out.println("SGN, Jai shree ram");
+//I hope this commnet
+        System.out.print("looks readable and good" +
+                "");
+        System.out.println("there you go.");
     }
 
 

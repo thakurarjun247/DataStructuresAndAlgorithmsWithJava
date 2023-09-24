@@ -12,10 +12,10 @@ brew install git
 
 brew install --cask oracle-jdk
 
-#use this mirror
 
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
-
+#use the below mirror if homebrew not installing
 #export HOMEBREW_BREW_GIT_REMOTE="https://github.com/Homebrew/brew.git"
 
  #brew install intellij-idea-ce  
