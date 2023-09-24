@@ -1,0 +1,22 @@
+# Shree Ganeshay Namah
+xcode-select --install
+
+
+#try other mirrors if this step fails
+/bin/bash -c "$(curl -fsSL https://cdn.jsdelivr.net/gh/Homebrew/install/install.sh)"
+
+
+brew install sublime-text  
+
+brew install git
+
+brew install --cask oracle-jdk
+
+
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+#use the below mirror if homebrew not installing
+#export HOMEBREW_BREW_GIT_REMOTE="https://github.com/Homebrew/brew.git"
+
+ #brew install intellij-idea-ce  
+ #not working? Download dmg from https://www.jetbrains.com/idea/download/download-thanks.html?platform=mac
