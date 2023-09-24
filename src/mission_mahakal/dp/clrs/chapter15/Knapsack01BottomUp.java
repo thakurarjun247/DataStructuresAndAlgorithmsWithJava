@@ -26,7 +26,8 @@ public class Knapsack01BottomUp{
             }
         }
         for(int x=0;i<n;i++)
-            util.GenericUtil.printArray(K[x]);
+            System.out.println("hi");
+         //   util.GenericUtil.printArray(K[x]);
         return K[n][W];
     }
 

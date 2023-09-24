@@ -3,7 +3,7 @@ package classic.comp.sci.problems;
 
 import java.util.*;
 public class NewLRUCacheFromScratch{
-    public static void main(int[] args) {
+    public static void main(String[] args) {
         NewLRUCache cache= new NewLRUCache(3);
         cache.put(1, 1);
         cache.put(0, 0);

@@ -6,7 +6,7 @@ import java.util.Set;
 
 // A simple Java program to introduce a linked list
 
-public class LinkedList {
+public class LinkedList<C> {
     Scanner scanner = new Scanner(System.in);
 
     public void displayChoice() {

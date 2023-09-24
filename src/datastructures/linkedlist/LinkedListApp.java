@@ -6,7 +6,7 @@ public class LinkedListApp {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        LinkedList ll = new LinkedList();
+        LinkedList<LLNode> ll = new LinkedList<>();
         LLNode start = new LLNode();
         LLNode startNodeOfCircularLL = new LLNode();
         for (int i = 0; i < 100; i++) {

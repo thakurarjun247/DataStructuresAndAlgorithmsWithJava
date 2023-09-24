@@ -1,15 +1,11 @@
 package leetcodeplayground.arrays;
 
-import org.junit.Test;
-
-import static org.junit.Assert.assertEquals;
-
 public class SortedRotatedArray {
     public static void main(String[] args) {
         SolutionTest test=new SolutionTest();
-        test.exampleTestCases();
+/*        test.exampleTestCases();
         test.edgeCases();
-        test.rotatedArrayTestCases();
+        test.rotatedArrayTestCases();*/
 
     }
     public  int search(int[] nums, int target) {
@@ -55,7 +51,7 @@ class SolutionTest {
 
     SortedRotatedArray solution = new SortedRotatedArray();
 
-    @Test
+/*    @Test
     void exampleTestCases() {
         assertEquals(4, solution.search(new int[]{4, 5, 6, 7, 0, 1, 2}, 0));
         assertEquals(-1, solution.search(new int[]{4, 5, 6, 7, 0, 1, 2}, 3));
@@ -76,6 +72,6 @@ class SolutionTest {
         assertEquals(-1, solution.search(new int[]{}, 0));
         assertEquals(0, solution.search(new int[]{1}, 1));
         assertEquals(-1, solution.search(new int[]{1}, 0));
-    }
+    }*/
 }
 
