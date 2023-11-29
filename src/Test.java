@@ -11,28 +11,69 @@ Inputs - 0: s = [ “{“, “[“, “<”, “>”, “]”, “}” ]
         Inputs - 4: s = { [ < > } ]  ⇒ Invalid (because the order of the brackets are not aligned)
         Inputs - 5: s = { [ < > ] }  ⇒ Valid
         */
+import java.util.*;
 
 
-import util.Pair;
-
-public class Test {
-
-    //“{“, “[“, “<”, “>”, “]”, “}”
-    public static void main(String[] args) {
-        int x =10;
-        for(int i=0;i<5;i++){
-            if(x==10)
-                System.out.println(x);
-        }
-
-        class LocalClass{}
-        System.out.println("SGN, Jai shree ram");
-//I hope this commnet
-        System.out.print("looks readable and good" +
-                "");
-        System.out.println("there you go.");
+class Singleton{
+    private volatile static Singleton object;
+    synchronized static Singleton getInstance(){
+        if(object==null)
+            object=new Singleton();
+        return object;
     }
 
 
+}
+
+interface Bird{
+    void wings();
+}
+abstract class FlyingBird implements Bird{
+     abstract void fly();
+}
+
+class Parrot extends FlyingBird{
+
+    @Override
+    public void wings() {
+        System.out.println("parrot wings");
+    }
+
+    @Override
+    void fly() {
+        System.out.println("parrot flying");
+
+    }
+}
+class GreenParrot extends Parrot{
+    @Override
+    void fly() {
+        System.out.println("green parrot flying");
+
+    }
+}
+
+class Arith {
+    public int add(int... numbers) {
+        int sum = 0;
+        for (int num : numbers) {
+            sum += num;
         }
+        return sum;
+    }
+}
+
+
+public class Test {
+    public static void main(String[] args) {
+        Arith arith=new
+                Arith();
+        arith.add(new int[]{2,3});
+Parrot gp= new GreenParrot();
+Parrot p= new Parrot();
+p.fly();
+gp.fly();
+    }
+
+}
 
