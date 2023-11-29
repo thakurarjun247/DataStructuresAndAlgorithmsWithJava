@@ -1,4 +1,4 @@
-package javabasics.map;
+package javarevision.map;
 
 import java.util.HashMap;
 import java.util.Map;
