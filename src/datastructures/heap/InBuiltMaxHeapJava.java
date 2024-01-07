@@ -10,7 +10,20 @@ class InBuiltMaxHeapJava {
         // Creating empty priority queue
         //by default a PQ is min datastructures.heap, pass a comparator to make it maxHeap
         PriorityQueue<Integer> minHeap= new PriorityQueue<>();
+        //you don't need to mention and capacigty.
 
+
+        PriorityQueue<Integer> q=new PriorityQueue<>((a,b)->a-b);
+        q.add(4);
+        q.add(2);
+        q.add(6);
+        System.out.println(q);
+        PriorityQueue<String > pq=new PriorityQueue<>((a,b)->a.compareTo(b));
+        pq.add("b");
+        pq.add("a");
+        pq.add("c");
+        System.out.println(pq);
+    
         PriorityQueue<Integer> maxHeap = new PriorityQueue<Integer>(10, new DescendingOrder());
         PriorityQueue<Integer> maxHeap2= new PriorityQueue<>(10, (a, b)-> b-a);
         // Adding items to the pQueue using add()
