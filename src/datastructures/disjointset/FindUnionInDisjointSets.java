@@ -19,10 +19,12 @@ public class FindUnionInDisjointSets {
 
     public FindUnionInDisjointSets(int n) {
         parent = new int[n];
+         // Initially, all elements are in their own set with rank 0
+
         rank = new int[n];
         for (int i = 0; i < n; i++) {
             parent[i] = i;
-            rank[i] = 0; // Initially, all elements are in their own set with rank 0
+
         }
     }
 
