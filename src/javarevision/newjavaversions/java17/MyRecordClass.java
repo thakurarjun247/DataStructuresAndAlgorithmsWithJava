@@ -45,10 +45,14 @@ This is the common base class of all Java language record classes.*/
         MyRecordClass r1=new MyRecordClass("Arjun", 26);
         MyRecordClass r2=new MyRecordClass("Arjun", 26);
         MyRecordClass r3=new MyRecordClass("Yuvan", 6);
-        //only 0 arg or complete arg const.
+        //only 0 arg or complete arg constructor
         //not  partial ones.
        // RecordClassDemo r4=new RecordClassDemo("OnlyName");
         System.out.println(r1==r2); //FALSE  //It should be true, but is false, hence can't use it as the hashmap key.
+
+       //r1==r2 is false because they are two diff objects. there hascode is same becuase they end up in the same
+        //bucket forming a linkedlist
+        //
         System.out.println(r1.equals(r2)); //TRUE
         System.out.println(r1.hashCode()== r2.hashCode()); //TRUE
         Set<MyRecordClass> set= new HashSet<>();
@@ -57,3 +61,12 @@ This is the common base class of all Java language record classes.*/
         System.out.println(set.add(r3));
     }
 }
+
+record Student(String name, int age){
+    public static void main(String[] args) {
+        Student s1= new Student("arjun", 23);
+        System.out.println(s1.name());
+        System.out.println(s1.name);
+    }
+}
+
