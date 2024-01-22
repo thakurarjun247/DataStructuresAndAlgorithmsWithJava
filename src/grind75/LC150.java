@@ -1,11 +1,16 @@
 package grind75;
 
 import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 import java.util.Stack;
 
 public class LC150 {
     public static void main(String[] args) {
+        List list=null;
+        Iterable<Integer> iterable = null;
+        iterable.forEach(System.out::println);
+        
+        
         System.out.println(LC150.isValidSimple("()[]{}"));
     }
     public static boolean isValidSimple(String s) {

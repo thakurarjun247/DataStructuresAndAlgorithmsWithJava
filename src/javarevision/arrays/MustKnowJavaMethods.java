@@ -27,8 +27,10 @@ public class MustKnowJavaMethods {
 
 
         //String <----> Array
+
         char[] charArray=string.toCharArray();
-        Arrays.toString(array);
+        System.out.println(array.toString());
+        System.out.println(Arrays.toString(array));;
 
         //Declare array
         boolean[] a = new boolean[256];

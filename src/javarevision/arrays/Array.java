@@ -17,7 +17,7 @@ public class Array {
         map.put(new int[]{10,20}, 30);
         //this prints false, which is incorrect
         System.out.println(map.containsKey(new int[]{1,2}));
-        //instead of this use a Pair or just a Java 17 record
+        //instead of this, if we wrp the array in a record, it wonm't work either.
         //see
         RecordClassInAction recordClassInAction;
         record ArrayRecord(int[] a){}
@@ -30,14 +30,21 @@ public class Array {
         //use this
         record MyRecord(int x, int y){}
 
-        Map<MyRecord,Integer> finalMap= new HashMap<>();
-       MyRecord mrec= new MyRecord(1,2);
-        finalMap.put(mrec,0);
+        Set<MyRecord> recordSet= new HashSet<>();
 
-        MyRecord mrec1=new MyRecord(1,2);
+        MyRecord record= new MyRecord(1,2);
+        MyRecord anotherRecord=new MyRecord(1,2);
 
-        System.out.println(mrec.equals(mrec1));
-        System.out.println(map.containsKey(mrec1));
+        System.out.println(record.equals(anotherRecord));
+        System.out.println(record == (anotherRecord));
+
+        System.out.println( recordSet.add(record));
+
+
+
+        System.out.println(recordSet.add(anotherRecord));
+
+
 
 
 
@@ -74,6 +81,10 @@ public class Array {
         //int[][] myMat= {{1,3}, {2,3},{2,4}};
 
         Integer[][] myMat= {{2,4}, {1,3},{2,3}};
+
+
+
+
         Arrays.sort(myMat, (x,y)-> x[0]!=y[0]? x[0]-y[0]: x[1]-y[1]);
         ArrayUtil.printArray(myMat);
 
