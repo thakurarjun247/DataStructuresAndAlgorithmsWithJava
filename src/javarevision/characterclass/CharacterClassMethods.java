@@ -6,6 +6,7 @@ public class CharacterClassMethods {
         for(char c:s.toCharArray()){
             System.out.println(c+"Character.isAlphabetic(c)"+Character.isAlphabetic(c));
             System.out.println(c+"Character.isDigit(c)"+Character.isDigit(c));
+
         }
     }
 }

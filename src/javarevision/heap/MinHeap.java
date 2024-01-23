@@ -11,16 +11,16 @@ public class MinHeap {
     public static int sumOfThreeLargestNum(int[] a){
         int ans=0;
         if(a==null ) return 0;
-
-        PriorityQueue<Integer> q = new PriorityQueue<>();
+        //create s min heap
+        PriorityQueue<Integer> minHeap = new PriorityQueue<>();
         for(Integer item: a){
 
-            q.add(item);
-            if(q.size()==4)
-                q.poll();
+            minHeap.add(item);
+            if(minHeap.size()==4)
+                minHeap.poll();
         }
-        while(!q.isEmpty())
-            ans+=q.poll();
+        while(!minHeap.isEmpty())
+            ans+=minHeap.poll();
         return ans;
     }
 }

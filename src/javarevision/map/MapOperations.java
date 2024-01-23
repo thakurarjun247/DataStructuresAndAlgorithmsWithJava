@@ -3,7 +3,6 @@ package javarevision.map;
 import java.util.*;
 import java.util.stream.Collectors;
 
-import static java.util.Map.Entry.comparingByKey;
 import static java.util.Map.Entry.comparingByValue;
 
 public class MapOperations {
@@ -22,17 +21,28 @@ public class MapOperations {
 
         //This should be used when we are planning on doing some additional Stream processing.
         // Otherwise, it's just a simple forEach() as described previously.
-        numberToWords.entrySet().stream().forEach(entrySet -> System.out.println(entrySet.getKey() + "->" + entrySet.getValue()));
+
 
 
         //transform
         System.out.println("transform...");
 
-        numberToWords
+
+
+        Map<Integer, String> squreMaps=numberToWords
                 .entrySet()
                 .stream()
-                .collect(Collectors.toMap(e -> e.getKey() * 2, e -> e.getValue() + e.getValue()))
-                .forEach((k, v) -> System.out.println(k + "->" + v));
+                .collect(Collectors.toMap(e -> e.getKey() * e.getKey(), e -> e.getValue() + e.getValue()))
+                ;
+
+        numberToWords
+                .entrySet()
+                        .stream()
+                                .collect(Collectors.toMap(e->e.getKey(), e->e.getValue()));
+       List<Integer> list = numberToWords.keySet().stream().collect(Collectors.toList());
+        System.out.println(list
+        );
+        System.out.println(squreMaps);
 
 
         //filter, only retain the value five
