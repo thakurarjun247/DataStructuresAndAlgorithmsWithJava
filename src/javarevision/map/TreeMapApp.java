@@ -18,7 +18,7 @@ public class TreeMapApp {
 //        map.put(cactus,1);
 //        map.put(rose,2);
 //        System.out.println(map);
-        
+
 
         Map<Plant, Integer> mapWithComparator= new TreeMap<>((p1, p2) -> p1.color().compareTo(p2.color()));
         mapWithComparator.put(cactus,1);

@@ -22,7 +22,20 @@ public class GenericsDemo {
         public void setItem(T item) {
             list.add(item);
         }
-
-
+        //error
+        //ChildObjectPool childObjectPool= new ChildObjectPool(5);
+        ChildObjectPool childObjectPool= new ChildObjectPool(new Child());
     }
+    class Parent{}
+class Child extends Parent{}
+
+
+    record ChildObjectPool<U extends Parent> (U u){
+    }
+
+
+
+
+
+
 

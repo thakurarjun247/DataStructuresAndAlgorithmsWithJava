@@ -24,6 +24,8 @@ public class RunnableWithLambda {
             System.out.println("fib 70" + fib.getNthFib(70));
             ;
         });
+
+
         //t0.start();
         t1.start();
         t2.start();

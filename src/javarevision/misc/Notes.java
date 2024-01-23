@@ -91,7 +91,10 @@ public class Notes {
         //Array and 2D array declare, initialize.
         int[] array={0, 1, 3, 4, 2, 5, 7, 6};
         //the list we get from Arrays.asList are fixed size, beware
+
         Arrays.asList(1,2,45).forEach(System.out::print);
+        List.of(1,2,3,4,5).forEach(System.out::println);
+        Arrays.sort(array);
         int[] copyOfArray=Arrays.copyOf(array, array.length);
         List<String> messages = Arrays.asList("Hello", "World!", "How", "Are", "You");
         messages.forEach(System.out::println);

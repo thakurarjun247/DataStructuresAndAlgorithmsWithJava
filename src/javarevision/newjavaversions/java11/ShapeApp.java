@@ -9,6 +9,14 @@ public class ShapeApp{
     double area();
 }
 
+//not allowed code below:
+//class ABC implements Shape{
+//
+//    @Override
+//    public double area() {
+//        return 0;
+//    }
+//}
  final class Circle implements Shape {
     private final double radius;
 
