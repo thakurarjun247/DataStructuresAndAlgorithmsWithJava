@@ -1,2 +1,4 @@
-cd D:
+D:
+cd DataStructuresAndAlgorithmsWithJava
 git pull
+

@@ -13,6 +13,7 @@ public class MustKnowJavaMethods {
 
         //String basics
         string.length();
+        //no size() method for string
         string.charAt(index);
         string.substring(beginIndex, excludingEndIndex);
         string.indexOf(character);
