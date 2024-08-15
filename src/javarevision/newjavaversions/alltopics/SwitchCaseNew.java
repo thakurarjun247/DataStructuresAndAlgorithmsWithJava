@@ -1,10 +1,14 @@
 package javarevision.newjavaversions.alltopics;
 
+import jdk.jshell.EvalException;
+
 public class SwitchCaseNew {
     public static void main(String[] args)
     {
         //use arrow operator instead of :
         //no need to use break;
+
+
         String s = "x";
         switch (s){
             case "a" ->

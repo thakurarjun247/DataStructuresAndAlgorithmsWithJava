@@ -14,16 +14,7 @@ Inputs - 0: s = [ “{“, “[“, “<”, “>”, “]”, “}” ]
 import java.util.*;
 
 
-class Singleton{
-    private volatile static Singleton object;
-    synchronized static Singleton getInstance(){
-        if(object==null)
-            object=new Singleton();
-        return object;
-    }
 
-
-}
 
 interface Bird{
     void wings();
