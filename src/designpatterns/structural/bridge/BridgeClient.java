@@ -16,6 +16,13 @@ Consider a scenario where you have multiple implementations (like different type
 The Bridge pattern solves this by creating two separate hierarchies: one for abstractions
 * (remote controls) and one for implementations (TVs). This allows you to combine different remote
 * controls with different TVs independently.
+*
+How Does it Help with OOP Principles?
+Extensibility: The Bridge pattern enhances extensibility by allowing you to add new remote controls or TV types without affecting existing code. You can create new implementations and abstractions independently.
+Modularity: It promotes modularity by separating concerns. The abstraction (remote control) focuses on the high-level interface, while the implementation (TV) handles the low-level details.
+SOLID Principles:
+Open-Closed Principle: The Bridge pattern allows you to extend the system's behavior without modifying existing code. You can add new remote controls or TV types without changing the core classes.
+Dependency Inversion: The Bridge pattern decouples the abstraction from the implementation, making the system more flexible and testable.
 * */
 interface RemoteInterface {
     void turnOn();
