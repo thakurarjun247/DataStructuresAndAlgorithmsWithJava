@@ -1,10 +1,7 @@
 package designpatterns.structural.adapter;
 
-import org.w3c.dom.ls.LSOutput;
-import problemsfrombooks.clrs.designpatterns.ObserverPattern.Subject;
-
 //application client
-public class AdpaterStudentToInternClient {
+public class StudentToWorkerAdapterExample {
     public static void main(String[] args) {
 
         new Employee().paid();
@@ -14,7 +11,7 @@ public class AdpaterStudentToInternClient {
         //won't work
         //student.paid();
         //adapting
-        new StudentToWorkerAdpater(student).paid();
+        new StudentToWorkerAdapter(student).paid();
 
     }
 }
@@ -43,10 +40,10 @@ void aboutme(){
 }
 }
 //adapter
-class StudentToWorkerAdpater implements Worker{
+class StudentToWorkerAdapter implements Worker{
     Student student;
 
-    public StudentToWorkerAdpater(Student student) {
+    public StudentToWorkerAdapter(Student student) {
         this.student = student;
     }
 
