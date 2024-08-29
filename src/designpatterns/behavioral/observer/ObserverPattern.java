@@ -4,7 +4,7 @@ public class ObserverPattern {
     public static void main(String[] args) {
         ConcreteSubject subject = new ConcreteSubject();
         ConcreteObserver observer1 = new ConcreteObserver(subject);
-        ConcreteObserver observer2 = new ConcreteObserver(subject);
+       // ConcreteObserver observer2 = new ConcreteObserver(subject);
 
         subject.setTemprature(10);
         subject.setTemprature(20);
@@ -34,6 +34,9 @@ public class ObserverPattern {
     public void setTemprature(int temprature) {
         this.temprature=temprature;
         notifyObservers();
+
+
+
     }
 
     @Override
