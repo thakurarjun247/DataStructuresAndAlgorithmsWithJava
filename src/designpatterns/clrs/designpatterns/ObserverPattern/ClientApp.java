@@ -1,4 +1,4 @@
-package problemsfrombooks.clrs.designpatterns.ObserverPattern;
+package designpatterns.clrs.designpatterns.ObserverPattern;
 
 public class ClientApp {
     public static void main(String[] args) {

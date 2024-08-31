@@ -1,4 +1,4 @@
-package problemsfrombooks.clrs.designpatterns;
+package designpatterns.clrs.designpatterns;
 
 import java.util.*;
 

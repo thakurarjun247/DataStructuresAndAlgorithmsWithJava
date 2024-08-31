@@ -1,4 +1,4 @@
-package problemsfrombooks.clrs.designpatterns.ObserverPattern;
+package designpatterns.clrs.designpatterns.ObserverPattern;
 
 import java.util.ArrayList;
 import java.util.List;

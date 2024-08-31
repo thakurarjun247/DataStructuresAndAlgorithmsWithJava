@@ -1,4 +1,4 @@
-package problemsfrombooks.clrs.designpatterns;
+package designpatterns.clrs.designpatterns;
 /*
 resouces
 why needed and builder vs factory

@@ -1,4 +1,4 @@
-package problemsfrombooks.clrs.designpatterns.ObserverPattern;
+package designpatterns.clrs.designpatterns.ObserverPattern;
 
 public interface Observer {
     void update(int score);
