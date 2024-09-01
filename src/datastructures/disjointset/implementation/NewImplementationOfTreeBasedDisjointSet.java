@@ -1,4 +1,4 @@
-package datastructures.disjointset;
+package datastructures.disjointset.implementation;
 
 //theory in CLRS page 561, chapter 21
 public class NewImplementationOfTreeBasedDisjointSet {
@@ -46,6 +46,8 @@ class AllDisjointSets {
         else
             return find(representative[item]);
     }
+
+
 
     public void union(int a, int b) {
 

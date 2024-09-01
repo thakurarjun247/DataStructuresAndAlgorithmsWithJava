@@ -1,8 +1,6 @@
 package util;
 
 
-import datastructures.graph.shortestpath.ShortestPathWithBFS;
-
 import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
@@ -12,10 +10,10 @@ public class GraphUtil {
     public static void main(String[] args) {
 
         int[][] a = {{0, 1}, {1, 2}, {3, 4}};
-        System.out.println(new GraphUtil().getAdjListUsingOldJavaSyntax(5, a));
+        System.out.println(new GraphUtil().buildAdjacencyListForNonWeightedDirectedGraph(5, a));
     }
 
-    public static Map<Integer, List<Integer>> getAdjListUsingOldJavaSyntax(int n, int[][] edges) {
+    public static Map<Integer, List<Integer>> buildAdjacencyListForNonWeightedDirectedGraph(int n, int[][] edges) {
         Map<Integer, List<Integer>> adjacencyList = new HashMap<>();
         for (int i = 1; i <= n; i++)
             adjacencyList.put(i, new ArrayList<Integer>());
@@ -29,6 +27,20 @@ public class GraphUtil {
         }
         return adjacencyList;
     }
+
+    public static Map<Integer, List<int[]>> buildAdjacencyListForWeightedDirectedGraph(int[][] edges, int n) {
+        Map<Integer, List<int[]>> edgeList = new HashMap<>();
+        for (int i = 1; i <= n; i++) {
+            edgeList.put(i, new ArrayList<>());
+        }
+        for (int[] edge : edges) {
+            edgeList.get(edge[0]).add(edge);
+            //todo: for undirected graph: add the reverse edge as well
+
+        }
+        return edgeList;
+    }
+
 
 
     //prepare adjList
