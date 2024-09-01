@@ -1,4 +1,4 @@
-package datastructures.disjointset.leetcode;
+package datastructures.graph.disjointset.leetcode;
 
 public class CheckIfGraphAValidTree {
     int[] parent;

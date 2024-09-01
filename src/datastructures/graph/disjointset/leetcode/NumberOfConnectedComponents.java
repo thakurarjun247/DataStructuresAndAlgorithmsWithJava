@@ -1,4 +1,4 @@
-package datastructures.disjointset.leetcode;
+package datastructures.graph.disjointset.leetcode;
 
 import java.util.HashSet;
 import java.util.Set;

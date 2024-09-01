@@ -1,4 +1,4 @@
-package datastructures.graph;
+package datastructures.graph.oldimplementation;
 
 import java.util.Scanner;
 

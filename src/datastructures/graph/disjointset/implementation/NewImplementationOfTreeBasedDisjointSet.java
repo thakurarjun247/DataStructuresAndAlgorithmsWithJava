@@ -1,4 +1,4 @@
-package datastructures.disjointset.implementation;
+package datastructures.graph.disjointset.implementation;
 
 //theory in CLRS page 561, chapter 21
 public class NewImplementationOfTreeBasedDisjointSet {
