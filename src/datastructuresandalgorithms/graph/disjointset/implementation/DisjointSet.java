@@ -1,9 +1,9 @@
 package datastructuresandalgorithms.graph.disjointset.implementation;
 
 //theory in CLRS page 561, chapter 21
-public class NewImplementationOfTreeBasedDisjointSet {
+ class DisjointSetApplication {
     public static void main(String[] args) {
-        AllDisjointSets disjointSet = new AllDisjointSets(11);
+        DisjointSet disjointSet = new DisjointSet(11);
         //make sets with individual items.
         for (int i = 0; i < 11; i++) {
             disjointSet.makeSet(i);
@@ -23,12 +23,12 @@ public class NewImplementationOfTreeBasedDisjointSet {
 }
 
 
-class AllDisjointSets {
+public class DisjointSet {
 
     int[] representative;
     int[] size; //size of set that contains a given item
 
-    public AllDisjointSets(int numberOfItemsInSet) {
+    public DisjointSet(int numberOfItemsInSet) {
 
         representative = new int[numberOfItemsInSet];
         size = new int[numberOfItemsInSet];
