@@ -2,7 +2,7 @@
 
 **This repository contains:** </p>
 The implementation of standard data structures and algorithms in Java.</p>
-Java language features and syntax that help you solve codeonline.leetcode problems.</p>
+Java language features and syntax that help you solve leetcode problems.</p>
 Solutions to many of the classical problems of computer science.<p/>
 <b>How to download ? </b><p/>
 You can download the source code in either of the following two ways:<p/>
@@ -28,4 +28,4 @@ In your IDE go to src folder and right click any application file, it should run
 <b>How to contribute to the code?</b></p>
 Request you to create a 'pull request' or 'merge request' so that your branch can be reviewed before merging to master.</p>
 
-<b>Got a better way to setup the project? Please email me to thakurarjun247@gmail.com </b></p>
+<b>Got a better way to setup the project? Please email me to thakurarjun247 [at the rate of] gmail.com </b></p>
