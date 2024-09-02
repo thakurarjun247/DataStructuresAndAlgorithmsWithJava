@@ -1,5 +1,8 @@
 package datastructuresandalgorithms.graph.disjointset.implementation;
 
+import java.arrays.Array;
+import java.util.Arrays;
+
 //theory in CLRS page 561, chapter 21
  class DisjointSetApplication {
     public static void main(String[] args) {
@@ -10,13 +13,14 @@ package datastructuresandalgorithms.graph.disjointset.implementation;
         }
         disjointSet.union(2, 5); // Merge sets containing 2 and 5
         disjointSet.union(2, 1);
+
         disjointSet.union(1, 8); // Merge sets containing 1 and 8
         disjointSet.union(9, 3);
-
+        disjointSet.union(1,5);
         disjointSet.areComponentsConnected(2, 8);
         disjointSet.areComponentsConnected(9, 3);
         disjointSet.areComponentsConnected(2, 3);
-        disjointSet.union(12, 3);
+      //  disjointSet.union(12, 3);
 
     }
 
@@ -34,6 +38,8 @@ public class DisjointSet {
         for(int i=0;i<representative.length;i++)
             representative[i]=i;
         size = new int[numberOfItemsInSet];
+        //intially size of all should be just 1
+        Arrays.fill(size,1);
     }
 
     public void makeSet(int item) {
@@ -52,19 +58,23 @@ public class DisjointSet {
 
 
     public void union(int a, int b) {
+        System.out.println("union() of: "+a+", "+b);
 
-        if (Math.min(a, b) < 0 || Math.max(a, b) >= representative.length) {
+/*        if (Math.min(a, b) < 0 || Math.max(a, b) >= representative.length) {
             System.out.println("error: can't unionize the item, beyond the index of our tree/datastructures.array");
             System.out.println("Error: Items must be within the range 0 to " + (representative.length - 1));
 
             return;
-        }
+        }*/
         //call the parents of each
         a = find(a);
         b = find(b);
         //if items belong to the same disjoint set (same parents, part of the same family) do nothing
         if (a == b)
+        {
+            System.out.println("can't union, in the same set.");
             return;
+        }
 
         int sizeAfterMerge = size[a] + size[b];
 
@@ -77,10 +87,12 @@ public class DisjointSet {
             representative[a] = b;
             size[b] = sizeAfterMerge;
         }
-
+        System.out.println("unionization done.");
     }
 
     public boolean areComponentsConnected(int a, int b) {
+        boolean connected=  (find(a) == find(b));
+        System.out.println("are "+a+" and "+b+" connected? "+connected);
         return find(a) == find(b);
     }
 }
