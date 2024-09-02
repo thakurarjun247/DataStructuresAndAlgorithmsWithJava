@@ -1,4 +1,4 @@
-package datastructuresandalgorithms.array.dp;
+package datastructuresandalgorithms.dp;
 import java.util.*;
 public class LeetcodeMaster {
     public static void main(String[] args) {

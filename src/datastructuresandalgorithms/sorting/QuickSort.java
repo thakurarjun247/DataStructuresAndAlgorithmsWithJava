@@ -1,4 +1,4 @@
-package datastructuresandalgorithms.array.sorting;
+package datastructuresandalgorithms.sorting;
 import util.*;
 //https://www.youtube.com/watch?v=COk73cpQbFQ
 //select the min element by scanning the datastructures.array

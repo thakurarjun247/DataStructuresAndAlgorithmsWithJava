@@ -1,4 +1,4 @@
-package datastructuresandalgorithms.array.dp;
+package datastructuresandalgorithms.dp;
 
 /*
 https://leetcode.com/problems/coin-change/

@@ -1,4 +1,4 @@
-package datastructuresandalgorithms.array.sorting;
+package datastructuresandalgorithms.sorting;
 
 import util.ArrayUtil;
 

@@ -1,4 +1,4 @@
-package datastructuresandalgorithms.array.slidingwindow;
+package datastructuresandalgorithms.slidingwindow;
 
 import java.util.HashMap;
 import java.util.Map;

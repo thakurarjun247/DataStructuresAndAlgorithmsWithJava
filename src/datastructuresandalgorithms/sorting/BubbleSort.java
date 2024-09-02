@@ -1,4 +1,4 @@
-package datastructuresandalgorithms.array.sorting;
+package datastructuresandalgorithms.sorting;
 
 //https://www.youtube.com/watch?v=p__ETf2CKY4
 

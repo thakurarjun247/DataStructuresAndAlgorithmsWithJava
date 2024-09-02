@@ -1,4 +1,4 @@
-package datastructuresandalgorithms.array.slidingwindow;
+package datastructuresandalgorithms.slidingwindow;
 
 import java.util.HashSet;
 import java.util.Set;

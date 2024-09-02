@@ -1,4 +1,4 @@
-package datastructuresandalgorithms.array.dp;
+package datastructuresandalgorithms.dp;
 
 import java.util.*;
 import java.util.stream.Collectors;

@@ -1,4 +1,4 @@
-package datastructuresandalgorithms.array.dp;
+package datastructuresandalgorithms.dp;
 
 import java.util.Random;
 import java.util.Scanner;
