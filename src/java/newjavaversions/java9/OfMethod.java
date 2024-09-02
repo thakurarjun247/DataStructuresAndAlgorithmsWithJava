@@ -17,7 +17,7 @@ public class OfMethod {
         //this will blast
        // fruits.add("bomb");
 
-        // encode decode tree in leetcode
+        // encode decode tree in codeonline.leetcode
         List<Integer> integerArrayList=  new ArrayList<>();
         integerArrayList.add(100);
         integerArrayList.add(null);
