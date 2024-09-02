@@ -53,29 +53,20 @@ public class MinimumSpanningTree {
         //sort edges based on weights
         Arrays.sort(edges, (a, b) -> a[2] - b[2]);
         List<int[]> mstEdges = new ArrayList<>();
-        Set<Integer> mstVertices = new HashSet<>();
-        //DisjointSet disjointSet= new DisjointSet(n);
-
+        DisjointSet disjointSet = new DisjointSet(n + 1);
 
         for (int[] edge : edges) {
             //process the edges unless all the vertices are added to our MST
-
-            if (mstEdges.size() == n-1 )
+            if (mstEdges.size() == n - 1)
                 break;
 
             //avoid forming a cycle,
-            // a cycle is formed if both the source and destinations are
-            //already present in our mst and we are connecting them with yet another edge
-            if (mstVertices.contains(edge[0]) && mstVertices.contains(edge[1])) {
+            // a cycle is formed if both the source and destinations are part of the same set
+            if (disjointSet.areComponentsConnected(edge[0], edge[1]))
                 continue;
-            } else {
-                mstVertices.add(edge[0]);
-                mstVertices.add(edge[1]);
-                mstEdges.add(edge);
 
-            }
-
-
+            disjointSet.union(edge[0], edge[1]);
+            mstEdges.add(edge);
         }
         return mstEdges;
     }

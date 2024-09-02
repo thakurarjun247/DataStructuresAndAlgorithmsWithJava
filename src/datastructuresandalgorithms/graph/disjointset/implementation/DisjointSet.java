@@ -31,6 +31,8 @@ public class DisjointSet {
     public DisjointSet(int numberOfItemsInSet) {
 
         representative = new int[numberOfItemsInSet];
+        for(int i=0;i<representative.length;i++)
+            representative[i]=i;
         size = new int[numberOfItemsInSet];
     }
 
@@ -79,8 +81,6 @@ public class DisjointSet {
     }
 
     public boolean areComponentsConnected(int a, int b) {
-
-        System.out.println(a + " and " + b + " are connected? " + (find(a) == find(b)));
         return find(a) == find(b);
     }
 }
