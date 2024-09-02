@@ -6,7 +6,7 @@ public class Subsets {
     }
 
     //https://leetcode.com/problems/subsets/
-    //Given an integer array nums of unique elements, return all possible
+    //Given an integer datastructures.array nums of unique elements, return all possible
     //subsets
     // (the power set).
     //

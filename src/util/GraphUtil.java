@@ -54,7 +54,7 @@ public class GraphUtil {
                                 //let's build the value now, it will be list of Edges
                                 v -> Arrays.stream(edges)
                                         .filter(e -> e[0] == v) //only take the edges where source is the current Vertex
-                                        .map(e -> e[1])//map the source destination from array to record class Edge representation
+                                        .map(e -> e[1])//map the source destination from datastructures.array to record class Edge representation
                                         .collect(Collectors.toList()) //Collect to a list, it will be value part of the map
                         ));
         return adjList;

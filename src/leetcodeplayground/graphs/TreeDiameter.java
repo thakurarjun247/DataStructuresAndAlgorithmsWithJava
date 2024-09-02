@@ -1,6 +1,6 @@
 package leetcodeplayground.graphs;
 
-import datastructures.btbst.TreeNode;
+import datastructuresandalgorithms.tree.TreeNode;
 
 import java.util.HashMap;
 import java.util.Map;

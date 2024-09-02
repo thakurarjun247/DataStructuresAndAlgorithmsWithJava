@@ -11,7 +11,7 @@ public class TwoSum {
 
         Map<Integer, Integer> map = new HashMap<>();
 
-        // Iterate through the array and store the complement of each number in a HashMap
+        // Iterate through the datastructures.array and store the complement of each number in a HashMap
         for (int i = 0; i < nums.length; i++) {
             int complement = target - nums[i];
             if (map.containsKey(complement)) {

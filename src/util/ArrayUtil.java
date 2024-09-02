@@ -42,7 +42,7 @@ public class ArrayUtil {
 
     public static <T> void printArray(T[] array) {
         //this function works exactly as
-        //System.out.println(Arrays.toString(array));
+        //System.out.println(Arrays.toString(datastructures.array));
         System.out.print("[");
         for (int i = 0; i < array.length; i++) {
             System.out.print(array[i]);
