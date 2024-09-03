@@ -70,20 +70,11 @@ public class Jimmy_CLRS {
             11.2 - Hash tables - important.
 11.3 - Hash functions - it's worth having an idea about them, but I wouldn't go too in-depth here. Just know a couple examples of good and bad hash functions (and why they are good/bad).
             11.4 - Open addressing - Worth having an idea about, but unlikely to come up.
-11.5 - Perfect hashing - skip.
 
-            Chapter 12
 
-            12.1 - What is a binary search tree? - Yep.
-12.2 - Querying a BST - Yep. All of it.
 12.3 - Insertion/Deletion - Same as 12.2
             12.4 - Randomly built BSTs - just know Theorem 12.4 (expected height of random BST is
-    O
-            (
-                    lg
-                            n
-            )
-) and an idea of why it's true.
+    O(logn) and an idea of why it's true.
 
     Chapter 13
 
@@ -103,33 +94,17 @@ public class Jimmy_CLRS {
             15.5 - Optimal binary search trees - I've never read this section, so I can't argue for its importance, but I did fine without it.
 
             Chapter 16
-
-    You should definitely know what a greedy algorithm is, so read the introduction for this chapter.
-16.1 - An activity selection problem - Haven't read this in detail, but I'd say check it out, if not in-depth.
 16.2 - Elements of the greedy strategy - same as 16.1
             16.3 - Huffman codes - I'd say read the problem and the algorithm, but that's enough. I've seen interview questions where the answer
             is Huffman coding (but the question will come up in a 'disguised form', so it won't be obvious.)
-            16.4 - Matroids and greedy methods - I've never read this section, but I've done a lot of greedy problems during interview prep and this stuff never came up, so I'd say this section is irrelevant for the interview.
             16.5 - Task-scheduling problem as a matroid - Same as 16.4.
 
-    Chapter 17
-
-    Okay, you should definitely know what amortized analysis is, but I've never read it from the book and I feel it's a sufficiently simple concept that you can just Google it and check a few examples on what it is, or understand it just by reading section 17.1. So:
-            17.1 - Aggregate analysis - read this, it explains the important stuff.
-17.2, 17.3, 17.4 - Skip.
 
             Chapter 18
 
     You should probably have an idea of what B-Trees (and B+ trees) are, I've heard of cases where candidates were asked about them in a general sense (high-level questions about what they are and why they're awesome).
      But other than that I'd skip this chapter.
 
-            Chapter 23
-
- //my note: only learn Kruskal its more efficient
-            23.2 - Prim and Kruskal's algorithms - sort of, yes.
-
-    Chapter 31
-    Most of what you should learn from this chapter you can learn from practicing on interview problems from Elements of Programming Interviews (and your time is better spent doing that), so I'd say skip it all except Euclid's algorithm for the GCD, under section 31.2.
 
     Chapter 32
             32.1 - Naive method - just read it quickly.

@@ -1,6 +1,5 @@
 package datastructuresandalgorithms.graph.disjointset.implementation;
 
-import java.arrays.Array;
 import java.util.Arrays;
 
 //theory in CLRS page 561, chapter 21
