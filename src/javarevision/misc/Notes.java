@@ -74,14 +74,14 @@ public class Notes {
         Stack<Integer> stack=new Stack<>();
         //Stack has all the list and queue methods see below
         //peek or pop don't return null, they will always throw exception.
-       // Integer popping = stack.pop(); // will throw emptystackexception think underflow
-        //Integer peeking = stack.peek();  // will throw emptystackexception think underflow.
+       // Integer popping = datastructures.stack.pop(); // will throw emptystackexception think underflow
+        //Integer peeking = datastructures.stack.peek();  // will throw emptystackexception think underflow.
         stack.push(3);
         stack.push(3);
         stack.push(3);
 
         stack.add(3);
-//        stack.remove(3);
+//        datastructures.stack.remove(3);
         stack.peek();
         stack.isEmpty();
         //comparator at IntervalCovering class
