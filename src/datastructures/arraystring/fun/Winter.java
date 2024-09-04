@@ -6,7 +6,7 @@ import java.util.List;
 public class Winter {
 
     public static void main(String[] args) {
-        int a[] = {2, 3, 0, 5, 6, 4, 10, 11, 12};
+        int[] a = {2, 3, 0, 5, 6, 4, 10, 11, 12};
         System.out.println(getSummerIterative(a));
 
     }

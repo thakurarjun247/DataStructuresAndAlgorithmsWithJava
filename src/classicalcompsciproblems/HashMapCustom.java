@@ -5,6 +5,13 @@ import java.util.Map;
 
 public class HashMapCustom<K, V> {
 
+    private final Entry<K, V>[] table; // Array of Entry.
+    private final int capacity = 4; // Initial capacity of HashMap
+    @SuppressWarnings("unchecked")
+    public HashMapCustom() {
+        table = new Entry[capacity];
+    }
+
     public static void main(String[] a) {
         Map<String, String> map = new HashMap<>();
         map.put("", "");
@@ -14,26 +21,6 @@ public class HashMapCustom<K, V> {
         //map.containsKey()
         System.out.println(customMap.get(1));
         customMap.display();
-    }
-
-    private Entry<K, V>[] table; // Array of Entry.
-    private int capacity = 4; // Initial capacity of HashMap
-
-    static class Entry<K, V> {
-        K key;
-        V value;
-        Entry<K, V> next;
-
-        public Entry(K key, V value, Entry<K, V> next) {
-            this.key = key;
-            this.value = value;
-            this.next = next;
-        }
-    }
-
-    @SuppressWarnings("unchecked")
-    public HashMapCustom() {
-        table = new Entry[capacity];
     }
 
     /**
@@ -165,6 +152,18 @@ public class HashMapCustom<K, V> {
      */
     private int hash(K key) {
         return Math.abs(key.hashCode()) % capacity;
+    }
+
+    static class Entry<K, V> {
+        K key;
+        V value;
+        Entry<K, V> next;
+
+        public Entry(K key, V value, Entry<K, V> next) {
+            this.key = key;
+            this.value = value;
+            this.next = next;
+        }
     }
 
 }

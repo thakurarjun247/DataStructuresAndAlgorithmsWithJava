@@ -9,22 +9,22 @@ public class ComparatorComparable {
         final Employee emp2 = new Employee("b");
         final Employee emp3 = new Employee("c");
 
-		Map<String, String> map = new HashMap<>();
+        Map<String, String> map = new HashMap<>();
         map.put(null, null);
-		map.put(null, "empty");
-		Hashtable<String, String> hashTable = new Hashtable<String, String>();
-		hashTable.put("a", "b");
-		System.out.println("hashTable"+hashTable);
-		System.out.println(map);
-		Set<Employee> set = new HashSet<>();
-		set.add(null);
-		set.add(emp2);
-		set.add(emp1);
-		System.out.println(set);
-		System.out.println(emp1.equals(emp3));
-		System.out.println(emp1 == emp3);
-		System.out.println(emp1.getEmail());
-		System.out.println(emp1 == emp3);
+        map.put(null, "empty");
+        Hashtable<String, String> hashTable = new Hashtable<String, String>();
+        hashTable.put("a", "b");
+        System.out.println("hashTable" + hashTable);
+        System.out.println(map);
+        Set<Employee> set = new HashSet<>();
+        set.add(null);
+        set.add(emp2);
+        set.add(emp1);
+        System.out.println(set);
+        System.out.println(emp1.equals(emp3));
+        System.out.println(emp1 == emp3);
+        System.out.println(emp1.getEmail());
+        System.out.println(emp1 == emp3);
         Set<Employee> treeSet = new TreeSet<Employee>((Employee e1, Employee e2) -> {
             if (e1 == null || e2 == null || e1.getClass() != Employee.class || e2.getClass() != Employee.class) {
                 throw new ClassCastException("null");
@@ -36,7 +36,7 @@ public class ComparatorComparable {
         treeSet.add(emp2);
         // treeSet.add(null);
         treeSet.forEach(item -> System.out.print(item + " "));
-        String s = new String("xyz");
+        String s = "xyz";
         s.intern();
         List<Employee> list = new ArrayList<Employee>();
         list.add(emp1);
@@ -50,7 +50,7 @@ public class ComparatorComparable {
             }
 
         });
-      //  list.sort((e1,e2)-> e2.getEmail().compareTo(e1.getEmail()));
+        //  list.sort((e1,e2)-> e2.getEmail().compareTo(e1.getEmail()));
         System.out.println(list);
         // System.out.println(treeSet);
     }
@@ -87,7 +87,7 @@ class Employee implements Comparable<Employee> {
     @Override
     public boolean equals(Object obj) {
         Employee emp = null;
-          if (obj instanceof Employee) {
+        if (obj instanceof Employee) {
             emp = (Employee) obj;
         }
         // TODO Auto-generated method stub

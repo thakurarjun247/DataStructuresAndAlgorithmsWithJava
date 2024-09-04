@@ -8,6 +8,17 @@ import java.util.Scanner;
 
 public class Trie {
     Scanner scanner = new Scanner(System.in);
+    TrieNode root;
+
+    public Trie() {
+
+    }
+
+    public Trie(List<String> list) {
+        this();
+        root = new TrieNode();
+        list.forEach(word -> root.addWord(word));
+    }
 
     public void displayChoice() {
         System.out.println();
@@ -19,18 +30,6 @@ public class Trie {
 
         System.out.println("=====================================================");
         System.out.println();
-    }
-
-    TrieNode root;
-
-    public Trie() {
-
-    }
-
-    public Trie(List<String> list) {
-        this();
-        root = new TrieNode();
-        list.forEach(word -> root.addWord(word));
     }
 
     public void insert() {

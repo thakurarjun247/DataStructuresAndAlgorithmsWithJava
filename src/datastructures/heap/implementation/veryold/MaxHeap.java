@@ -42,7 +42,7 @@ class MaxHeapUtil {
 
     //settles down the value at index i to appropriate place
     //when we have to delete the max element, we call maxHeapyfy(a, 0)
-    void  maxHeapyfy(List<Integer> list, int i) {
+    void maxHeapyfy(List<Integer> list, int i) {
         if (i >= list.size()) return;
         int heapSize = list.size();
         int indexOfLargest = i;
@@ -59,7 +59,7 @@ class MaxHeapUtil {
         if (right < heapSize)
             if (list.get(right) > list.get(indexOfLargest))
                 indexOfLargest = right;
-            //parent is not the indexOfLargest
+        //parent is not the indexOfLargest
         if (indexOfLargest != i) {
             Collections.swap(list, indexOfLargest, i);
             maxHeapyfy(list, indexOfLargest);
@@ -82,34 +82,35 @@ class MaxHeapUtil {
 
     //Bubble up  / Flow up
     //i is the index where we need to update the value
-    void heapIncreaseKey(List<Integer> list, int i, int newValueForIndexI){
-        if(i>=list.size())
+    void heapIncreaseKey(List<Integer> list, int i, int newValueForIndexI) {
+        if (i >= list.size())
             return;
-        list.set(i,newValueForIndexI);
+        list.set(i, newValueForIndexI);
         flowUp(list, i);
     }
-    void flowUp(List<Integer> list, int i){
-        if(i>=list.size() || i<1)
-            return;
-        else{
-            int parent = i/2;
-            if(parent<0) return;
-            if(list.get(parent)<list.get(i))
-            {
+
+    void flowUp(List<Integer> list, int i) {
+        if (i >= list.size() || i < 1) {
+        }
+        else {
+            int parent = i / 2;
+            if (parent < 0) return;
+            if (list.get(parent) < list.get(i)) {
                 Collections.swap(list, i, parent);
                 flowUp(list, parent);
             }
         }
     }
 
-    void maxHeapInsertCLRSStyle(List<Integer> list, int key){
+    void maxHeapInsertCLRSStyle(List<Integer> list, int key) {
         list.add(Integer.MIN_VALUE); //appended
-        heapIncreaseKey(list,list.size()-1, key);
+        heapIncreaseKey(list, list.size() - 1, key);
 
     }
-    void maxHeapInsertMyStyle(List<Integer> list, int key){
+
+    void maxHeapInsertMyStyle(List<Integer> list, int key) {
         list.add(key); //appended
-        flowUp(list, list.size()-1);
+        flowUp(list, list.size() - 1);
     }
 
 

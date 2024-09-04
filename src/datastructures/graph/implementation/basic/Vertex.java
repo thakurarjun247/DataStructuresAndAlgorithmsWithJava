@@ -8,6 +8,18 @@ public class Vertex {
     public VisitStatus visitStatus;
     List<Vertex> adjacencyList;
 
+    public Vertex() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
+
+    public Vertex(int data) {
+        super();
+        this.data = data;
+        this.adjacencyList = new LinkedList<Vertex>();
+        this.visitStatus = VisitStatus.UNVISITED;
+    }
+
     public int getData() {
         return data;
     }
@@ -30,18 +42,6 @@ public class Vertex {
 
     public void setAdjacencyList(List<Vertex> adjacencyList) {
         this.adjacencyList = adjacencyList;
-    }
-
-    public Vertex() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
-
-    public Vertex(int data) {
-        super();
-        this.data = data;
-        this.adjacencyList = new LinkedList<Vertex>();
-        this.visitStatus = VisitStatus.UNVISITED;
     }
 
     @Override

@@ -1,28 +1,34 @@
 package design.designpatterns.behavioral.observer;
-import java.util.*;
+
+import java.util.ArrayList;
+import java.util.List;
+
+interface Subject {
+    void registerObserver(Observer observer);
+
+    void removeObserver(Observer observer);
+
+    void notifyObservers();
+
+    int getTemprature();
+}
+
+interface Observer {
+    void update(Subject subject);
+}
+
 public class ObserverPattern {
     public static void main(String[] args) {
         ConcreteSubject subject = new ConcreteSubject();
         ConcreteObserver observer1 = new ConcreteObserver(subject);
-       // ConcreteObserver observer2 = new ConcreteObserver(subject);
+        // ConcreteObserver observer2 = new ConcreteObserver(subject);
 
         subject.setTemprature(10);
         subject.setTemprature(20);
     }
 }
 
- interface Subject {
-    void registerObserver(Observer observer);
-    void removeObserver(Observer observer);
-    void notifyObservers();
-     int getTemprature();
-}
-
- interface Observer {
-    void update(Subject subject);
-}
-
- class ConcreteSubject implements Subject {
+class ConcreteSubject implements Subject {
     private final List<Observer> observers = new ArrayList<>();
     private int temprature;
 
@@ -32,9 +38,8 @@ public class ObserverPattern {
     }
 
     public void setTemprature(int temprature) {
-        this.temprature=temprature;
+        this.temprature = temprature;
         notifyObservers();
-
 
 
     }
@@ -57,7 +62,7 @@ public class ObserverPattern {
     }
 }
 
- class ConcreteObserver implements Observer {
+class ConcreteObserver implements Observer {
     private Subject subject;
     private int observerState;
 
@@ -68,7 +73,7 @@ public class ObserverPattern {
 
     @Override
     public void update(Subject subject) {
-        this.subject=subject;
+        this.subject = subject;
         System.out.println("Observer notified, subject's temprature changed to " + subject.getTemprature());
     }
 }

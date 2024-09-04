@@ -1,31 +1,46 @@
 package leetcodeandgrind75.leetcode.lrucache;
-import java.util.*;
+
+import java.util.HashMap;
+import java.util.Map;
+
 public class LRUCacheApp {
 
 
-
     public static void main(String[] args) {
-        LRUCache cache= new LRUCache(2);
-       // System.out.println(cache.get(2));
-        cache.put(1,1);
-        cache.put(2,2);
+        LRUCache cache = new LRUCache(2);
+        // System.out.println(cache.get(2));
+        cache.put(1, 1);
+        cache.put(2, 2);
         System.out.println(cache.get(1));
-        cache.put(3,3);
+        cache.put(3, 3);
         System.out.println(cache.get(2));
-        cache.put(4,4);
+        cache.put(4, 4);
         System.out.println(cache.get(1));
         System.out.println(cache.get(3));
         System.out.println(cache.get(4));
     }
 }
 
- class LRUCache {
+class LRUCache {
 
-    class Node {
-        int key;
-        int value;
-        Node prev;
-        Node next;
+    private final Map<Integer, Node> cache = new HashMap<>();
+    private int size;
+    private final int capacity;
+    private final Node head;
+    private final Node tail;
+
+    public LRUCache(int capacity) {
+        this.size = 0;
+        this.capacity = capacity;
+
+        head = new Node();
+        // head.prev = null;
+
+        tail = new Node();
+        // tail.next = null;
+
+        head.next = tail;
+        tail.prev = head;
     }
 
     private void addNode(Node node) {
@@ -39,7 +54,7 @@ public class LRUCacheApp {
         head.next = node;
     }
 
-    private void removeNode(Node node){
+    private void removeNode(Node node) {
         /**
          * Remove an existing node from the linked list.
          */
@@ -50,7 +65,7 @@ public class LRUCacheApp {
         next.prev = prev;
     }
 
-    private void moveToHead(Node node){
+    private void moveToHead(Node node) {
         /**
          * Move certain node in between to the head.
          */
@@ -67,25 +82,6 @@ public class LRUCacheApp {
         return res;
     }
 
-    private Map<Integer, Node> cache = new HashMap<>();
-    private int size;
-    private int capacity;
-    private Node head, tail;
-
-    public LRUCache(int capacity) {
-        this.size = 0;
-        this.capacity = capacity;
-
-        head = new Node();
-        // head.prev = null;
-
-        tail = new Node();
-        // tail.next = null;
-
-        head.next = tail;
-        tail.prev = head;
-    }
-
     public int get(int key) {
         Node node = cache.get(key);
         if (node == null) return -1;
@@ -99,7 +95,7 @@ public class LRUCacheApp {
     public void put(int key, int value) {
         Node node = cache.get(key);
 
-        if(node == null) {
+        if (node == null) {
             Node newNode = new Node();
             newNode.key = key;
             newNode.value = value;
@@ -109,7 +105,7 @@ public class LRUCacheApp {
 
             ++size;
 
-            if(size > capacity) {
+            if (size > capacity) {
                 // pop the tail
                 Node tail = popTail();
                 cache.remove(tail.key);
@@ -120,5 +116,12 @@ public class LRUCacheApp {
             node.value = value;
             moveToHead(node);
         }
+    }
+
+    class Node {
+        int key;
+        int value;
+        Node prev;
+        Node next;
     }
 }

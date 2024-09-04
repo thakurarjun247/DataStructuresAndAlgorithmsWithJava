@@ -42,10 +42,10 @@ public class LinkedList<C> {
         // startNode=null;
         System.out.println("---------------------------------------------------------");
         /*
-		 * LLNode current = startNode; if (startNode.next == null) {
-		 * System.out.print("ll is empty"); } while (current.next != null) {
-		 * System.out.print(current.next.data + "  "); current = current.next; }
-		 */
+         * LLNode current = startNode; if (startNode.next == null) {
+         * System.out.print("ll is empty"); } while (current.next != null) {
+         * System.out.print(current.next.data + "  "); current = current.next; }
+         */
         if (startNode == null || startNode.next == null) {
             System.out.println("empty list");
             return;
@@ -223,9 +223,9 @@ public class LinkedList<C> {
             start = start.next;
             fast = fast.next.next;
             // following lines are redundant
-			/*
-			 * if (fast == null) { break; }
-			 */
+            /*
+             * if (fast == null) { break; }
+             */
         }
         System.out.println(start.data);
     }
@@ -234,10 +234,10 @@ public class LinkedList<C> {
 
         LLNode pointer = new LLNode(start.next);
         LLNode refPointer = new LLNode(start.next);
-		/*
-		 * The above code is same as doing Node scanner=new Node(); Node scanner2x=new
-		 * Node(); scanner.setNext(start.next); scanner2x.setNext(start.next);
-		 */
+        /*
+         * The above code is same as doing Node scanner=new Node(); Node scanner2x=new
+         * Node(); scanner.setNext(start.next); scanner2x.setNext(start.next);
+         */
         int i = 0;
         nullCheck(start);
         while (refPointer.next != null && i <= n) {
@@ -281,7 +281,6 @@ public class LinkedList<C> {
     public void nullCheck(LLNode start) {
         if (start.next == null) {
             System.out.println("ll is empty");
-            return;
         }
     }
 
@@ -399,13 +398,13 @@ public class LinkedList<C> {
 
     public void checkIfTwoLLsIntersect(LLNode startFirst, LLNode startSecond) {
 
-		/*
-		 * here we have to parts ... 1)Given two singly linked list, find if they are
-		 * intersecting. Do this in single iteration. a) traverse list1 and find the
-		 * last element b) traverse list2 and find the last element c) check if last
-		 * element of list1 == last element of list2 , if equal intersecting else not
-		 * here we have parsed the list only once :-)
-		 */
+        /*
+         * here we have to parts ... 1)Given two singly linked list, find if they are
+         * intersecting. Do this in single iteration. a) traverse list1 and find the
+         * last element b) traverse list2 and find the last element c) check if last
+         * element of list1 == last element of list2 , if equal intersecting else not
+         * here we have parsed the list only once :-)
+         */
         LLNode lastNodeOfFirstLL, lastNodeOfSecondLL;
         lastNodeOfFirstLL = getLastNode(startFirst);
         lastNodeOfSecondLL = getLastNode(startSecond);

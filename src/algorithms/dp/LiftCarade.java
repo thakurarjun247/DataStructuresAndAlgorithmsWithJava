@@ -11,33 +11,6 @@ import java.util.stream.Collectors;
 /// <returns></returns>
 
 public class LiftCarade {
-    class Person {
-        int weight;
-
-        @Override
-        public String toString() {
-            return "weight: " + this.weight + " floor: " + this.floor;
-        }
-
-        public int getWeight() {
-            return weight;
-        }
-
-        public int getFloor() {
-            return floor;
-        }
-
-        int floor;
-
-        Person() {
-        }
-
-        Person(int weight, int floor) {
-            this.weight = weight;
-            this.floor = floor;
-        }
-    }
-
     public int solution(int[] weight, int[] floor, int totalFloors, int maxPerson, int maxWeight) {
         Queue<Person> q = new LinkedList<>();
 
@@ -74,5 +47,31 @@ public class LiftCarade {
         }
 
         return numberOfFloors;
+    }
+
+    class Person {
+        int weight;
+        int floor;
+
+        Person() {
+        }
+
+        Person(int weight, int floor) {
+            this.weight = weight;
+            this.floor = floor;
+        }
+
+        @Override
+        public String toString() {
+            return "weight: " + this.weight + " floor: " + this.floor;
+        }
+
+        public int getWeight() {
+            return weight;
+        }
+
+        public int getFloor() {
+            return floor;
+        }
     }
 }

@@ -12,7 +12,6 @@ public class DutchNationalFlag {
         Integer[] a = {1, 0, 2, 1, 1, 0, 0, 2, 1, 1, 0, 0, 2, 1, 1, 0, 0, 2, 1, 1, 0, 2, 1, 0, 2, 1,};
         dnf(a, 1);
         System.out.println(Arrays.toString(a));
-        ;
     }
 
     static void dnf(Integer[] a, int pivot) {

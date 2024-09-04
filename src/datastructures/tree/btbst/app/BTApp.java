@@ -9,13 +9,12 @@ import java.util.Scanner;
 public class BTApp {
     public static void main(String[] args) throws Exception {
         TreeNode root = null;
-        LCNode lcRoot=null;
+        LCNode lcRoot = null;
         TreeNode newRoot = null;
         TreeNode root1 = null;
         TreeNode root2 = null;
         Scanner scanner = new Scanner(System.in);
         BT binaryTree = new BT();
-
 
 
         for (int i = 0; i < 100; i++) {
@@ -101,13 +100,13 @@ public class BTApp {
                     binaryTree.inOrder(treeNode);
                     break;
                 case 14:
-                    for (int j = 0; j <=4; j++) {
+                    for (int j = 0; j <= 4; j++) {
 
                         //   System.out.println("enter data value");
                         // int data = scanner.nextInt();
                         root = binaryTree.insert(root, j);
                     }
-                    binaryTree.levelWiseLLs(root).forEach(item-> System.out.println(item));
+                    binaryTree.levelWiseLLs(root).forEach(item -> System.out.println(item));
                     break;
                 case 15:
                     System.out.println(binaryTree.lowestCommonAncestor(root, root.right, root.right.left));
@@ -124,7 +123,7 @@ public class BTApp {
                     binaryTree.levelOrder1(root);
                     binaryTree.levelOrder2(root);
                 case 19:
-                   // System.out.println("enter the datastructures.array in format \"[0,1,2,3,4,5,6,7,8,9,10]\"");
+                    // System.out.println("enter the datastructures.array in format \"[0,1,2,3,4,5,6,7,8,9,10]\"");
                     String s = "[0,1,2,3,4,5,6,7,8,9,10]";
                     String[] arrString = s
                             .substring(1, s.length() - 1)
@@ -147,12 +146,12 @@ public class BTApp {
                     }
                     binaryTree.levelOrderLC(lcRoot);
                 case 20:
-                   // System.out.println("enter the number of nodes to be inserted");
+                    // System.out.println("enter the number of nodes to be inserted");
                     //int number = 10;
                     for (int j = 0; j < 10; j++) {
 
-                     //   System.out.println("enter data value");
-                       // int data = scanner.nextInt();
+                        //   System.out.println("enter data value");
+                        // int data = scanner.nextInt();
                         root = binaryTree.insert(root, j);
                     }
                     binaryTree.naturalView(root);
@@ -163,7 +162,7 @@ public class BTApp {
                     binaryTree.zigZag(root);
                     break;
                 case 23:
-                    for (int j = 0; j <=4; j++) {
+                    for (int j = 0; j <= 4; j++) {
 
                         //   System.out.println("enter data value");
                         // int data = scanner.nextInt();

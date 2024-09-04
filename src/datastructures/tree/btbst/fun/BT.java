@@ -9,7 +9,10 @@ import java.util.*;
 
 public class BT {
     Scanner scanner = new Scanner(System.in);
-    private TreeNode root = null;
+    int size = 0;
+    int treeSize = 0;
+    boolean identical;
+    private final TreeNode root = null;
 
     public void displayChoice() {
         System.out.println();
@@ -39,8 +42,6 @@ public class BT {
         System.out.println("23: create and show me Right view");
         System.out.println();
     }
-
-    int size = 0;
 
     public boolean isBST(TreeNode node, Integer previous) throws Exception {
         if (node == null) {
@@ -111,8 +112,6 @@ public class BT {
 
     }
 
-    int treeSize = 0;
-
     public int getSize(TreeNode root) {
         if (root == null) {
             return 0;
@@ -147,8 +146,6 @@ public class BT {
                 && checkIfTwoTreesIdentical(root1.getRight(), root2.getRight()));
 
     }
-
-    boolean identical;
 
     public boolean identical(TreeNode root1, TreeNode root2) {
         if (root1 == null || root2 == null)
@@ -218,7 +215,7 @@ public class BT {
                 // }
                 totalItemsPrinted++;
                 if (totalItemsPrinted == numberOfItemsPrintedInLastLevel * 2) {
-                    System.out.println("");
+                    System.out.println();
                     // for formatting after every level
                     System.out.print(++level + ":  " + printNTabs(--numberOfTabs));
                     numberOfItemsPrintedInLastLevel = totalItemsPrinted;
@@ -240,7 +237,7 @@ public class BT {
         int totalItemsPrinted = 1;
         int numberOfItemsPrintedInLastLevel = 1;
         int numberOfTabs = 8;
-        int numberOfWhiteSpaces=32;
+        int numberOfWhiteSpaces = 32;
 
         System.out.print(level + ":  " + printNTabs(numberOfWhiteSpaces));
 
@@ -254,9 +251,9 @@ public class BT {
                 // }
                 totalItemsPrinted++;
                 if (totalItemsPrinted == numberOfItemsPrintedInLastLevel * 2) {
-                    System.out.println("");
+                    System.out.println();
                     // for formatting after every level
-                    System.out.print(++level + ":  " + printNTabs(numberOfTabs-2));
+                    System.out.print(++level + ":  " + printNTabs(numberOfTabs - 2));
                     numberOfItemsPrintedInLastLevel = totalItemsPrinted;
                 }
 
@@ -276,6 +273,7 @@ public class BT {
         }
         return builder.toString();
     }
+
     private String printNWhiteSpaces(int n) {
 
         StringBuilder builder = new StringBuilder();
@@ -313,22 +311,19 @@ public class BT {
 
     }
 
-	/*
+    /*
      *
-	 * 0 1 2 3 45 6
-	 * 
-	 * 
-	 * 
-	 * 
-	 */
+     * 0 1 2 3 45 6
+     *
+     *
+     *
+     *
+     */
 
     public boolean isBalanced(TreeNode node) {
         if (node == null)
             return true;
-        if (Math.abs(getHeight(node)) > 1)
-            return false;
-        else
-            return true;
+        return Math.abs(getHeight(node)) <= 1;
 
     }
 
@@ -366,11 +361,11 @@ public class BT {
     }
 
     public List<List<TreeNode>> levelWiseLLs(TreeNode root) {
-        List<List<TreeNode>> lists=new ArrayList<>();
+        List<List<TreeNode>> lists = new ArrayList<>();
         List<TreeNode> currentLevelList = new ArrayList<>();
-        if (root == null)
-        {
-            return lists;}
+        if (root == null) {
+            return lists;
+        }
         Queue<TreeNode> q = new LinkedList<>();
         q.add(root);
         q.add(null);
@@ -413,7 +408,7 @@ public class BT {
         if (isOneOnLeft != isTwoOnLeft) {
             return root;
         }
-        root = isOneOnLeft == true ? root.left : root.right;
+        root = isOneOnLeft ? root.left : root.right;
         return lowestCommonAncestor(root, one, two);
     }
 
@@ -447,7 +442,6 @@ public class BT {
     }
 
 
-
     public void levelOrderLC(LCNode root) {
 
         Queue<LCNode> queue = new LinkedList<>();
@@ -468,7 +462,7 @@ public class BT {
                 // }
                 totalItemsPrinted++;
                 if (totalItemsPrinted == numberOfItemsPrintedInLastLevel * 2) {
-                    System.out.println("");
+                    System.out.println();
                     // for formatting after every level
                     System.out.print(++level + ":  " + printNTabs(--numberOfTabs));
                     numberOfItemsPrintedInLastLevel = totalItemsPrinted;
@@ -482,56 +476,56 @@ public class BT {
     }
 
     //both working good
-    public void levelOrder1(TreeNode n){
-        if(n==null) return;
-        Queue<TreeNode> q=new LinkedList<>();
+    public void levelOrder1(TreeNode n) {
+        if (n == null) return;
+        Queue<TreeNode> q = new LinkedList<>();
         q.add(n);
-        while(!q.isEmpty()){
-            TreeNode node= q.poll();
-            System.out.print(node+" ");
-            if(node.left!=null) q.add(node.left);
-            if(node.right!=null) q.add(node.right);
+        while (!q.isEmpty()) {
+            TreeNode node = q.poll();
+            System.out.print(node + " ");
+            if (node.left != null) q.add(node.left);
+            if (node.right != null) q.add(node.right);
         }
 
     }
 
-    public void levelOrder2(TreeNode n){
-        if(n!=null) {
+    public void levelOrder2(TreeNode n) {
+        if (n != null) {
             Queue<TreeNode> q = new LinkedList<>();
             q.add(n);
             q.add(null);
             while (!q.isEmpty()) {
 
                 TreeNode node = q.poll();
-                if(node==null) {
-                    if(q.isEmpty()) return;
+                if (node == null) {
+                    if (q.isEmpty()) return;
                     System.out.println();
                     q.add(null);
 
-                }
-                else{
-                    System.out.print(node+" ");
+                } else {
+                    System.out.print(node + " ");
                     if (node.left != null) q.add(node.left);
                     if (node.right != null) q.add(node.right);
                 }
             }
         }
     }
+
     //aka zigzag spiral traversal
-    public void zigZag(TreeNode root){
-        if(root!=null){
-            Queue<TreeNode> q= new LinkedList<>();
+    public void zigZag(TreeNode root) {
+        if (root != null) {
+            Queue<TreeNode> q = new LinkedList<>();
             q.add(root);
-                int level=1;
-            while(!q.isEmpty()){
-                System.out.println("level "+level);
-                int size=q.size();
-                for(int i=0;i<size;i++){
+            int level = 1;
+            while (!q.isEmpty()) {
+                System.out.println("level " + level);
+                int size = q.size();
+                for (int i = 0; i < size; i++) {
                     TreeNode polled = q.poll();
-                    System.out.print(polled.key+" ");
-                    if(polled.left!=null)
+                    System.out.print(polled.key + " ");
+                    if (polled.left != null)
                         q.add(polled.left);
-                    if(polled.right!=null)
+                    if (polled.right != null)
                         q.add(polled.right);
                 }
                 //if(level%2==0)

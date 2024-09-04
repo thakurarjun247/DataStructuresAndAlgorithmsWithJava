@@ -3,6 +3,7 @@ package datastructures.graph.disjointset.leetcode;
 public class CheckIfGraphAValidTree {
     int[] parent;
     int[] size;
+
     public static void main(String[] args) {
         // Test case 1: Valid tree
         int n1 = 5;
@@ -42,49 +43,49 @@ public class CheckIfGraphAValidTree {
             parent[i] = i;
         }
     }
-      boolean isGraphAValidTree(int n, int[][] edges) {
-        init(n,edges);
-         for(int[] edge: edges){
-             //cycle detected?
-             if(areTwoVerticesAlreadyConnected(edge[0],edge[1]))
-                 return false;
-             else union(edge[0],edge[1]);
-         }
-         //even after all the connections if any of the two nodes are
-          //disconnected, not having the same parents
-          //its just a graph not a tree.
-          for(int i=0;i<n-1;i++){
-              if(find(i)!=find(i+1))
-                  return false;
-          }
-         return true;
+
+    boolean isGraphAValidTree(int n, int[][] edges) {
+        init(n, edges);
+        for (int[] edge : edges) {
+            //cycle detected?
+            if (areTwoVerticesAlreadyConnected(edge[0], edge[1]))
+                return false;
+            else union(edge[0], edge[1]);
+        }
+        //even after all the connections if any of the two nodes are
+        //disconnected, not having the same parents
+        //its just a graph not a tree.
+        for (int i = 0; i < n - 1; i++) {
+            if (find(i) != find(i + 1))
+                return false;
+        }
+        return true;
 
 
     }
 
-     boolean areTwoVerticesAlreadyConnected(int a, int b){
-        return find(a)==find(b);
+    boolean areTwoVerticesAlreadyConnected(int a, int b) {
+        return find(a) == find(b);
     }
-      int find(int v){
-        if(v==parent[v])
+
+    int find(int v) {
+        if (v == parent[v])
             return v;
         else
             return find(parent[v]);
     }
 
-     boolean union(int a, int b){
-        a=find(a);
-        b=find(b);
-        if(a==b) return false;
-        int newSize=size[a]+size[b];
-        if(size[a]>size[b])
-        {
-            parent[b]=a;
-            size[a]=newSize;
-        }
-        else{
-            parent[a]=b;
-            size[b]=newSize;
+    boolean union(int a, int b) {
+        a = find(a);
+        b = find(b);
+        if (a == b) return false;
+        int newSize = size[a] + size[b];
+        if (size[a] > size[b]) {
+            parent[b] = a;
+            size[a] = newSize;
+        } else {
+            parent[a] = b;
+            size[b] = newSize;
         }
         return true;
     }

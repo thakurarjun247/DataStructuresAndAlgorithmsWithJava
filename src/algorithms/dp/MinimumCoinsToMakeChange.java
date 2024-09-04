@@ -27,7 +27,9 @@ You may assume that you have an infinite number of each kind of coin.
 
 public class RodCutting
 */
-import java.util.*;
+
+import java.util.Map;
+
 public class MinimumCoinsToMakeChange {
     public static void main(String[] args) {
 
@@ -41,13 +43,13 @@ public class MinimumCoinsToMakeChange {
     }*/
 
     private static int f(int[] coins, int amount, Map<Integer, Integer> memo) {
-        if(memo.containsKey(amount)) return memo.get(amount);
-        int min=Integer.MAX_VALUE;
+        if (memo.containsKey(amount)) return memo.get(amount);
+        int min = Integer.MAX_VALUE;
         for (int i = 0; i < coins.length; i++) {
-            if(amount>=coins[i]){
-                int val =f(coins, amount-coins[i], memo);
-               if(val< min)
-                   min=val;
+            if (amount >= coins[i]) {
+                int val = f(coins, amount - coins[i], memo);
+                if (val < min)
+                    min = val;
             }
         }
         memo.put(amount, min);

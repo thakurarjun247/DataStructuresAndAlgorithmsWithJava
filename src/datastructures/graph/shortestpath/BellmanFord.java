@@ -7,7 +7,7 @@ public class BellmanFord {
         BellmanFord bellmanFord = new BellmanFord();
 
         System.out.println("Test case 1:  graph with negative weights");
-        int[][] edges2 = {{0, 1, 6}, {0, 2, 7}, {1, 2, 8}, {2, 3, -3},{2,4,9},{4,3,7},{3,1,-2},{1,3,5},{4,0,2},{1,4,-4}};
+        int[][] edges2 = {{0, 1, 6}, {0, 2, 7}, {1, 2, 8}, {2, 3, -3}, {2, 4, 9}, {4, 3, 7}, {3, 1, -2}, {1, 3, 5}, {4, 0, 2}, {1, 4, -4}};
         int source2 = 0, n2 = 5;
         int[] distances2 = bellmanFord.bellmanFordAlgo(edges2, source2, n2);
         System.out.println("output: " + Arrays.toString(distances2) + " \n Expected: [0,2,7,4,-2]");

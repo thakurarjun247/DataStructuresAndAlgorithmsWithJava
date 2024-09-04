@@ -3,7 +3,7 @@ package datastructures.arraystring.ch07String;
 public class ReplaceCharFromString {
     //replace 'a' with 'dd' and remove 'b'
     public static void main(String[] args) {
-        char[] a="abcb".toCharArray();
+        char[] a = "abcb".toCharArray();
         for (int i = 0; i < replace(a).length; i++)
             System.out.println(a[i]);
     }

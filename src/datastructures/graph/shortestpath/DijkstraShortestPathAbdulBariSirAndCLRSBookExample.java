@@ -1,7 +1,12 @@
 package datastructures.graph.shortestpath;
+
 import util.GraphUtil;
 
-import java.util.*;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Map;
+import java.util.PriorityQueue;
+
 public class DijkstraShortestPathAbdulBariSirAndCLRSBookExample {
     // TODO: 01-09-2024 : see the video below for context, or page 659 of CLRS book
     //https://www.youtube.com/watch?v=XB4MIexjvY0
@@ -33,13 +38,13 @@ public class DijkstraShortestPathAbdulBariSirAndCLRSBookExample {
                 {2, 4, 1},//
                 {3, 5, 2},//
                 {5, 4, 6},//
-                {3,2,3},
-                {5, 1,7},
-                {4,5,4},
-                {3,4,9}
+                {3, 2, 3},
+                {5, 1, 7},
+                {4, 5, 4},
+                {3, 4, 9}
         };
 
-        System.out.println(Arrays.toString(findShortestPathWithDijktraAlgo(graph2,startInGraph2,numVerticesInGraph2)));
+        System.out.println(Arrays.toString(findShortestPathWithDijktraAlgo(graph2, startInGraph2, numVerticesInGraph2)));
     }
 
 
@@ -47,16 +52,16 @@ public class DijkstraShortestPathAbdulBariSirAndCLRSBookExample {
         int[] distance = new int[n + 1]; //vertex numbering start from 1
         Arrays.fill(distance, Integer.MAX_VALUE); //intially all the vertices are at infinite distance
         distance[start] = 0;//except start vertex which is at 0 distance from itself.
-        boolean[] visited = new boolean[n+1]; //keep track of visit status of all vertices
+        boolean[] visited = new boolean[n + 1]; //keep track of visit status of all vertices
         Map<Integer, List<int[]>> edgeList = GraphUtil.buildAdjacencyListForWeightedDirectedGraph(edges, n); // source -> {{source, destination, edgeWeight}}
         PriorityQueue<Integer> priorityQueue = new PriorityQueue<>((x, y) -> distance[x] - distance[y]); //in order of nearest to farthest vertices from the last processed vertex
         priorityQueue.add(start);
         while (!priorityQueue.isEmpty()) {
             int currentlyPolledVertex = priorityQueue.poll();
-            if(visited[currentlyPolledVertex])
+            if (visited[currentlyPolledVertex])
                 continue; //skip
             else
-                visited[currentlyPolledVertex]=true;
+                visited[currentlyPolledVertex] = true;
             List<int[]> neighboursOfCurrentVertex = edgeList.get(currentlyPolledVertex);
             for (int[] edge : neighboursOfCurrentVertex) {
                 int destination = edge[1];

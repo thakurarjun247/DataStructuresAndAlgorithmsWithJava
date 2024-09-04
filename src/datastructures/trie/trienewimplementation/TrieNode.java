@@ -7,7 +7,7 @@ import java.util.HashMap;
  */
 public class TrieNode {
     /* The children of this node in the datastructures.trie.*/
-    private HashMap<Character, TrieNode> children;
+    private final HashMap<Character, TrieNode> children;
     private boolean terminates = false;
 
     // The character stored in this node as data.

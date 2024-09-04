@@ -26,11 +26,13 @@ Dependency Inversion: The Bridge pattern decouples the abstraction from the impl
 * */
 interface RemoteInterface {
     void turnOn();
+
     void turnOff();
 }
 
 interface TVInterface {
     void turnOn();
+
     void turnOff();
 }
 
@@ -53,9 +55,10 @@ class PhilipsTV implements TVInterface {
         System.out.println("Philips TV turned off");
     }
 }
+
 //you can say that the BasicRemote class is bridging the gap between the TVInterface and RemoteInterface
 class BasicRemote implements RemoteInterface {
-    private TVInterface tvInterface;
+    private final TVInterface tvInterface;
 
     public BasicRemote(TVInterface tvInterface) {
         this.tvInterface = tvInterface;

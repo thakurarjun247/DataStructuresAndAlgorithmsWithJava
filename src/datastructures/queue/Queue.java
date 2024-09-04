@@ -20,14 +20,15 @@ class QueueApp {
 public class Queue {
     Node rear;
     Node front;
-    public Queue(){
 
-        rear=null;
-        front=null;
+    public Queue() {
+
+        rear = null;
+        front = null;
 
     }
 
-//todo: see it carefully.
+    //todo: see it carefully.
     public void add(int key) {
 
         if (rear == null)
@@ -36,27 +37,28 @@ public class Queue {
             rear.next = new Node(key);
             rear = rear.next;
         }
-        if(front==null)
-            front=rear;
+        if (front == null)
+            front = rear;
         System.out.println();
-        System.out.println(" added "+key);
-       printQ(front);
+        System.out.println(" added " + key);
+        printQ(front);
 
     }
-    void printQ(Node front){
-        if(front ==null)
-            System.out.println("q is empty");
-        else{
-            Node temp=front;
-            //System.out.println();
-            while(temp!=null)
-            {
-                System.out.print(temp.key+ " -> ");
 
-                temp=temp.next;
+    void printQ(Node front) {
+        if (front == null)
+            System.out.println("q is empty");
+        else {
+            Node temp = front;
+            //System.out.println();
+            while (temp != null) {
+                System.out.print(temp.key + " -> ");
+
+                temp = temp.next;
             }
         }
     }
+
     boolean isEmpty() {
         return front == null;
     }
@@ -66,8 +68,8 @@ public class Queue {
             System.out.println("q is empty");
             return null;
         }
-        Node node=front;
-        System.out.println("removed "+node.key);
+        Node node = front;
+        System.out.println("removed " + node.key);
         front = front.next;
         printQ(front);
         return node;

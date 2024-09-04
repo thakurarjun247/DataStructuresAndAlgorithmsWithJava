@@ -1,6 +1,9 @@
 package algorithms.greedy.epi.ch18greedy;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
 
 public class IntervalCovering {
     public static void main(String[] args) {
@@ -21,24 +24,9 @@ public class IntervalCovering {
         );
         f(list).forEach(System.out::println);
         f(list2).forEach(System.out::println);
-        System.out.println("");
+        System.out.println();
         //Integer.compare(1,2);
 
-    }
-
-    static class Interval {
-        int s;
-        int e;
-
-        Interval(int s, int e) {
-            this.s = s;
-            this.e = e;
-        }
-
-        @Override
-        public String toString() {
-            return "(" + s + "," + e + ")";
-        }
     }
 
     static List<Integer> f(List<Interval> list) {
@@ -54,6 +42,21 @@ public class IntervalCovering {
             }
         }
         return visits;
+    }
+
+    static class Interval {
+        int s;
+        int e;
+
+        Interval(int s, int e) {
+            this.s = s;
+            this.e = e;
+        }
+
+        @Override
+        public String toString() {
+            return "(" + s + "," + e + ")";
+        }
     }
 
 

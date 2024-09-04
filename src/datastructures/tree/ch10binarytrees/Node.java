@@ -1,39 +1,38 @@
 package datastructures.tree.ch10binarytrees;
 
- public class Node {
-    @Override
-    public String toString() {
-        return "("+key+")";
-    }
-
-    public Node left, parent,  right;
+public class Node {
+    public Node left, parent, right;
     public int key;
     public int numOfDescendents;
-
     public Node(int key, Node left, Node right, Node parent) {
         this.left = left;
         this.parent = parent;
         this.right = right;
         this.key = key;
     }
+
     public Node(int key) {
 
         this.key = key;
     }
-     public Node(int key, int numOfDescendents) {
 
-         this.key = key;
-         this.numOfDescendents=numOfDescendents;
-     }
+    public Node(int key, int numOfDescendents) {
+
+        this.key = key;
+        this.numOfDescendents = numOfDescendents;
+    }
+
     public Node(int key, Node left, Node right) {
         this.left = left;
 
         this.right = right;
         this.key = key;
     }
-    public Node(){}
 
-    public static Node createBinaryTree(){
+    public Node() {
+    }
+
+    public static Node createBinaryTree() {
         Node f = new Node(2);
         Node g = new Node(6);
         Node e = new Node(4);
@@ -52,5 +51,10 @@ package datastructures.tree.ch10binarytrees;
         g.left = h;
         g.right = i;
         return b;
+    }
+
+    @Override
+    public String toString() {
+        return "(" + key + ")";
     }
 }

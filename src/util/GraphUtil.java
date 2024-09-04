@@ -23,7 +23,7 @@ public class GraphUtil {
             adjacencyList.get(source).add(destination);
             //for undirected graph: add the reverse edge as well
             //uncomment below
-          //  adjacencyList.get(destination).add(source);
+            //  adjacencyList.get(destination).add(source);
         }
         return adjacencyList;
     }
@@ -40,7 +40,6 @@ public class GraphUtil {
         }
         return edgeList;
     }
-
 
 
     //prepare adjList

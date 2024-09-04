@@ -9,7 +9,7 @@ import util.ArrayUtil;
 
 public class SelectionSort {
     public static void main(String[] args) {
-        Integer a[] = {9, 8, -1, 0,7, 6, 5};
+        Integer[] a = {9, 8, -1, 0, 7, 6, 5};
         ArrayUtil.printArray(selectionSort(a));
     }
 

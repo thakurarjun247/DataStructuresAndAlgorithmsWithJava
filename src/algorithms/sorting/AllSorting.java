@@ -9,7 +9,7 @@ import java.util.Random;
 public class AllSorting {
     public static void main(String[] s) {
         for (int i = 0; i < 5; i++) {
-            int[] a = ArrayUtil.generateArray(5,false, 10, true );
+            int[] a = ArrayUtil.generateArray(5, false, 10, true);
             System.out.println("before sort:" + Arrays.toString(a) + " ");
             //insertionSort(a);
             qsort(a);
@@ -68,13 +68,15 @@ public class AllSorting {
         qsort(a, l, pivotIndex - 1);
         qsort(a, pivotIndex, h);
     }
-    static boolean isSorted(int[] a){
-        for(int i=0;i<a.length-1;i++){
-            if(a[i]>a[i+1])
+
+    static boolean isSorted(int[] a) {
+        for (int i = 0; i < a.length - 1; i++) {
+            if (a[i] > a[i + 1])
                 return false;
         }
         return true;
     }
+
     static int swapAroundPivotOrPartition(int[] a, int l, int h) {
         //pivot is the middle element, not the middle index.
         //or just choose it randomly,
@@ -119,8 +121,8 @@ public class AllSorting {
 
     public static void mergesort(int[] a) {
         if (a.length < 2) return;
-       //new int[a.length];
-        int[] helper =  Arrays.copyOf(a, a.length);
+        //new int[a.length];
+        int[] helper = Arrays.copyOf(a, a.length);
         mergesort(a, helper, 0, a.length - 1);
     }
 
@@ -148,9 +150,7 @@ public class AllSorting {
             current++;
         }
         int remaining = m - helperLeft;
-        for (int i = 0; i <= remaining; i++) {
-            a[current + i] = helper[helperLeft + i];
-        }
+        if (remaining + 1 >= 0) System.arraycopy(helper, helperLeft + 0, a, current + 0, remaining + 1);
   /*      while (current <= m) {
             helper[current] = a[current];
             current++;
@@ -158,7 +158,7 @@ public class AllSorting {
     }
 
     public static int[] countingSort(int[] arr, int k) {
-        int output[] = new int[arr.length];
+        int[] output = new int[arr.length];
         int[] count = new int[k + 1];
         Arrays.fill(count, 0);
         for (int i = 0; i < arr.length; i++) {
@@ -202,11 +202,11 @@ public class AllSorting {
             int i = j - 1;
             int key = a[j];
             //todo: careful of the order of the conditions below.
-            while (i >= 0 && a[i] > key ) {
-                a[i+1]=a[i];
+            while (i >= 0 && a[i] > key) {
+                a[i + 1] = a[i];
                 i--;
             }
-            a[i+1]=key;
+            a[i + 1] = key;
         }
     }
 }

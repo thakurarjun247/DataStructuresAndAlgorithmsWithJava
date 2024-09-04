@@ -1,16 +1,22 @@
 package leetcodeandgrind75.leetcode.slidingwindow;
-import java.util.*;
+
+import java.util.HashSet;
+import java.util.Set;
+
 public class LC904 {
     public static void main(String[] args) {
 
-        System.out.println(new Solution().totalFruit(new int[]{1,2,3,2,2}));
+        System.out.println(new Solution().totalFruit(new int[]{1, 2, 3, 2, 2}));
     }
 }
+
 class Solution {
-    private boolean add(Integer item){
-        if(!set.contains(item) && set.size()==2)
+    Set<Integer> set = new HashSet<>();
+
+    private boolean add(Integer item) {
+        if (!set.contains(item) && set.size() == 2)
             return false;
-        else{
+        else {
             set.add(item);
             return true;
         }
@@ -29,29 +35,28 @@ class Solution {
 
 
     }
-    Set<Integer> set= new HashSet<>();
+
     public int totalFruit(int[] a) {
-        int n=a.length;
-        if(n<=2)
+        int n = a.length;
+        if (n <= 2)
             return n;
-        int ans=0;
-        int right=0;
-        int windowSize =1;
+        int ans = 0;
+        int right = 0;
+        int windowSize = 1;
         set.add(a[0]);
-        for(int left=0;left<n;left++){
-            if(set.size()>=2)
-            {
+        for (int left = 0; left < n; left++) {
+            if (set.size() >= 2) {
                 windowSize--;
                 continue;
             }
 
             //set.clear();
-            while(right<n-1 && add(a[right]) ){
+            while (right < n - 1 && add(a[right])) {
 
                 windowSize++;
                 right++;
             }
-            ans= Math.max(windowSize, ans);
+            ans = Math.max(windowSize, ans);
         }
         return ans;
     }

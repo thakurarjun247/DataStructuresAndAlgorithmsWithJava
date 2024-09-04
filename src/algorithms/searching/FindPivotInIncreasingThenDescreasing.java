@@ -2,7 +2,7 @@ package algorithms.searching;
 
 public class FindPivotInIncreasingThenDescreasing {
     public static void main(String[] args) {
-        int[] a = {  1, -90};
+        int[] a = {1, -90};
         int index = f(a, 0, a.length - 1);
         System.out.println(index + " ");
     }

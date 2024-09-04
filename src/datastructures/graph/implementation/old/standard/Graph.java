@@ -8,24 +8,24 @@ class GraphApp {
 
         List<Vertex> list = new ArrayList<>();
         for (int i = 0; (i) < 8; i++) {
-            list.add(new Vertex(i ));
+            list.add(new Vertex(i));
         }
         //list.forEach(System.out::println);
         Graph g = new Graph(list);
-        g.addEdge(list.get(1),list.get(2));
-        g.addEdge(list.get(1),list.get(3));
-        g.addEdge(list.get(2),list.get(3));
-        g.addEdge(list.get(2),list.get(4));
-        g.addEdge(list.get(2),list.get(5));
-        g.addEdge(list.get(3),list.get(6));
-        g.addEdge(list.get(3),list.get(7));
-        g.addEdge(list.get(1),list.get(0));
+        g.addEdge(list.get(1), list.get(2));
+        g.addEdge(list.get(1), list.get(3));
+        g.addEdge(list.get(2), list.get(3));
+        g.addEdge(list.get(2), list.get(4));
+        g.addEdge(list.get(2), list.get(5));
+        g.addEdge(list.get(3), list.get(6));
+        g.addEdge(list.get(3), list.get(7));
+        g.addEdge(list.get(1), list.get(0));
         g.unvisitAll();
         System.out.println("bfs null");
-       // g.bfs(null);
+        // g.bfs(null);
         g.unvisitAll();
         System.out.println("dfs null");
-       // g.dfsWithStack(null);
+        // g.dfsWithStack(null);
 
         g.unvisitAll();
         //g.bfs(list.get(1));
@@ -47,7 +47,7 @@ class Vertex {
 
     Vertex(int key) {
         this.key = key;
-        list=new ArrayList<>();
+        list = new ArrayList<>();
     }
 /*
     @Override
@@ -72,9 +72,16 @@ class Vertex {
 public class Graph {
     List<Vertex> vertices;
 
+    public Graph() {
+    }
+
+    public Graph(List<Vertex> vertices) {
+        this.vertices = vertices;
+    }
+
     void addEdge(Vertex sv, Vertex dv) {
         //Vertex sv = new Vertex(s);
-       // Vertex dv = new Vertex(d);
+        // Vertex dv = new Vertex(d);
         if (!sv.list.contains(dv))
             sv.list.add(dv);
         if (!dv.list.contains(sv))
@@ -86,9 +93,9 @@ public class Graph {
     }
 
     void dfs(Vertex s) {
-        if(s!=null && !s.visited){
-            System.out.print(" " + s.key+ " ");
-            s.visited=true;
+        if (s != null && !s.visited) {
+            System.out.print(" " + s.key + " ");
+            s.visited = true;
             s.list.forEach(this::dfs);
 
         }
@@ -99,9 +106,9 @@ public class Graph {
         stack.add(s);
         while (!stack.isEmpty()) {
             Vertex v = stack.pop();
-            if (v!=null && !v.visited) {
+            if (v != null && !v.visited) {
                 System.out.print(v.key);
-                v.visited=true;
+                v.visited = true;
                 v.list.forEach(item -> stack.push(item));
             }
         }
@@ -113,19 +120,12 @@ public class Graph {
         q.add(s);
         while (!q.isEmpty()) {
             Vertex v = q.poll();
-                if (v!=null && !v.visited) {
-                    System.out.print(v.key);
-                    v.visited=true;
-                    v.list.forEach(item -> q.add(item));
-                }
+            if (v != null && !v.visited) {
+                System.out.print(v.key);
+                v.visited = true;
+                v.list.forEach(item -> q.add(item));
+            }
         }
-    }
-
-    public Graph() {
-    }
-
-    public Graph(List<Vertex> vertices) {
-        this.vertices = vertices;
     }
 
 }

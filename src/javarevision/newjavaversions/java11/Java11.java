@@ -6,4 +6,5 @@ public class Java11 {
         String multilineString = " helps \n \n developers \n explore Java.";
         System.out.println(multilineString);
         System.out.println(multilineString.isBlank());
-    }}
+    }
+}

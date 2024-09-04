@@ -8,28 +8,28 @@ public class Main {
         MaxContinuousSubArrayDevideConquer m = new MaxContinuousSubArrayDevideConquer();
         int[] a = {4, -1, 2, 4, -3, 0, 3, -2, 9};
         int[] a1 = {-4, -5, 8, 4, -1, 2, 4, -3, 0, 3, -2, 9};
-        int[] arr={-4, -5 };
-        int[] a3={1,-4,1,1,1 -5,99 };
-        int[] empty={};
+        int[] arr = {-4, -5};
+        int[] a3 = {1, -4, 1, 1, 1 - 5, 99};
+        int[] empty = {};
         MaxContinuousSubArrayDevideConquer.Bound b = m.findMaxSubArray(0, a1.length - 1, a1);
-        System.out.println(b.sum+b.leftMost+b.rightMost);
+        System.out.println(b.sum + b.leftMost + b.rightMost);
         //System.out.println(b.sum);
-       // System.out.println(k.kadanseRecursive(a1, 0, Integer.MIN_VALUE, Integer.MIN_VALUE));
-       // System.out.println(k.kadanseRecursive(a, 0, Integer.MIN_VALUE, Integer.MIN_VALUE));
-      // System.out.println(k.kadanseIterative(a1, Integer.MIN_VALUE, Integer.MIN_VALUE));
-       // System.out.println(k.kadanseRecursive(a, 0, Integer.MIN_VALUE, Integer.MIN_VALUE));
+        // System.out.println(k.kadanseRecursive(a1, 0, Integer.MIN_VALUE, Integer.MIN_VALUE));
         // System.out.println(k.kadanseRecursive(a, 0, Integer.MIN_VALUE, Integer.MIN_VALUE));
-      //  System.out.println(k.kadanseIterative(empty, Integer.MIN_VALUE, Integer.MIN_VALUE));
-     //   System.out.println(k.kadanseIterative(a1, Integer.MIN_VALUE, Integer.MIN_VALUE));
-     //   System.out.println(k.kadanseIterative(a, Integer.MIN_VALUE, Integer.MIN_VALUE));
+        // System.out.println(k.kadanseIterative(a1, Integer.MIN_VALUE, Integer.MIN_VALUE));
+        // System.out.println(k.kadanseRecursive(a, 0, Integer.MIN_VALUE, Integer.MIN_VALUE));
+        // System.out.println(k.kadanseRecursive(a, 0, Integer.MIN_VALUE, Integer.MIN_VALUE));
+        //  System.out.println(k.kadanseIterative(empty, Integer.MIN_VALUE, Integer.MIN_VALUE));
+        //   System.out.println(k.kadanseIterative(a1, Integer.MIN_VALUE, Integer.MIN_VALUE));
+        //   System.out.println(k.kadanseIterative(a, Integer.MIN_VALUE, Integer.MIN_VALUE));
     }
 }
 
 class Kadanse {
-    public int kadanseRecursive(int a[], int index, int localMax, int globalMax) {
+    public int kadanseRecursive(int[] a, int index, int localMax, int globalMax) {
         if (index >= a.length)
             return globalMax;
-         localMax = Math.max(0, localMax) + a[index];
+        localMax = Math.max(0, localMax) + a[index];
         globalMax = Math.max(localMax, globalMax);
         return kadanseRecursive(a, ++index, localMax, globalMax);
     }
@@ -41,11 +41,11 @@ class Kadanse {
             //so that we discard the Integer.MIN_VALUE as well as
             //we discard any dips we have had so far
             //Math.max(0, localMax) will take or leave existing sum
-            localMax= Math.max(localMax, 0)+a[i];
-        //    System.out.println(localMax+" "+globalMax);
-            globalMax=Math.max(localMax, globalMax);
+            localMax = Math.max(localMax, 0) + a[i];
+            //    System.out.println(localMax+" "+globalMax);
+            globalMax = Math.max(localMax, globalMax);
         }
-     //   System.out.println("finally gmax "+globalMax);
+        //   System.out.println("finally gmax "+globalMax);
         return globalMax;
     }
 }
@@ -100,11 +100,6 @@ class MaxContinuousSubArrayDevideConquer {
         int rightMost;
         int sum;
 
-        @Override
-        public String toString() {
-            return leftMost + " " + rightMost + " " + sum;
-        }
-
         Bound() {
         }
 
@@ -112,6 +107,11 @@ class MaxContinuousSubArrayDevideConquer {
             this.leftMost = leftMost;
             this.rightMost = rightMost;
             this.sum = sum;
+        }
+
+        @Override
+        public String toString() {
+            return leftMost + " " + rightMost + " " + sum;
         }
 
         @Override

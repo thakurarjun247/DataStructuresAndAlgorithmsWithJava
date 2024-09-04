@@ -7,12 +7,12 @@ import java.util.Map;
 public class Knapsack {
     public static void main(String[] args) {
 
-        int[] yw={12, 2, 6, 4, 1};
-        int[] yp={4, 2, 3, 10, 2};
-        int ymax=20;
-        System.out.println(f(yw, yp, 0,ymax, 0));
-        System.out.println(fMemo(yw, yp, 0,ymax, 0,new HashMap<String, Integer>()));
-        System.out.println(fYouTube(yw, yp, 0,ymax, 0,new HashMap<Index, Integer>()));
+        int[] yw = {12, 2, 6, 4, 1};
+        int[] yp = {4, 2, 3, 10, 2};
+        int ymax = 20;
+        System.out.println(f(yw, yp, 0, ymax, 0));
+        System.out.println(fMemo(yw, yp, 0, ymax, 0, new HashMap<String, Integer>()));
+        System.out.println(fYouTube(yw, yp, 0, ymax, 0, new HashMap<Index, Integer>()));
 
        /* int[] w = {2, 2, 4, 5};
         int[] p = {2, 4, 6, 11};
@@ -31,9 +31,9 @@ public class Knapsack {
         int maxWeight2 = 7;
 
 
-       // System.out.println("f: " + f(w, p, 0, maxWeight, 0));
+        // System.out.println("f: " + f(w, p, 0, maxWeight, 0));
 
-      //  System.out.println("fMemo: " + fMemo(w, p, 0, maxWeight, 0, new HashMap<String, Integer>()));
+        //  System.out.println("fMemo: " + fMemo(w, p, 0, maxWeight, 0, new HashMap<String, Integer>()));
         // }
         //System.out.println(fMemo(w1, p1, 0, maxWeight1, 0, new HashMap<String, Integer>()));
         //  System.out.println(fMemo(w2, p2, 0, maxWeight2, 0, new HashMap<String, Integer>()));
@@ -58,7 +58,7 @@ public class Knapsack {
     }
 
     static int fMemo(int[] w, int[] p, int currentIndex, int maxWeight, int totalPriceSoFar, Map<String, Integer> memo) {
-       // System.out.println("fMemo");
+        // System.out.println("fMemo");
         if (currentIndex == w.length || maxWeight == 0)
             return totalPriceSoFar;
         String key = maxWeight + "," + (currentIndex);
@@ -76,7 +76,7 @@ public class Knapsack {
                         //leave it
                         fMemo(w, p, currentIndex + 1, maxWeight, totalPriceSoFar, memo),
                         //take it
-                        fMemo(w, p, currentIndex +1, maxWeight - w[currentIndex], totalPriceSoFar + p[currentIndex], memo)
+                        fMemo(w, p, currentIndex + 1, maxWeight - w[currentIndex], totalPriceSoFar + p[currentIndex], memo)
 
                 );
             memo.put(key, maxPrice);
@@ -84,14 +84,14 @@ public class Knapsack {
         }
         return memo.get(key);
     }
+
     static int fYouTube(int[] w, int[] p, int currentIndex, int maxWeight, int totalPriceSoFar, Map<Index, Integer> memo) {
         // System.out.println("fMemo");
         if (currentIndex == w.length || maxWeight == 0)
             return totalPriceSoFar;
         Index key = new Index();
-        key.remainingWeight=maxWeight;
-        key.remainingItems=currentIndex;
-
+        key.remainingWeight = maxWeight;
+        key.remainingItems = currentIndex;
 
 
         if (memo.containsKey(key)) {
@@ -107,7 +107,7 @@ public class Knapsack {
                         //leave it
                         fYouTube(w, p, currentIndex + 1, maxWeight, totalPriceSoFar, memo),
                         //take it
-                        fYouTube(w, p, currentIndex +1, maxWeight - w[currentIndex], totalPriceSoFar + p[currentIndex], memo)
+                        fYouTube(w, p, currentIndex + 1, maxWeight - w[currentIndex], totalPriceSoFar + p[currentIndex], memo)
 
                 );
             memo.put(key, maxPrice);
@@ -139,7 +139,6 @@ public class Knapsack {
             return result;
         }
     }
-
 
 
 }

@@ -3,9 +3,9 @@ package leetcodeandgrind75.leetcode.backtracking;
 public class WordSearch {
 
     public static void main(String[] args) {
-        char[][] board = {{'A','B','C','E'},{'S','F','C','S'},{'A','D','E','E'}};
+        char[][] board = {{'A', 'B', 'C', 'E'}, {'S', 'F', 'C', 'S'}, {'A', 'D', 'E', 'E'}};
         String word = "SEE";
-        System.out.println(new Solution().exist(board,word));
+        System.out.println(new Solution().exist(board, word));
 
     }
 }
@@ -39,7 +39,7 @@ class Solution {
 
         /* Step 3). explore the neighbors in DFS */
         // mark the path before the next exploration
-        char temp=board[row][col];
+        char temp = board[row][col];
         board[row][col] = '#';
 
         int[] rowOffsets = {0, 1, 0, -1};

@@ -1,5 +1,12 @@
 package design.designpatterns.structural.adapter;
 
+//target
+interface Worker {
+    default void paid() {
+        System.out.println(" worker gets paid!");
+    }
+}
+
 //application client
 public class StudentToWorkerAdapterExample {
     public static void main(String[] args) {
@@ -7,20 +14,12 @@ public class StudentToWorkerAdapterExample {
         new Employee().paid();
 
 
-        Student student= new Student();
+        Student student = new Student();
         //won't work
         //student.paid();
         //adapting
         new StudentToWorkerAdapter(student).paid();
 
-    }
-}
-
-
-//target
-interface Worker{
-    default public void paid() {
-        System.out.println( " worker gets paid!");
     }
 }
 
@@ -32,15 +31,15 @@ class Employee implements Worker {
 }
 
 
-
 //adaptee
-class Student{
-void aboutme(){
-    System.out.println("I am a student");
+class Student {
+    void aboutme() {
+        System.out.println("I am a student");
+    }
 }
-}
+
 //adapter
-class StudentToWorkerAdapter implements Worker{
+class StudentToWorkerAdapter implements Worker {
     Student student;
 
     public StudentToWorkerAdapter(Student student) {

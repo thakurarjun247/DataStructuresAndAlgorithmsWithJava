@@ -32,40 +32,40 @@ public class TopologicalSortWithBFS {
         System.out.println(" Actual output: " + sortedList3);
         System.out.println("Expected output: [] (empty list, indicating a cycle)");
 
-        }
+    }
 
     //given total n vertices, V0 to Vn-1
-    static List<Integer> topologicalSort(int[][] edges, int n){
-        List<Integer> sortedList= new ArrayList<>();
-        int[] indegree= new int[n];
-        Queue<Integer> queue =  new LinkedList<>();
+    static List<Integer> topologicalSort(int[][] edges, int n) {
+        List<Integer> sortedList = new ArrayList<>();
+        int[] indegree = new int[n];
+        Queue<Integer> queue = new LinkedList<>();
         //set indegrees of all
-        for(int[] edge: edges){
+        for (int[] edge : edges) {
             indegree[edge[1]] += 1;
         }
         //push 0 indegree vertices to q for processing
-       for (int vertex=0;vertex<indegree.length;vertex++){
-           if(indegree[vertex]==0)
-               queue.add(vertex);
-       }
-       if(queue.isEmpty())
-           System.out.println("cyclic graph detected, none of the vertices have an indegree of 0");
+        for (int vertex = 0; vertex < indegree.length; vertex++) {
+            if (indegree[vertex] == 0)
+                queue.add(vertex);
+        }
+        if (queue.isEmpty())
+            System.out.println("cyclic graph detected, none of the vertices have an indegree of 0");
 
-       while(!queue.isEmpty()){
-           Integer polledVertex= queue.poll();
-           sortedList.add(polledVertex);
-           //reduce indegree of the nodes, where the outdegree is from polledVertex
-           //e.g. if polledVertex -> nextVertex, is an edge, reduce indegree of the nextVertex by 1
-           for(int[] edge: edges){
-              if(edge[0]==polledVertex){
+        while (!queue.isEmpty()) {
+            Integer polledVertex = queue.poll();
+            sortedList.add(polledVertex);
+            //reduce indegree of the nodes, where the outdegree is from polledVertex
+            //e.g. if polledVertex -> nextVertex, is an edge, reduce indegree of the nextVertex by 1
+            for (int[] edge : edges) {
+                if (edge[0] == polledVertex) {
 
-                  indegree[edge[1]] -= 1;
-                  //push the nextVetex to queue if it's indgree is now 0
-                  if(indegree[edge[1]] == 0)
-                      queue.add(edge[1]);
-              }
-           }
-       }
-        return  sortedList;
+                    indegree[edge[1]] -= 1;
+                    //push the nextVetex to queue if it's indgree is now 0
+                    if (indegree[edge[1]] == 0)
+                        queue.add(edge[1]);
+                }
+            }
+        }
+        return sortedList;
     }
 }

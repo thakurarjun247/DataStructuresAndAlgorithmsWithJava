@@ -42,7 +42,7 @@ public class ShortestPathWithBFS {
                 return constructPath(source, polledVertex, childToParent);
             } else {
                 adjList.get(polledVertex).forEach(child -> childToParent.put(child, polledVertex));
-                if(adjList.get(polledVertex)!=null)
+                if (adjList.get(polledVertex) != null)
                     q.addAll(adjList.get(polledVertex));
             }
 
@@ -59,8 +59,8 @@ public class ShortestPathWithBFS {
         }
 
         path.add(source);
-       // Collections.reverse(path);
-       // or
+        // Collections.reverse(path);
+        // or
         return path.reversed();
     }
 

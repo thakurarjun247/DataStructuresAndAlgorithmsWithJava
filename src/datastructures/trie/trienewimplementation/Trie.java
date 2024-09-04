@@ -4,11 +4,11 @@ import java.util.ArrayList;
 
 
 /* Implements a datastructures.trie. We store the input list of words in tries so
- * that we can efficiently find words with a given prefix. 
+ * that we can efficiently find words with a given prefix.
  */
 public class Trie {
     // The root of this datastructures.trie.
-    private TrieNode root;
+    private final TrieNode root;
 
     /* Takes a list of strings as an argument, and constructs a datastructures.trie that stores these strings. */
     public Trie(ArrayList<String> list) {

@@ -1,6 +1,6 @@
 package algorithms.dp;
 
- class Playground {
+class Playground {
     public static void main(String[] args) {
         //, {3, 4, 5}, {0, 3, 0}, {9, 0, 20}
         int[][] grid = {{1, 0, 7}, {2, 0, 6}};
@@ -14,6 +14,7 @@ package algorithms.dp;
 
     }
 }
+
 class Solution2 {
     public int getMaximumGold(int[][] grid) {
         int max = 0;
@@ -37,6 +38,7 @@ class Solution2 {
         return grid[i][j] + max;
     }
 }
+
 class Solution {
     public int getMaximumGold(int[][] grid) {
         int[][] ans = new int[grid.length][grid[0].length];
@@ -70,9 +72,7 @@ class Solution {
     }
 
     public boolean visitable(int i, int j, boolean[][] v, int[][] grid) {
-         if(i < 0 || i > grid.length - 1 || j < 0 || j > grid[0].length - 1 || v[i][j] == true || grid[i][j] == 0 )
-             return false;
-         return true;
+        return i >= 0 && i <= grid.length - 1 && j >= 0 && j <= grid[0].length - 1 && !v[i][j] && grid[i][j] != 0;
 
 
     }

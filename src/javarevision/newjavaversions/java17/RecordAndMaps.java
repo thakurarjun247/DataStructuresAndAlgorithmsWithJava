@@ -5,8 +5,6 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class RecordAndMaps {
-    public record MyPair(String key, Integer value) { }
-
     public static void main(String[] args) {
 
         // Create unsorted pairs
@@ -23,7 +21,10 @@ public class RecordAndMaps {
                 .collect(Collectors.toList());
 
 // Print the sorted pairs
-        sortedPairs.forEach( System.out::println);
+        sortedPairs.forEach(System.out::println);
+    }
+
+    public record MyPair(String key, Integer value) {
     }
 }
 

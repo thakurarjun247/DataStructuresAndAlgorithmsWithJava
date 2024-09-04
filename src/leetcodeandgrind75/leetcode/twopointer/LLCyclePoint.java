@@ -1,5 +1,6 @@
 package leetcodeandgrind75.leetcode.twopointer;
-class ListNode{
+
+class ListNode {
     ListNode next;
 }
 

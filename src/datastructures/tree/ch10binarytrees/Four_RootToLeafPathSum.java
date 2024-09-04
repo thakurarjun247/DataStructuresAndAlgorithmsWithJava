@@ -1,16 +1,18 @@
 package datastructures.tree.ch10binarytrees;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Four_RootToLeafPathSum {
     public static void main(String[] args) {
 
-       Node root=Node.createBinaryTree();
+        Node root = Node.createBinaryTree();
 
 
-        List<Integer> list=pathSumRootToLeaf(root);
+        List<Integer> list = pathSumRootToLeaf(root);
         list.forEach(System.out::println);
     }
+
     static List<Integer> pathSumRootToLeaf(Node root) {
         return pathSumRootToLeaf(root, new ArrayList<Integer>(), 0);
     }

@@ -19,6 +19,7 @@ public class SearchSorted2DMatrix {
         if (key < a[0][0] && key > a[row][col]) return false;
         return f(a, 0, 0, row, col, key);
     }
+
     //see explanation in datastructuresandalgorithms.problemsfrombooks.epi, we can also use a[rowHigh][colLow] instead of a[rowLow][colHigh] for comparison
     //the idea is to eliminate one row or column after every comparison.
     private static boolean f(int[][] a, int rowLow, int colLow, int rowHigh, int colHigh, int key) {

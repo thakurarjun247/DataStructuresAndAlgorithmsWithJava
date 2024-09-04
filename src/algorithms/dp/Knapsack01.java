@@ -55,8 +55,8 @@ public class Knapsack01 {
         int[] w3 = /*{1, 3, 4, 5};*/{12, 2, 1, 4, 1};
         int[] p3 = /*{1, 4, 5, 7};*/{4, 2, 1, 10, 2};
         int W3 = 10;
-        System.out.println(knap01(w3,p3, W3));
-        System.out.println(knap01Memo(w3,p3, W3));
+        System.out.println(knap01(w3, p3, W3));
+        System.out.println(knap01Memo(w3, p3, W3));
         int[] wWiki = /*{1, 3, 4, 5};*/{3, 2, 1};
         int[] ppWiki = /*{1, 4, 5, 7};*/{4, 3, 1};
         int maxWeight = 4;
@@ -65,10 +65,9 @@ public class Knapsack01 {
         int[] w2 = /*{1, 3, 4, 5};*/{2, 3, 4, 5};
         int[] p2 = /*{1, 4, 5, 7};*/{1, 2, 5, 6};
         int W2 = 2;
-     /*   System.out.println(knap01(w2, p2, W2));*/
+        /*   System.out.println(knap01(w2, p2, W2));*/
         System.out.println(knap01Memo(w2, p2, W2));
-        System.out.println("done bari" +
-                "");
+        System.out.println("done bari");
 
         //System.out.println(f(w3, p3, W3));
 
@@ -107,12 +106,13 @@ public class Knapsack01 {
     static int knap01(int[] w, int[] p, int maxWeight) {
         if (w.length == 0 || p.length == 0 || maxWeight <= 0)
             return 0;
-         return knap01(w, p, 0, maxWeight, 0);
+        return knap01(w, p, 0, maxWeight, 0);
     }
+
     static int knap01Memo(int[] w, int[] p, int maxWeight) {
         if (w.length == 0 || p.length == 0 || maxWeight <= 0)
             return 0;
-        Map<WeightIndex, Integer> map=new HashMap<>();
+        Map<WeightIndex, Integer> map = new HashMap<>();
         return knap01Memo(w, p, 0, maxWeight, 0, map);
     }
 
@@ -136,17 +136,18 @@ public class Knapsack01 {
 
         if (i == w.length)
             return priceSoFar;
-        WeightIndex key=new WeightIndex(remainingWeight, i);
-        if(map.containsKey(key) )
+        WeightIndex key = new WeightIndex(remainingWeight, i);
+        if (map.containsKey(key))
             return map.get(key);
         // skip
-        if (w[i] > remainingWeight){
-            int  value=knap01Memo(w, p, i + 1, remainingWeight, priceSoFar, map);
+        if (w[i] > remainingWeight) {
+            int value = knap01Memo(w, p, i + 1, remainingWeight, priceSoFar, map);
             map.put(key, value);
-        return value;}
-        int value= Math.max(
+            return value;
+        }
+        int value = Math.max(
                 knap01Memo(w, p, i + 1, remainingWeight - w[i], priceSoFar + p[i], map),
-                knap01Memo(w, p, i + 1, remainingWeight, priceSoFar,map)
+                knap01Memo(w, p, i + 1, remainingWeight, priceSoFar, map)
         );
         map.put(key, value);
         return value;

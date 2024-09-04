@@ -1,7 +1,7 @@
 package algorithms.dp;
 
-import java.util.Map;
 import java.util.HashMap;
+import java.util.Map;
 
 public class LCS {
     public static void main(String[] s) {

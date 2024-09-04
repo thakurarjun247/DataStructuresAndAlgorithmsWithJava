@@ -23,23 +23,20 @@ public class MapOperations {
         // Otherwise, it's just a simple forEach() as described previously.
 
 
-
         //transform
         System.out.println("transform...");
 
 
-
-        Map<Integer, String> squreMaps=numberToWords
+        Map<Integer, String> squreMaps = numberToWords
                 .entrySet()
                 .stream()
-                .collect(Collectors.toMap(e -> e.getKey() * e.getKey(), e -> e.getValue() + e.getValue()))
-                ;
+                .collect(Collectors.toMap(e -> e.getKey() * e.getKey(), e -> e.getValue() + e.getValue()));
 
         numberToWords
                 .entrySet()
-                        .stream()
-                                .collect(Collectors.toMap(e->e.getKey(), e->e.getValue()));
-       List<Integer> list = numberToWords.keySet().stream().collect(Collectors.toList());
+                .stream()
+                .collect(Collectors.toMap(e -> e.getKey(), e -> e.getValue()));
+        List<Integer> list = numberToWords.keySet().stream().collect(Collectors.toList());
         System.out.println(list
         );
         System.out.println(squreMaps);
@@ -50,45 +47,44 @@ public class MapOperations {
         numberToWords
                 .entrySet()
                 .stream()
-                .filter(entrySet-> entrySet.getKey()==5)
+                .filter(entrySet -> entrySet.getKey() == 5)
                 .forEach(e -> System.out.println(e.getKey() + "->" + e.getValue()));
-      //there is nothing called filter not
+        //there is nothing called filter not
 
 
-        Map<Integer, Integer> numberTo2xNumber=numberToWords
+        Map<Integer, Integer> numberTo2xNumber = numberToWords
                 .entrySet()
                 .stream()
-                .collect(Collectors.toMap(e->e.getKey(), e-> e.getKey()*2));
+                .collect(Collectors.toMap(e -> e.getKey(), e -> e.getKey() * 2));
 
         //notice the keyset and values are collections hence these ops are applicable on collections as well
         int sumOfKeys = numberTo2xNumber.keySet().stream().reduce(0, Integer::sum);
-        int sumOfValues=numberTo2xNumber.values().stream().reduce(0 ,Integer::sum );
-        System.out.println(sumOfKeys+" "+sumOfValues);
+        int sumOfValues = numberTo2xNumber.values().stream().reduce(0, Integer::sum);
+        System.out.println(sumOfKeys + " " + sumOfValues);
 
         //sort map in descending order of values
-
 
 
 //        .sorted(comparingByValue())
 
 
-        Map<Integer, Integer> ascendingOrderOfMapValues=numberTo2xNumber
+        Map<Integer, Integer> ascendingOrderOfMapValues = numberTo2xNumber
                 .entrySet()
                 .stream()
                 .sorted(comparingByValue())
-                .collect( Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue, (e1, e2) -> e2, LinkedHashMap::new));
+                .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue, (e1, e2) -> e2, LinkedHashMap::new));
 //sort by keys
-      //  int[] sorted = numberTo2xNumber
-           //     .entrySet().toArray();
+        //  int[] sorted = numberTo2xNumber
+        //     .entrySet().toArray();
 
 
-        ascendingOrderOfMapValues.forEach((k,v)-> System.out.println(k+"->"+v));
-        Map<Integer, Integer> reverseOrderOfMapValues=numberTo2xNumber
+        ascendingOrderOfMapValues.forEach((k, v) -> System.out.println(k + "->" + v));
+        Map<Integer, Integer> reverseOrderOfMapValues = numberTo2xNumber
                 .entrySet()
                 .stream()
                 .sorted(Collections.reverseOrder(comparingByValue()))
-                .collect( Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue, (e1, e2) -> e2, LinkedHashMap::new));
-        reverseOrderOfMapValues.forEach((k,v)-> System.out.println(k+"->"+v));
+                .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue, (e1, e2) -> e2, LinkedHashMap::new));
+        reverseOrderOfMapValues.forEach((k, v) -> System.out.println(k + "->" + v));
 
     }
 }

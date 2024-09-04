@@ -12,18 +12,18 @@ public class DiningPhilosopher {
 }
 
 class Philosopher implements Runnable {
+    private final int bite = 10;
+    private final Chopstick left;
+    private final Chopstick right;
+    public Philosopher(Chopstick left, Chopstick right) {
+        this.left = left;
+        this.right = right;
+    }
+
     public void run() {
         for (int i = 0; i < bite; i++) {
             eat();
         }
-    }
-
-    private int bite = 10;
-    private Chopstick left, right;
-
-    public Philosopher(Chopstick left, Chopstick right) {
-        this.left = left;
-        this.right = right;
     }
 
     public void eat() {
@@ -56,7 +56,7 @@ class Philosopher implements Runnable {
 }
 
 class Chopstick {
-    private Lock lock;
+    private final Lock lock;
 
     public Chopstick() {
         lock = new ReentrantLock();

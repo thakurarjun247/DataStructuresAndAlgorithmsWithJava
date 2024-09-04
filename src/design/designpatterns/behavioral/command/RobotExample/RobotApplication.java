@@ -1,10 +1,15 @@
-
 package design.designpatterns.behavioral.command.RobotExample;
 
 
 import java.util.Arrays;
 import java.util.List;
 import java.util.Stack;
+
+interface Command {
+    void execute();
+
+    void undo();
+}
 
 /*
 * What is the Command Design Pattern?
@@ -55,14 +60,8 @@ public class RobotApplication {
     }
 }
 
-interface Command {
-    void execute();
-
-    void undo();
-}
-
 class MoveLeftCommand implements Command {
-    private Robot robot;
+    private final Robot robot;
 
     MoveLeftCommand(Robot robot) {
         this.robot = robot;
@@ -80,7 +79,7 @@ class MoveLeftCommand implements Command {
 }
 
 class MoveRightCommand implements Command {
-    private Robot robot;
+    private final Robot robot;
 
     MoveRightCommand(Robot robot) {
         this.robot = robot;
@@ -100,12 +99,12 @@ class MoveRightCommand implements Command {
 class Robot {
     private int position;
 
-    public int getPosition() {
-        return position;
-    }
-
     public Robot() {
         position = 0;
+    }
+
+    public int getPosition() {
+        return position;
     }
 
     public void moveLeft() {

@@ -8,6 +8,17 @@ public class Graph {
     boolean directed;
     Scanner scanner = new Scanner(System.in);
 
+    public Graph() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
+
+    public Graph(List<Vertex> vertices, boolean directed) {
+        super();
+        this.vertices = vertices;
+        this.directed = directed;
+    }
+
     public void addEdge() {
 
 
@@ -44,17 +55,6 @@ public class Graph {
     }
 
     public void setDirected(boolean directed) {
-        this.directed = directed;
-    }
-
-    public Graph() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
-
-    public Graph(List<Vertex> vertices, boolean directed) {
-        super();
-        this.vertices = vertices;
         this.directed = directed;
     }
 

@@ -51,7 +51,7 @@ public class AllPermutations {
             String charToBeReplacedByFirstChar = ((Character) s.charAt(i)).toString();
             String z = i == (s.length() - 1) ? "" : (s.substring(i + 1));
 
-            List<String> perms = p(s.substring(0, i) + ((Character) s.charAt(0)).toString() + z);
+            List<String> perms = p(s.substring(0, i) + ((Character) s.charAt(0)) + z);
             perms.forEach(string -> ans.add(charToBeReplacedByFirstChar + string));
         }
         return ans;

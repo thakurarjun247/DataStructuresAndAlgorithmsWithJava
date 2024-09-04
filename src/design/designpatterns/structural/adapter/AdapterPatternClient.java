@@ -4,17 +4,17 @@ package design.designpatterns.structural.adapter;
 //The adapter will take a adaptee(source) and adapt/convert it to the target
 //adaptee -> adapter -> target
 interface AdapteeBird {
-    public void makeSound();
+    void makeSound();
+}
+
+interface TargetToyBird {
+    void whistle();
 }
 
 class Sparrow implements AdapteeBird {
     public void makeSound() {
         System.out.println("Chirp Chirp");
     }
-}
-
-interface TargetToyBird {
-    public void whistle();
 }
 
 class BirdToTargetToyBirdAdapter implements TargetToyBird {
@@ -33,7 +33,7 @@ class BirdToTargetToyBirdAdapter implements TargetToyBird {
 }
 
 public class AdapterPatternClient {
-    public static void main(String args[]) {
+    public static void main(String[] args) {
         AdapteeBird adapteeSparrowBird = new Sparrow();
         // Wrap a adapteeBird in a ToyBirdAdapter so that it
         // behaves like TargetToyBird

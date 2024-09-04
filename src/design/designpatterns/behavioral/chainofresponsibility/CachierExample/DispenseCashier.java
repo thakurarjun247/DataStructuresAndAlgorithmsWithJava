@@ -1,6 +1,6 @@
 package design.designpatterns.behavioral.chainofresponsibility.CachierExample;
 
-public class DispenseCashier implements Cashier{
+public class DispenseCashier implements Cashier {
 
     @Override
     public void process(Request request) {

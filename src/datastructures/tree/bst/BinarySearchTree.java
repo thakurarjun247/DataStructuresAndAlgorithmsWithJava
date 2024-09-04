@@ -1,13 +1,14 @@
 package datastructures.tree.bst;
 
-import java.util.*;
+import java.util.HashSet;
+import java.util.Set;
 
 class BSTApp {
     public static void main(String[] args) {
 
         BinarySearchTree bst = new BinarySearchTree();
 
-        int a[] = {0,10, 20, 30, 40, 50, 60, 70, 80, 90, 100};
+        int[] a = {0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100};
 
         Node root = bst.createBST(a);
 
@@ -16,7 +17,7 @@ class BSTApp {
         System.out.println(bst.lcaInBST(null, new Node(30), new Node(10)));
         System.out.println(bst.lcaInBST(root, null, new Node(10)).key);
         System.out.println(bst.lcaInBST(root, new Node(10), null).key);
-        System.out.println(bst.lcaInBST(null, null,null));
+        System.out.println(bst.lcaInBST(null, null, null));
        /* bst.findKLargestElements(root, 5);
         bst.findKLargestElements(root, 2);
         bst.findKLargestElements(root, 10);*/
@@ -57,7 +58,7 @@ class Node {
     @Override
     public String toString() {
 
-        return  key + " (" + getLeft() + ", " + getRight() + ")";
+        return key + " (" + getLeft() + ", " + getRight() + ")";
     }
 
     Integer getLeft() {
@@ -74,7 +75,7 @@ class Node {
 
     @Override
     public int hashCode() {
-        Integer k = (Integer) key;
+        Integer k = key;
         return k.hashCode();
     }
 
@@ -229,7 +230,7 @@ public class BinarySearchTree {
 
         //instructions are parsed left to right, so first null check will be done on root
         //npe if null==root not on the leftmost
-        if (  null == root || one.key == root.key || two.key == root.key) return root;
+        if (null == root || one.key == root.key || two.key == root.key) return root;
 
         boolean oneGreaterThanRoot = one.key > root.key;
         boolean twoGreaterThanRoot = two.key > root.key;

@@ -1,6 +1,7 @@
 package datastructures.arraystring.ch06arrays;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class EnumerateNPrimes {
     public static void main(String[] args) {
@@ -9,7 +10,7 @@ public class EnumerateNPrimes {
 
     static List<Integer> f(int n) {
         //initially all false
-        boolean b[] = new boolean[n + 1];
+        boolean[] b = new boolean[n + 1];
         //set all true
         for (int i = 2; i <= n; i++)
             b[i] = true;
@@ -23,12 +24,12 @@ public class EnumerateNPrimes {
                 //we initialzied it to be a prime, try deviding it and see if it becomes nonprime
                 int devidingByIndex = 2;
                 while (devidingByIndex <= Math.sqrt(itemUnderExam)) {
-                    if (b[devidingByIndex] == true && itemUnderExam % devidingByIndex == 0 && itemUnderExam!=devidingByIndex) {
+                    if (b[devidingByIndex] && itemUnderExam % devidingByIndex == 0 && itemUnderExam != devidingByIndex) {
                         b[itemUnderExam] = false;
-                        int x=2;
-                        while (x*itemUnderExam<n){
-                            if(b[x])
-                            x++;
+                        int x = 2;
+                        while (x * itemUnderExam < n) {
+                            if (b[x])
+                                x++;
                         }
                     }
 
@@ -37,8 +38,8 @@ public class EnumerateNPrimes {
                 //could'n't devide
                 //set it as prime (no need it's prime by defalut) and set it's multiples as non prime
                 for (int i = 2; i <= n; i++) {
-                   if(i % itemUnderExam%itemUnderExam==0)
-                    b[i] = false;
+                    if (i % itemUnderExam % itemUnderExam == 0)
+                        b[i] = false;
                 }
 
             }

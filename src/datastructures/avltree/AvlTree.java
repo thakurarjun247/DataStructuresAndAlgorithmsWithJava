@@ -6,13 +6,11 @@ import java.util.Scanner;
 //visit http://blog.blackbam.at/2012/05/04/avl-tree-implementation-in-java/
 public class AvlTree {
     AvlNode root;
-
+    Scanner scanner = new Scanner(System.in);
 
     public AvlTree() {
         root = new AvlNode();
     }
-
-    Scanner scanner = new Scanner(System.in);
 
     public void displayChoice() {
         System.out.println();
@@ -135,7 +133,6 @@ public class AvlTree {
     public void removeAVL(AvlNode p, int q) {
         if (p == null) {
             // der Wert existiert nicht in diesem Baum, daher ist nichts zu tun
-            return;
         } else {
             if (p.key > q) {
                 removeAVL(p.left, q);

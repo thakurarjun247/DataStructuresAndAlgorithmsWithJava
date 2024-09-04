@@ -2,7 +2,9 @@ package datastructures.graph.mst;
 
 import datastructures.graph.disjointset.implementation.DisjointSet;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 public class MinimumSpanningTree {
     public static void main(String[] args) {

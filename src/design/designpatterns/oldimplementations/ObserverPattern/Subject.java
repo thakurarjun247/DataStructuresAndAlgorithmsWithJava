@@ -6,16 +6,19 @@ import java.util.List;
 //this is the data producer
 public interface Subject {
     void registerObjserver(Observer observer);
+
     void unregisterObjserver(Observer observer);
+
     void sendUpdates();
 }
-class SubjectImpl implements Subject{
+
+class SubjectImpl implements Subject {
     int score;
     List<Observer> objservers;
 
-    SubjectImpl(){
-        objservers=new ArrayList<Observer>();
-        score=0;
+    SubjectImpl() {
+        objservers = new ArrayList<Observer>();
+        score = 0;
     }
 
 
@@ -26,13 +29,13 @@ class SubjectImpl implements Subject{
 
     @Override
     public void unregisterObjserver(Observer observer) {
-objservers.remove(observer);
+        objservers.remove(observer);
     }
 
     @Override
     public void sendUpdates() {
-    for(Observer o:objservers){
-        o.update(score);
-    }
+        for (Observer o : objservers) {
+            o.update(score);
+        }
     }
 }

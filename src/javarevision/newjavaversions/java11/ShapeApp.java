@@ -1,12 +1,13 @@
 package javarevision.newjavaversions.java11;
 
-public class ShapeApp{
-    public static void main(String[] args) {
-        System.out.println("output: "+new Circle((1)).area());
-    }
-}
- sealed interface Shape permits Circle, Rectangle {
+sealed interface Shape permits Circle, Rectangle {
     double area();
+}
+
+public class ShapeApp {
+    public static void main(String[] args) {
+        System.out.println("output: " + new Circle((1)).area());
+    }
 }
 
 //not allowed code below:
@@ -17,7 +18,7 @@ public class ShapeApp{
 //        return 0;
 //    }
 //}
- final class Circle implements Shape {
+final class Circle implements Shape {
     private final double radius;
 
     public Circle(double radius) {
@@ -30,7 +31,7 @@ public class ShapeApp{
     }
 }
 
- final class Rectangle implements Shape {
+final class Rectangle implements Shape {
     private final double width;
     private final double height;
 

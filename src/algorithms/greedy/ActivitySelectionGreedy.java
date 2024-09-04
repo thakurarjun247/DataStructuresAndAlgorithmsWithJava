@@ -3,6 +3,7 @@ package algorithms.greedy;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+
 // Given a set of activities, each with a start time and a finish time,
 // the goal is to select a maximum number of non-overlapping activities.
 // In other words, no two selected activities can have overlapping time intervals.
@@ -23,14 +24,14 @@ public class ActivitySelectionGreedy {
 
     //The goal in the Activity Selection Problem is to select the maximum
     // number of non-overlapping activities from a given set of activities.
-    static  List<int[]> selectActivities(int[][] activities){
+    static List<int[]> selectActivities(int[][] activities) {
         //sort in order of finish time.
-        Arrays.sort(activities, (x,y)->x[1]-y[1]);
-        List<int[]> list= new ArrayList<>();
+        Arrays.sort(activities, (x, y) -> x[1] - y[1]);
+        List<int[]> list = new ArrayList<>();
         list.add(activities[0]);
-        for(int i=1;i<activities.length;i++){
+        for (int i = 1; i < activities.length; i++) {
             //if start of this activity after finish of last activity
-            if(activities[i][0] >= list.get(list.size() - 1)[1]){
+            if (activities[i][0] >= list.get(list.size() - 1)[1]) {
                 list.add(activities[i]);
             }
         }

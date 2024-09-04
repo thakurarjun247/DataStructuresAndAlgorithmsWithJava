@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class MaxArraySubsequence {
     public static void main(String[] args) {
-        int a[] = {1, 11, 2, 3, 10, -54, 49, 59, 0, 100};
+        int[] a = {1, 11, 2, 3, 10, -54, 49, 59, 0, 100};
         System.out.println(Arrays.toString(a));
         System.out.println("recursive " + maxArraySubsequenceRecursive(a));
         System.out.println("iterative " + maxArraySubsequenceIterativeSolution(a));

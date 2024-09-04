@@ -41,10 +41,10 @@ public class DutchNationalFlag {
         System.out.println("String.valueOf(datastructures.array)" + String.valueOf(array));
         Arrays.sort(array);
         System.out.println(array);
-        Integer[] a = {2,3,1,2,2,1,3};
+        Integer[] a = {2, 3, 1, 2, 2, 1, 3};
         DutchNationalFlag.dnf(a);
         System.out.println(Arrays.toString(a));
-        Integer arr[] = { 1, 1, 1, 2,  3};
+        Integer[] arr = {1, 1, 1, 2, 3};
         DutchNationalFlag.dnf(arr);
         System.out.println(Arrays.toString(arr));
 

@@ -19,19 +19,9 @@ public class MinMaxInOnePass {
         }
     }
 
-    static class MinMax {
-        int min, max;
-        MinMax(){}
-        MinMax(int min, int max){
-            this.min=min;
-            this.max=max;
-        }
-
-    }
-
     static MinMax f(int[] a) {
-        MinMax mm=new MinMax();
-        if(a.length==0) return mm;
+        MinMax mm = new MinMax();
+        if (a.length == 0) return mm;
         int min = Integer.MAX_VALUE;
         int max = Integer.MIN_VALUE;
         int low = 0;
@@ -60,6 +50,19 @@ public class MinMaxInOnePass {
         if (a[low] < min)
             min = a[low];
         return new MinMax(min, max);
+
+    }
+
+    static class MinMax {
+        int min, max;
+
+        MinMax() {
+        }
+
+        MinMax(int min, int max) {
+            this.min = min;
+            this.max = max;
+        }
 
     }
 }

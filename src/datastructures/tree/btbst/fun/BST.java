@@ -10,6 +10,7 @@ import java.util.Scanner;
 
 public class BST {
     Scanner scanner = new Scanner(System.in);
+    int size = 0;
     private TreeNode root = null;
 
     public void displayChoice() {
@@ -35,8 +36,6 @@ public class BST {
         System.out.println();
 
     }
-
-    int size = 0;
 
     //static Integer minValue=Integer.MIN_VALUE;
     public boolean isBST(TreeNode node, Integer previous) throws Exception {

@@ -15,9 +15,14 @@ package design.lowleveldesign.parkinglot;
 // Given a vehicle, you should be able to unpark it.
 // Given a spot, you should be able to find the vehicle parked in it.
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 
 // Main class should be named 'Solution' and should not be public.
+
+enum SpotType {
+    CAR, MC
+}
 
 interface Vehicle {
 
@@ -54,20 +59,16 @@ class Car implements Vehicle {
     }
 }
 
-enum SpotType {
-    CAR, MC;
-}
-
 class Spot {
     public SpotType spotType;
     public boolean isEmpty;
 
-    void setIsEmpty(boolean isEmpty) {
+    Spot(SpotType spotType, boolean isEmpty) {
+        this.spotType = spotType;
         this.isEmpty = isEmpty;
     }
 
-    Spot(SpotType spotType, boolean isEmpty) {
-        this.spotType = spotType;
+    void setIsEmpty(boolean isEmpty) {
         this.isEmpty = isEmpty;
     }
 
@@ -105,11 +106,11 @@ class Row {
 }
 
 class ParkingManager {
-    ParkingManager() {
-    }
-
     //todo: program to interface
     ParkingLot lot;
+
+    ParkingManager() {
+    }
 
     ParkingManager(ParkingLot lot) {
         this.lot = lot;
@@ -121,12 +122,12 @@ class ParkingManager {
             for (Row row : level.rows) {
                 for (Spot spot : row.spots) {
                     if (spotType == SpotType.MC) {
-                        if ((spot.spotType == SpotType.MC || spot.spotType == SpotType.CAR) && spot.isEmpty == true) {
+                        if ((spot.spotType == SpotType.MC || spot.spotType == SpotType.CAR) && spot.isEmpty) {
                             return spot;
                         }
                     }
 
-                    if ((spot.spotType == SpotType.CAR) && spot.isEmpty == true) {
+                    if ((spot.spotType == SpotType.CAR) && spot.isEmpty) {
                         return spot;
 
                     }

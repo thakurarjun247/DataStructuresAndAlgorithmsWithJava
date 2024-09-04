@@ -7,27 +7,27 @@ package algorithms.dp;
 // no other steps possible.
 
 public class NumOfWaysToTraverseMatrix {
-    int f(int row, int col){
-        if(row==0 || col==0) return 0;
-        int[][] memo=new int[row][col];
-      return  f(row-1, col-1, memo);
+    public static void main(String[] args) {
+        NumOfWaysToTraverseMatrix n = new NumOfWaysToTraverseMatrix();
+        System.out.println(n.f(2, 2));
+        System.out.println(n.f(3, 3));
+        System.out.println(n.f(5, 5));
+    }
+
+    int f(int row, int col) {
+        if (row == 0 || col == 0) return 0;
+        int[][] memo = new int[row][col];
+        return f(row - 1, col - 1, memo);
     }
 
     private int f(int row, int col, int[][] memo) {
-        if(row==0 || col==0) return 1;
+        if (row == 0 || col == 0) return 1;
         //defalut value of 2d matrix is always 0
         //if it's not default, i.e. already calculated return it.
-        if(memo[row][col]!=0) return memo[row][col];
+        if (memo[row][col] != 0) return memo[row][col];
 
         //if not calculated, calculate now.
-        memo[row][col]=f(row-1, col, memo)+f(row, col-1, memo);
+        memo[row][col] = f(row - 1, col, memo) + f(row, col - 1, memo);
         return memo[row][col];
-    }
-
-    public static void main(String[] args) {
-        NumOfWaysToTraverseMatrix n=new NumOfWaysToTraverseMatrix();
-        System.out.println(n.f(2,2));
-        System.out.println(n.f(3,3));
-        System.out.println(n.f(5,5));
     }
 }

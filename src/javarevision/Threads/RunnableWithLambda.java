@@ -7,22 +7,18 @@ public class RunnableWithLambda {
         Thread t0 = new Thread(() -> {
             System.out.println("running " + Thread.currentThread().getName());
             System.out.println("fib 100 " + fib.getNthFib(100));
-            ;
         });
         Thread t1 = new Thread(() -> {
             System.out.println("running " + Thread.currentThread().getName());
             System.out.println("fib 50" + fib.getNthFib(50));
-            ;
         });
         Thread t2 = new Thread(() -> {
             System.out.println("running " + Thread.currentThread().getName());
             System.out.println("fib 60" + fib.getNthFib(60));
-            ;
         });
         Thread t3 = new Thread(() -> {
             System.out.println("running " + Thread.currentThread().getName());
             System.out.println("fib 70" + fib.getNthFib(70));
-            ;
         });
 
 

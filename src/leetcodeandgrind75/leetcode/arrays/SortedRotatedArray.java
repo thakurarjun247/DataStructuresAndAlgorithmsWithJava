@@ -2,13 +2,14 @@ package leetcodeandgrind75.leetcode.arrays;
 
 public class SortedRotatedArray {
     public static void main(String[] args) {
-        SolutionTest test=new SolutionTest();
+        SolutionTest test = new SolutionTest();
 /*        test.exampleTestCases();
         test.edgeCases();
         test.rotatedArrayTestCases();*/
 
     }
-    public  int search(int[] nums, int target) {
+
+    public int search(int[] nums, int target) {
         int n = nums.length;
         int left = 0, right = n - 1;
         while (left <= right) {
@@ -47,6 +48,7 @@ public class SortedRotatedArray {
         return -1;
     }
 }
+
 class SolutionTest {
 
     SortedRotatedArray solution = new SortedRotatedArray();

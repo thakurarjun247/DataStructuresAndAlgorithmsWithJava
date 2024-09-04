@@ -3,20 +3,6 @@ package datastructures.graph.shortestpath;
 
 public class FloydWashalAlgoImlementation {
 
-    int[][] calculatePath(int[][] edges) {
-        int V = edges.length;
-        //for every vertex relax
-        for (int currentVertex = 0; currentVertex < V; currentVertex++) {
-            for(int r=0;r< edges.length;r++){
-                //relax every row and column
-                for (int c=0;c<edges.length;c++){
-                    edges[r][c]=Math.min(edges[r][c], (edges[r][currentVertex]==Integer.MAX_VALUE || edges[currentVertex][c]==Integer.MAX_VALUE)?Integer.MAX_VALUE:edges[r][currentVertex]+edges[currentVertex][c]);
-                }
-            }
-        }
-        return edges;
-    }
-
     public static void main(String[] args) {
         FloydWashalAlgoImlementation algo = new FloydWashalAlgoImlementation();
         //todo: here in the test cases Integer.MAX_VALUE means no path between the nodes.
@@ -120,6 +106,20 @@ public class FloydWashalAlgoImlementation {
             }
             System.out.println();
         }
+    }
+
+    int[][] calculatePath(int[][] edges) {
+        int V = edges.length;
+        //for every vertex relax
+        for (int currentVertex = 0; currentVertex < V; currentVertex++) {
+            for (int r = 0; r < edges.length; r++) {
+                //relax every row and column
+                for (int c = 0; c < edges.length; c++) {
+                    edges[r][c] = Math.min(edges[r][c], (edges[r][currentVertex] == Integer.MAX_VALUE || edges[currentVertex][c] == Integer.MAX_VALUE) ? Integer.MAX_VALUE : edges[r][currentVertex] + edges[currentVertex][c]);
+                }
+            }
+        }
+        return edges;
     }
 
 

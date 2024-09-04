@@ -2,17 +2,19 @@ package classicalcompsciproblems.ch13Hashing;
 
 import java.util.LinkedHashMap;
 import java.util.Map;
-class App{
+
+class App {
     public static void main(String[] args) {
-        LRUCache cache=new LRUCache(3);
-        cache.insert(1,100);
-        cache.insert(2,200);
-        cache.insert(3,300);
-        cache.insert(4,400);
-        cache.insert(5,500);
+        LRUCache cache = new LRUCache(3);
+        cache.insert(1, 100);
+        cache.insert(2, 200);
+        cache.insert(3, 300);
+        cache.insert(4, 400);
+        cache.insert(5, 500);
 
     }
 }
+
 public class LRUCache {
     LinkedHashMap<Integer, Integer> map;
 

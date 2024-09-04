@@ -145,10 +145,10 @@ public class SortingSearching {
         return array;
     }
     /*
-	 * private void bSort(int[] a ) { //Integer[] a=Arrays.copy int n=a.length;
-	 * for(int i=0;i<n-1;i++) { for(int j=0;j<n-i-1;j++) { int temp = a[i]; a[i] =
-	 * a[i + 1]; a[i + 1] = temp; } } }
-	 */
+     * private void bSort(int[] a ) { //Integer[] a=Arrays.copy int n=a.length;
+     * for(int i=0;i<n-1;i++) { for(int j=0;j<n-i-1;j++) { int temp = a[i]; a[i] =
+     * a[i + 1]; a[i + 1] = temp; } } }
+     */
 
     public int[] selectionSort(int[] a) {
         // scan the datastructures.array and find the smallest element
@@ -198,10 +198,10 @@ public class SortingSearching {
         int helperLeft = low;
         int current = low;
         int helperRight = middle + 1;
-		/*
-		 * Iterate through helper datastructures.array. Compare the left and right half, copying back
-		 * the smaller element from the two halves 28 * into the original datastructures.array.
-		 */
+        /*
+         * Iterate through helper datastructures.array. Compare the left and right half, copying back
+         * the smaller element from the two halves 28 * into the original datastructures.array.
+         */
         while (helperLeft <= middle && helperRight <= high) {
             if (temp[helperLeft] < temp[helperRight]) {
                 array[current] = temp[helperLeft];
@@ -214,29 +214,27 @@ public class SortingSearching {
         }
 
         int remaining = middle - helperLeft;
-        for (int i = 0; i <= remaining; i++) {
-            array[current + i] = temp[helperLeft + i];
-        }
-		/*
-		 * if (helperLeft < middle) { while (helperLeft != middle) { a[current] =
-		 * helper[helperLeft]; helperLeft++; current++; } }
-		 */
-		/*
-		 * You may notice that only the remaining elements from the left half of the
-		 * helper datastructures.array are copied into the target datastructures.array. Why not the right half? The
-		 * right half doesn't need to be copied because it's already there
-		 */
+        if (remaining + 1 >= 0) System.arraycopy(temp, helperLeft + 0, array, current + 0, remaining + 1);
+        /*
+         * if (helperLeft < middle) { while (helperLeft != middle) { a[current] =
+         * helper[helperLeft]; helperLeft++; current++; } }
+         */
+        /*
+         * You may notice that only the remaining elements from the left half of the
+         * helper datastructures.array are copied into the target datastructures.array. Why not the right half? The
+         * right half doesn't need to be copied because it's already there
+         */
 
-		/*
-		 * if(helperRight<high) { while(helperRight!=high) {
-		 * a[current]=helper[helperRight]; helperRight++; current++; } }
-		 */
+        /*
+         * if(helperRight<high) { while(helperRight!=high) {
+         * a[current]=helper[helperRight]; helperRight++; current++; } }
+         */
 
     }
 
     public void recursiveLinearSearch() {
         System.out.println("enter item to be found");
-        int array[] = {0, 1, 2, 3, 4, 5};
+        int[] array = {0, 1, 2, 3, 4, 5};
         int item = scanner.nextInt();
         System.out.println("searching...");
         for (int i = 0; i < array.length; i++) {
@@ -258,7 +256,6 @@ public class SortingSearching {
         }
         if (array[i] == item) {
             System.out.println("found at index " + i);
-            return;
         } else {
             // notice it's not i++ otherwise i will be increased after execution
             // of instruction which will be uselsess

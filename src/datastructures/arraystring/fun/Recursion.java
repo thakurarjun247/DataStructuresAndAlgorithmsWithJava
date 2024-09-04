@@ -70,24 +70,27 @@ public class Recursion {
         }
 
     }
-    public int[] reverseArraySimple(int a[]){
-   if(a.length==0) return a;
-   else return  reverseArraySimpleRec(a, 0, a.length-1);
 
-       // printArray(reverseArraySimpleRec(a,0, a.length-1));
-       // printArray(reverseArraySimpleRec(b,0, b.length-1));
-       // printArray(reverseArraySimpleRec(c,0, c.length-1));
+    public int[] reverseArraySimple(int[] a) {
+        if (a.length == 0) return a;
+        else return reverseArraySimpleRec(a, 0, a.length - 1);
+
+        // printArray(reverseArraySimpleRec(a,0, a.length-1));
+        // printArray(reverseArraySimpleRec(b,0, b.length-1));
+        // printArray(reverseArraySimpleRec(c,0, c.length-1));
 
     }
-    int[] reverseArraySimpleRec(int[] a, int start, int end){
-        if(end>=start) return a;
-        int temp=a[end];
-        a[end]=a[start];
-        a[start]=temp;
-        return reverseArraySimpleRec(a,start+1, end-1);
+
+    int[] reverseArraySimpleRec(int[] a, int start, int end) {
+        if (end >= start) return a;
+        int temp = a[end];
+        a[end] = a[start];
+        a[start] = temp;
+        return reverseArraySimpleRec(a, start + 1, end - 1);
     }
-    public void printArray(int[] a){
-        for(int i=0;i<a.length;i++) System.out.print(a[i]+" ");
+
+    public void printArray(int[] a) {
+        for (int i = 0; i < a.length; i++) System.out.print(a[i] + " ");
     }
 
     public char[] reverseArrayNew(char[] array, int i) {
@@ -106,9 +109,9 @@ public class Recursion {
 
     }
 
-     public String reverseStringIteratively(String s) {
+    public String reverseStringIteratively(String s) {
         StringBuilder sb = new StringBuilder();
-        for(int i = s.length() - 1; i >= 0; i--)
+        for (int i = s.length() - 1; i >= 0; i--)
             sb.append(s.charAt(i));
         return sb.toString();
     }
@@ -150,10 +153,11 @@ public class Recursion {
         if (index < 0)
             return s;
         else {
-            return removeACharacterFromString(s.substring(0, index) + s.substring(index + 1, s.length()), c);
+            return removeACharacterFromString(s.substring(0, index) + s.substring(index + 1), c);
 
         }
     }
+
     public int nthNumberInFiboSeries(int number) {
         if (number < 1) {
             throw new IndexOutOfBoundsException("");
@@ -204,7 +208,7 @@ public class Recursion {
                         if (j == (first.length() - 1)) {
                             results.add(first + lastChar);
                         } else {
-                            results.add(first.substring(j, j + 1) + lastChar + first.substring(j + 1));
+                            results.add(first.charAt(j) + lastChar + first.substring(j + 1));
                         }
 
                     }
@@ -242,7 +246,7 @@ public class Recursion {
 
         for (int i = 0; i < t.length(); i++) {
 
-            int c = (int) t.charAt(i);
+            int c = t.charAt(i);
 
             if (--letters[c] < 0) {
 
@@ -288,8 +292,8 @@ public class Recursion {
     public void rotateMatrix(int n) {
         int[][] a = new int[n][n];
         /*
-		 * 1 2 3 4 5 6 7 8 9
-		 */
+         * 1 2 3 4 5 6 7 8 9
+         */
         Scanner scanner = new Scanner(System.in);
 
         for (int i = 0; i < n; i++) {
@@ -301,7 +305,7 @@ public class Recursion {
         System.out.print("before rotation");
         printMatrix(a, n);
 
-        System.out.println("");
+        System.out.println();
         System.out.print("after rotation");
         printMatrix(a, n);
         // 13 11 33 13 31 33 11 31
@@ -312,7 +316,7 @@ public class Recursion {
 
     private void printMatrix(int[][] a, int n) {
         for (int i = 0; i < n; i++) {
-            System.out.println("");
+            System.out.println();
             for (int j = 0; j < n; j++) {
                 System.out.print(a[i][j] + " ");
             }

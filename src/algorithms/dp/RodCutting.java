@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class RodCutting {
     public static void main(String[] a) {
-        int price[] = {0, 1, 5, 8, 9, 10, 17, 17, 20, 24, 30};
+        int[] price = {0, 1, 5, 8, 9, 10, 17, 17, 20, 24, 30};
 /*
 For testing
 here are expected revenues aka r for a given rod size aka s

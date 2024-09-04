@@ -12,24 +12,6 @@ public final class FinalClassExample {
 
     private final HashMap<String, String> testMap;
 
-    public int getId() {
-        return id;
-    }
-
-
-    public String getName() {
-        return name;
-    }
-
-    /**
-     * Accessor function for mutable objects
-     */
-    public Map<String, String> getTestMap() {
-        //return testMap;
-
-        return (Map<String, String>) testMap.clone();
-    }
-
     /**
      * Constructor performing Deep Copy
      *
@@ -52,22 +34,6 @@ public final class FinalClassExample {
         }
         this.testMap = tempMap;
     }
-
-
-    /**
-     * Constructor performing Shallow Copy
-     * @param i
-     * @param n
-     * @param hm
-     */
-    /**
-     public FinalClassExample(int i, String n, HashMap<String,String> hm){
-     System.out.println("Performing Shallow Copy for Object initialization");
-     this.id=i;
-     this.name=n;
-     this.testMap=hm;
-     }
-     */
 
     /**
      * To test the consequences of Shallow Copy and how to avoid it with Deep Copy for creating immutable classes
@@ -116,6 +82,39 @@ public final class FinalClassExample {
 
         System.out.println("ce testMap after changing variable from accessor methods:" + ce.getTestMap());
 
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+
+    /**
+     * Constructor performing Shallow Copy
+     * @param i
+     * @param n
+     * @param hm
+     */
+    /**
+     public FinalClassExample(int i, String n, HashMap<String,String> hm){
+     System.out.println("Performing Shallow Copy for Object initialization");
+     this.id=i;
+     this.name=n;
+     this.testMap=hm;
+     }
+     */
+
+    /**
+     * Accessor function for mutable objects
+     */
+    public Map<String, String> getTestMap() {
+        //return testMap;
+
+        return (Map<String, String>) testMap.clone();
     }
 
 }

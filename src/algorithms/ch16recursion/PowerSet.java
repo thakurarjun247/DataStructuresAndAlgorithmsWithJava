@@ -10,7 +10,7 @@ public class PowerSet {
         int head = tail.remove(0);
 
 
-        Set<Set<Integer>> sets=powerSet(Arrays.asList(1, 2, 3));
+        Set<Set<Integer>> sets = powerSet(Arrays.asList(1, 2, 3));
         sets.forEach(set ->
                 System.out.println(set));
     }

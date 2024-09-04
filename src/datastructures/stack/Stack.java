@@ -1,8 +1,8 @@
 package datastructures.stack;
 
-class App{
+class App {
     public static void main(String[] args) {
-        Stack s=new Stack();
+        Stack s = new Stack();
         System.out.println(s.isEmpty());
         System.out.println(s.pop());
         s.push(0);
@@ -17,6 +17,7 @@ class App{
         System.out.println();
     }
 }
+
 public class Stack {
     int size = 4;
     int top = -1;
@@ -25,23 +26,23 @@ public class Stack {
     boolean isEmpty() {
         return top == (-1);
     }
-    int pop(){
-        if(isEmpty()) {
+
+    int pop() {
+        if (isEmpty()) {
             System.out.println("underflow");
             return Integer.MIN_VALUE;
-        }
-        else
-        {
-            int key=a[top];
+        } else {
+            int key = a[top];
             top--;
             return key;
         }
 
     }
-    void push(int key){
-        if(top==(size-1))
+
+    void push(int key) {
+        if (top == (size - 1))
             System.out.println("overflow");
         else
-            a[++top]=key;
+            a[++top] = key;
     }
 }

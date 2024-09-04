@@ -3,7 +3,7 @@ package datastructures.graph.disjointset.implementation;
 import java.util.Arrays;
 
 //theory in CLRS page 561, chapter 21
- class DisjointSetApplication {
+class DisjointSetApplication {
     public static void main(String[] args) {
         DisjointSet disjointSet = new DisjointSet(11);
         //make sets with individual items.
@@ -15,11 +15,11 @@ import java.util.Arrays;
 
         disjointSet.union(1, 8); // Merge sets containing 1 and 8
         disjointSet.union(9, 3);
-        disjointSet.union(1,5);
+        disjointSet.union(1, 5);
         disjointSet.areComponentsConnected(2, 8);
         disjointSet.areComponentsConnected(9, 3);
         disjointSet.areComponentsConnected(2, 3);
-      //  disjointSet.union(12, 3);
+        //  disjointSet.union(12, 3);
 
     }
 
@@ -34,11 +34,11 @@ public class DisjointSet {
     public DisjointSet(int numberOfItemsInSet) {
 
         representative = new int[numberOfItemsInSet];
-        for(int i=0;i<representative.length;i++)
-            representative[i]=i;
+        for (int i = 0; i < representative.length; i++)
+            representative[i] = i;
         size = new int[numberOfItemsInSet];
         //intially size of all should be just 1
-        Arrays.fill(size,1);
+        Arrays.fill(size, 1);
     }
 
     public void makeSet(int item) {
@@ -55,9 +55,8 @@ public class DisjointSet {
     }
 
 
-
     public void union(int a, int b) {
-        System.out.println("union() of: "+a+", "+b);
+        System.out.println("union() of: " + a + ", " + b);
 
 /*        if (Math.min(a, b) < 0 || Math.max(a, b) >= representative.length) {
             System.out.println("error: can't unionize the item, beyond the index of our tree/datastructures.array");
@@ -69,8 +68,7 @@ public class DisjointSet {
         a = find(a);
         b = find(b);
         //if items belong to the same disjoint set (same parents, part of the same family) do nothing
-        if (a == b)
-        {
+        if (a == b) {
             System.out.println("can't union, in the same set.");
             return;
         }
@@ -90,8 +88,8 @@ public class DisjointSet {
     }
 
     public boolean areComponentsConnected(int a, int b) {
-        boolean connected=  (find(a) == find(b));
-        System.out.println("are "+a+" and "+b+" connected? "+connected);
+        boolean connected = (find(a) == find(b));
+        System.out.println("are " + a + " and " + b + " connected? " + connected);
         return find(a) == find(b);
     }
 }

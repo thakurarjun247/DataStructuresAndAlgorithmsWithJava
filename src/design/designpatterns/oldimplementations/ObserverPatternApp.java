@@ -1,46 +1,45 @@
 package design.designpatterns.oldimplementations;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 
-class ObserverPatternApp {
+//BlogSubject
+interface Subject {
+
+    //methods to register and unregister observers
+    void register(Observer obj);
+
+    void unregister(Observer obj);
+
+    //method to notify observers of change
+    void notifyObservers();
+
+    //method to get updates from subject
+    Object getUpdate(Observer obj);
+
 }
 
 //TODO: refer https://www.journaldev.com/1739/observer-design-pattern-in-java
 
 
-//BlogSubject
- interface Subject {
-
-    //methods to register and unregister observers
-    public void register(Observer obj);
-
-    public void unregister(Observer obj);
-
-    //method to notify observers of change
-    public void notifyObservers();
-
-    //method to get updates from subject
-    public Object getUpdate(Observer obj);
-
-}
-
-
 interface Observer {
 
     //method to update the observer, used by subject
-    public void update();
+    void update();
 
     //attach with subject to observe
-    public void setSubject(Subject sub);
+    void setSubject(Subject sub);
 }
 
+class ObserverPatternApp {
+}
 
 class MyTopic implements Subject {
 
-    private List<Observer> observers;
+    private final Object MUTEX = new Object();
+    private final List<Observer> observers;
     private String message;
     private boolean changed;
-    private final Object MUTEX = new Object();
 
     public MyTopic() {
         this.observers = new ArrayList<>();
@@ -94,7 +93,7 @@ class MyTopic implements Subject {
 
 class MyTopicSubscriber implements Observer {
 
-    private String name;
+    private final String name;
     private Subject topic;
 
     public MyTopicSubscriber(String nm) {
@@ -147,6 +146,6 @@ class ObserverPatternTest {
 
 }
 
- class mammal extends java.util.Observable{
+class mammal extends java.util.Observable {
 
- }
+}

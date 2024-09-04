@@ -10,6 +10,29 @@ public class TreeNode {
     //this field is used only in a few methods e.g. finding inorder successor
     public TreeNode parent;
 
+    public TreeNode() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
+
+    public TreeNode(int key) {
+        super();
+        this.key = key;
+    }
+
+    public TreeNode(int key, TreeNode left, TreeNode right) {
+        super();
+        this.key = key;
+        this.left = left;
+        this.right = right;
+    }
+
+    public TreeNode(int key, TreeNode left) {
+        super();
+        this.key = key;
+        this.left = left;
+    }
+
     public int getKey() {
         return key;
     }
@@ -34,33 +57,10 @@ public class TreeNode {
         this.right = right;
     }
 
-    public TreeNode() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
-
-    public TreeNode(int key) {
-        super();
-        this.key = key;
-    }
-
-    public TreeNode(int key, TreeNode left, TreeNode right) {
-        super();
-        this.key = key;
-        this.left = left;
-        this.right = right;
-    }
-
-    public TreeNode(int key, TreeNode left) {
-        super();
-        this.key = key;
-        this.left = left;
-    }
-
     @Override
     public String toString() {
         // TODO Auto-generated method stub
-        Integer i = new Integer(this.key);
+        Integer i = Integer.valueOf(this.key);
         return i.toString();
     }
 }

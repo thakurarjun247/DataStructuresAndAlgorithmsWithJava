@@ -1,12 +1,14 @@
 package algorithms.dp.ch17dp;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 public class MinWeightPathInTriangle {
 
-    public static void main(String a[]) {
+    public static void main(String[] a) {
         List<List<Integer>> tri = new ArrayList<>();
-        tri.add(Arrays.asList(2));
+        tri.add(List.of(2));
         tri.add(Arrays.asList(14, 4));
         tri.add(Arrays.asList(81, 91, 6));
         tri.add(Arrays.asList(41, 21, 61, 2));
@@ -28,11 +30,11 @@ public class MinWeightPathInTriangle {
             else {
                 int rowSize = tri.get(rowNumber).size();
                 for (int rowIndex = 0; rowIndex < rowSize; rowIndex++) {
-                    int current=tri.get(rowNumber).get(rowIndex);
-                    int index0=results.get(tri.size()-rowNumber - 2).get(rowIndex);
-                    int index1=results.get(tri.size()-rowNumber - 2).get(rowIndex+1);
-                    int min= Math.min(index0, index1);
-                    row.add(min+current);
+                    int current = tri.get(rowNumber).get(rowIndex);
+                    int index0 = results.get(tri.size() - rowNumber - 2).get(rowIndex);
+                    int index1 = results.get(tri.size() - rowNumber - 2).get(rowIndex + 1);
+                    int min = Math.min(index0, index1);
+                    row.add(min + current);
                 }
             }
             results.add(row);

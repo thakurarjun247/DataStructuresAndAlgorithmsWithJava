@@ -1,16 +1,19 @@
 package leetcodeandgrind75.leetcode.list;
-import java.util.*;
+
+import java.util.ArrayList;
+
 public class LeetCode855ExamRoom {
-    public static void main(String[] args) {
-        LeetCode855ExamRoom object= new LeetCode855ExamRoom(4);
-        System.out.println( object.seat());
-        System.out.println( object.seat());
-        System.out.println(object.seat());
-    }
     int N;
     ArrayList<Integer> list = new ArrayList<>();
     public LeetCode855ExamRoom(int n) {
         N = n;
+    }
+
+    public static void main(String[] args) {
+        LeetCode855ExamRoom object = new LeetCode855ExamRoom(4);
+        System.out.println(object.seat());
+        System.out.println(object.seat());
+        System.out.println(object.seat());
     }
 
     public int seat() {

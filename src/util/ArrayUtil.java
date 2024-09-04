@@ -1,6 +1,5 @@
 package util;
 
-import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Random;
 import java.util.Set;
@@ -12,7 +11,6 @@ public class ArrayUtil {
         a[i] = a[j];
         a[j] = temp;
     }
-
 
 
     public static int[] generateArray() {
@@ -35,9 +33,8 @@ public class ArrayUtil {
         for (int i = 0; i < array.length; i++) {
             System.out.print(array[i]);
         }
-        System.out.println("");
+        System.out.println();
     }
-
 
 
     public static <T> void printArray(T[] array) {
@@ -46,19 +43,20 @@ public class ArrayUtil {
         System.out.print("[");
         for (int i = 0; i < array.length; i++) {
             System.out.print(array[i]);
-            if(i== array.length-1)
+            if (i == array.length - 1)
                 continue;
             System.out.print(", ");
         }
         System.out.print("]");
-        System.out.println("");
+        System.out.println();
 
     }
+
     public static <T> void printArray(T[][] array) {
-        for (T[] row:array) {
+        for (T[] row : array) {
             printArray(row);
         }
-        System.out.println("");
+        System.out.println();
     }
 
     public static <T> T[] swapArrayElements(T[] a, int i, int j) {
@@ -67,8 +65,6 @@ public class ArrayUtil {
         a[j] = temp;
         return a;
     }
-
-
 
 
 }

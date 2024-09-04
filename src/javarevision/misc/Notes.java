@@ -4,19 +4,19 @@ import java.util.*;
 
 public class Notes {
     /**
-     *                            Collection Heirarchy
+     * Collection Heirarchy
      * <p>
-     *                              Collection(I)
-     * <p>
-     * <p>
-     *                  List(I)                             Queue(I)
+     * Collection(I)
      * <p>
      * <p>
-     *                              LinkedList(C)
-     *                                  ^
-     *                                  |
-     *                                  |
-     *                                Stack
+     * List(I)                             Queue(I)
+     * <p>
+     * <p>
+     * LinkedList(C)
+     * ^
+     * |
+     * |
+     * Stack
      * <p>
      * Collection Methods
      * add()
@@ -38,32 +38,28 @@ public class Notes {
         System.out.println(Math.abs(-19)); // prints 19
         System.out.println(Math.abs(19));//same
 
-        double x1=(double)1;
-        double y1 =(double) 2;
-        double z1=(x1+y1)/2;
+        double x1 = 1;
+        double y1 = 2;
+        double z1 = (x1 + y1) / 2;
         System.out.println(z1);
 
-        List<LinkedList<Integer>> lists=new ArrayList<>();
-
-
-
+        List<LinkedList<Integer>> lists = new ArrayList<>();
 
 
         //Queue Methods
         //In Java Q doesn't have enqueue or dequeue methods, use the add and remove from COllections instead
 
         Queue<Integer> q = new LinkedList<>();
-       // q.add(8);
+        // q.add(8);
         //q.add(38);
         q.isEmpty();
         //pro tip: never use remove method in q, it's weired, just use peek or poll as both of them return null if the queue
         //is empty.
         //peek()Retrieves, but does not remove, the head of this queue, or returns null if this queue is empty.
-        Integer canBeNull=q.peek();
+        Integer canBeNull = q.peek();
 
         //poll() Retrieves and removes the head of this queue, or returns null if this queue is empty.
         Integer mayBeNull = q.poll();
-
 
 
         //remove() Retrieves and removes the head of this queue.
@@ -71,10 +67,10 @@ public class Notes {
         //q.remove();
 
         //Stack
-        Stack<Integer> stack=new Stack<>();
+        Stack<Integer> stack = new Stack<>();
         //Stack has all the list and queue methods see below
         //peek or pop don't return null, they will always throw exception.
-       // Integer popping = datastructures.stack.pop(); // will throw emptystackexception think underflow
+        // Integer popping = datastructures.stack.pop(); // will throw emptystackexception think underflow
         //Integer peeking = datastructures.stack.peek();  // will throw emptystackexception think underflow.
         stack.push(3);
         stack.push(3);
@@ -89,13 +85,13 @@ public class Notes {
         //TODO: Java scope when to use public private or default with class, method, variables.
         //String intern
         //Array and 2D datastructures.array declare, initialize.
-        int[] array={0, 1, 3, 4, 2, 5, 7, 6};
+        int[] array = {0, 1, 3, 4, 2, 5, 7, 6};
         //the list we get from Arrays.asList are fixed size, beware
 
-        Arrays.asList(1,2,45).forEach(System.out::print);
-        List.of(1,2,3,4,5).forEach(System.out::println);
+        Arrays.asList(1, 2, 45).forEach(System.out::print);
+        List.of(1, 2, 3, 4, 5).forEach(System.out::println);
         Arrays.sort(array);
-        int[] copyOfArray=Arrays.copyOf(array, array.length);
+        int[] copyOfArray = Arrays.copyOf(array, array.length);
         List<String> messages = Arrays.asList("Hello", "World!", "How", "Are", "You");
         messages.forEach(System.out::println);
         //print datastructures.array
@@ -108,10 +104,10 @@ public class Notes {
         //to add remove elements.
         List<Integer> list = new LinkedList<>(Arrays.asList(2, 6, 3, 8, 4, 9, 1, 7));
         //SWAP two list elements
-        int index2=2;
-        int givenIndex=0;
-        int item=10;
-        int index1= 1;
+        int index2 = 2;
+        int givenIndex = 0;
+        int item = 10;
+        int index1 = 1;
         //swap values at two given indexes, only for list
         Collections.swap(list, index2, index1);
         //read element from list
@@ -128,17 +124,17 @@ public class Notes {
         //multiple statement
         list.forEach(member -> {
             member++;
-            System.out.print(member+" ");
+            System.out.print(member + " ");
         });
         //traditional
         for (Integer integer : list) {
-            System.out.print(integer+" ");
+            System.out.print(integer + " ");
         }
 
-        int size =10;
-        int value=-1;
+        int size = 10;
+        int value = -1;
         //Array ops
-        int[] memo= new int[size];
+        int[] memo = new int[size];
         //takes an datastructures.array and value to be filled returns nothing
         Arrays.fill(memo, value);
         //for hashcode and equals
@@ -151,76 +147,76 @@ public class Notes {
         //dont' forget adding return keyword in return statement.
 
         //generate random numbers between 0 and a given number(exclding given number)
-        int number =3;
-        Random random=new Random();
-        int randomNumber=random.nextInt(number);
+        int number = 3;
+        Random random = new Random();
+        int randomNumber = random.nextInt(number);
 
-        for(int i=0;i<20;i++)
-            System.out.print(random.nextInt(number+1)+" ");
+        for (int i = 0; i < 20; i++)
+            System.out.print(random.nextInt(number + 1) + " ");
         //if you want between min and max
-        int min=4;
-        int maximum=7;
-        int randomBetweenMinMax=min+random.nextInt(maximum+1);
+        int min = 4;
+        int maximum = 7;
+        int randomBetweenMinMax = min + random.nextInt(maximum + 1);
         //Maps
-      Map<Character, Integer> map=new HashMap<>();
-      for(int i=97;i<102;i++){
-          //ascii value 97 is 'a'
+        Map<Character, Integer> map = new HashMap<>();
+        for (int i = 97; i < 102; i++) {
+            //ascii value 97 is 'a'
 
-          map.put((char) i, i);
+            map.put((char) i, i);
 
-      }
+        }
 
 
-      //traverse map
+        //traverse map
         /**
          * map.get(key) :
          * Returns the value to which the specified key is mapped,
          * or {@code null} if this map contains no mapping for the key.
          */
-        map.keySet().forEach(key-> System.out.println(key+"->"+map.get(key)));
+        map.keySet().forEach(key -> System.out.println(key + "->" + map.get(key)));
         map
                 .entrySet()
-                .forEach(e-> System.out.println(e.getKey()+"->"+e.getValue()));
+                .forEach(e -> System.out.println(e.getKey() + "->" + e.getValue()));
 
         //Doubly LinkedList
         //Doubly-linked list implementation of the {@code List} and {@code Deque}
         // * interfaces.  Implements all optional list operations, and permits all
         // * elements (including {@code null}).
-        List<Integer> dll=new LinkedList<>();
+        List<Integer> dll = new LinkedList<>();
 
 
-       //xor
-                boolean x = false;
-                boolean y = false;
-                boolean xXorY = x ^ y;
-                System.out.println("false XOR false: "+xXorY);
-                x = false;
-                y = true;
-                xXorY = x ^ y;
-                System.out.println("false XOR true: "+xXorY);
-                x = true;
-                y = false;
-                xXorY = x ^ y;
-                System.out.println("true XOR false: "+xXorY);
-                x = true;
-                y = true;
-                xXorY = x ^ y;
-                System.out.println("true XOR true: "+xXorY);
+        //xor
+        boolean x = false;
+        boolean y = false;
+        boolean xXorY = x ^ y;
+        System.out.println("false XOR false: " + xXorY);
+        x = false;
+        y = true;
+        xXorY = x ^ y;
+        System.out.println("false XOR true: " + xXorY);
+        x = true;
+        y = false;
+        xXorY = x ^ y;
+        System.out.println("true XOR false: " + xXorY);
+        x = true;
+        y = true;
+        xXorY = x ^ y;
+        System.out.println("true XOR true: " + xXorY);
 
-                //java data type conversion:
-        char c='c';
-        int charToInt=Character.getNumericValue(c);
-        System.out.println("charToInt \n"+charToInt);
+        //java data type conversion:
+        char c = 'c';
+        int charToInt = Character.getNumericValue(c);
+        System.out.println("charToInt \n" + charToInt);
         System.out.println(Character.getNumericValue('9'));
 
         //convert number to java datastructures.array
-        int oneToFive=12345;
+        int oneToFive = 12345;
         char[] A = Integer
                 .toString(oneToFive)
                 .toCharArray();
 
         //convert string to integer
-        int oneToEight=Integer
+        int oneToEight = Integer
                 .parseInt("12345678");
         System.out.println("break");
 
@@ -228,15 +224,15 @@ public class Notes {
         //if Arrays.equals(a, b), it is also the case that
         // Arrays.hashCode(a) == Arrays.hashCode(b).
 
-        int[] l1={1,2,3,4};
-        int[] l2={1,2,3,4};
-        int[] m={1,2,3,5};
+        int[] l1 = {1, 2, 3, 4};
+        int[] l2 = {1, 2, 3, 4};
+        int[] m = {1, 2, 3, 5};
         System.out.println(Arrays.equals(l1, l2)); //true
-        System.out.println(l1==l2); //fasle
-        System.out.println(Arrays.hashCode(l1)== Arrays.hashCode(l2));
+        System.out.println(l1 == l2); //fasle
+        System.out.println(Arrays.hashCode(l1) == Arrays.hashCode(l2));
 
         System.out.println(Arrays.equals(l1, m));
-        System.out.println(Arrays.hashCode(l1)== Arrays.hashCode(m));
+        System.out.println(Arrays.hashCode(l1) == Arrays.hashCode(m));
 
 
 

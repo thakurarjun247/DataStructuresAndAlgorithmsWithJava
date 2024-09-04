@@ -8,6 +8,25 @@ import java.util.List;
 public class MaxHeap {
     List<Integer> heap;
 
+    public MaxHeap() {
+        heap = new ArrayList<>();
+
+    }
+
+    public static void main(String[] args) {
+        MaxHeap maxHeap = new MaxHeap();
+        maxHeap.buildHeap(new int[]{1, 14, 10, 8, 16, 7, 9, 3, 2, 4});
+
+        maxHeap.insert(100);
+        maxHeap.insert(2000);
+        maxHeap.insert(0);
+        maxHeap.delete();
+        maxHeap.getMax();
+        maxHeap.udpate(300);
+        maxHeap.heapSort();
+
+    }
+
     private int getGreaterChildIndex(int parentIndex) {
         //returns index of the left or right child whichever is greater
 
@@ -32,24 +51,6 @@ public class MaxHeap {
         }
 
     }
-    public static void main(String[] args) {
-        MaxHeap maxHeap= new MaxHeap();
-        maxHeap.buildHeap(new int[]{1,14,10,8,16,7,9,3,2,4});
-
-        maxHeap.insert(100);
-        maxHeap.insert(2000);
-        maxHeap.insert(0);
-        maxHeap.delete();
-        maxHeap.getMax();
-        maxHeap.udpate(300);
-        maxHeap.heapSort();
-
-    }
-
-    public MaxHeap() {
-        heap = new ArrayList<>();
-
-    }
 
     int delete() {
         int heapRoot = heap.getFirst();
@@ -59,8 +60,8 @@ public class MaxHeap {
         return heapRoot;
     }
 
-    void buildHeap(int[] a){
-        for(int item: a){
+    void buildHeap(int[] a) {
+        for (int item : a) {
             insert(item);
         }
     }
@@ -80,9 +81,9 @@ public class MaxHeap {
     }
 
     private void settleDown(int rootIndex) {
-        int childIndex=getGreaterChildIndex(rootIndex);
-        if(childIndex!= -1 && heap.get(childIndex) > heap.get(rootIndex)){
-            Collections.swap(heap,rootIndex,childIndex);
+        int childIndex = getGreaterChildIndex(rootIndex);
+        if (childIndex != -1 && heap.get(childIndex) > heap.get(rootIndex)) {
+            Collections.swap(heap, rootIndex, childIndex);
             settleDown(childIndex);
         }
     }
@@ -100,11 +101,11 @@ public class MaxHeap {
     }
 
     int[] heapSort() {
-        int[] array=new int[heap.size()];
-        for(int i=0;i<array.length;i++){
-            array[i]=delete();
+        int[] array = new int[heap.size()];
+        for (int i = 0; i < array.length; i++) {
+            array[i] = delete();
         }
-        Arrays.stream(array).forEach(item-> System.out.print(item + ", "));
+        Arrays.stream(array).forEach(item -> System.out.print(item + ", "));
         return array;
     }
 

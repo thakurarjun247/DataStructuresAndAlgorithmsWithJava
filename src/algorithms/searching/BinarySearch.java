@@ -2,14 +2,14 @@ package algorithms.searching;
 
 public class BinarySearch {
     public static void main(String[] args) {
-        int[] a = {0, 1,3,4};
-       // int recursiveIndex = recursive(a, 0, a.length - 1, 3);
-       // int iterativeIndex = iterative(a, 0, a.length - 1,3);
+        int[] a = {0, 1, 3, 4};
+        // int recursiveIndex = recursive(a, 0, a.length - 1, 3);
+        // int iterativeIndex = iterative(a, 0, a.length - 1,3);
 
         int recursiveIndex = recursive(a, 0, a.length - 1, 2);
-        int iterativeIndex = iterative(a, 0, a.length - 1,2);
+        int iterativeIndex = iterative(a, 0, a.length - 1, 2);
 
-        System.out.println(recursiveIndex + " " +iterativeIndex+ " " +(recursiveIndex == iterativeIndex));
+        System.out.println(recursiveIndex + " " + iterativeIndex + " " + (recursiveIndex == iterativeIndex));
     }
 
     static int recursive(int[] a, int l, int h, int key) {
@@ -30,7 +30,7 @@ public class BinarySearch {
             int m = (l + h) / 2;
             if (a[m] == key)
                 return m;
-            if (a[m] > key ) {
+            if (a[m] > key) {
                 h = m - 1;
             } else
                 l = m + 1;

@@ -6,12 +6,11 @@ import java.util.Scanner;
 
 public class MaxHeap {
     List<Integer> heap;
+    Scanner scanner = new Scanner(System.in);
 
     public MaxHeap() {
         heap = new ArrayList<Integer>();
     }
-
-    Scanner scanner = new Scanner(System.in);
 
     public void displayChoice() {
         System.out.println();

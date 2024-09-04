@@ -9,10 +9,10 @@ class LinkedListApp {
         LinkedListUtil util = new LinkedListUtil();
         int[] a = {10, 20, 30};
         int[] b = {5, 25, 35};
-       // System.out.println(util.mergeSortedLLs(util.createLLFromArray(b),util.createLLFromArray(a)));
+        // System.out.println(util.mergeSortedLLs(util.createLLFromArray(b),util.createLLFromArray(a)));
 
         //8.2 reverse single sublist
-        int[] l= {10, 20, 30, 40, 50, 60, 70};
+        int[] l = {10, 20, 30, 40, 50, 60, 70};
         System.out.println(util.reverseSingleSublist(util.createLLFromArray(l), 3, 5));
         System.out.println();
 
@@ -64,28 +64,26 @@ class LinkedListUtil {
     }
 
     public Node mergeSortedLLs(Node n1, Node n2) {
-      if(n1==null) return n2;
-      if(n2==null) return n1;
+        if (n1 == null) return n2;
+        if (n2 == null) return n1;
 
-      Node current=new Node();
-      Node dummyHead=current;
+        Node current = new Node();
+        Node dummyHead = current;
 
-      while(n1!=null && n2!=null){
-          if(n1.key>=n2.key)
-          {
-              current.next=n2;
-              n2=n2.next;
-          }
-          else{
-              current.next=n1;
-              n1=n1.next;
-          }
-          current=current.next;
-      }
-        if(n1==null)
-            current.next=n2;
+        while (n1 != null && n2 != null) {
+            if (n1.key >= n2.key) {
+                current.next = n2;
+                n2 = n2.next;
+            } else {
+                current.next = n1;
+                n1 = n1.next;
+            }
+            current = current.next;
+        }
+        if (n1 == null)
+            current.next = n2;
         else
-            current.next=n1;
+            current.next = n1;
 
         return dummyHead.next;
     }
@@ -95,30 +93,30 @@ class LinkedListUtil {
         //s and f inclusive
         //index starts from 1
         //head ->
-        Node start=head;
-        for(int i=0;i<s-1;i++){
+        Node start = head;
+        for (int i = 0; i < s - 1; i++) {
             start = start.next;
         }
         //start is the "sth" node
-        Node current=start.next;
+        Node current = start.next;
 
-        Node finish=current;
-        int diff=f-s+1;
-        while(diff!=0){
-            finish=finish.next;
+        Node finish = current;
+        int diff = f - s + 1;
+        while (diff != 0) {
+            finish = finish.next;
             diff--;
         }
-        Node prev=current;
-        while(current!=finish && current!=null){
+        Node prev = current;
+        while (current != finish && current != null) {
 
-            Node next=current.next;
-            current.next=prev;
-            prev=current;
-            current=next;
+            Node next = current.next;
+            current.next = prev;
+            prev = current;
+            current = next;
 
         }
-        start.next.next=finish.next;
-        start.next=finish;
+        start.next.next = finish.next;
+        start.next = finish;
         return head;
     }
 
