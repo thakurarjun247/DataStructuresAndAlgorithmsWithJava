@@ -1,4 +1,3 @@
 D:
-cd DataStructuresAndAlgorithmsWithJava
+cd git\DataStructuresAndAlgorithmsWithJava
 git pull
-

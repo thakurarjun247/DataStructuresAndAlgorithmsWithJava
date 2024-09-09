@@ -5,6 +5,7 @@ import java.util.Arrays;
 public class RodCutting {
     public static void main(String[] a) {
         int[] price = {0, 1, 5, 8, 9, 10, 17, 17, 20, 24, 30};
+       // rodCutBottomUp2024(price,15);
 /*
 For testing
 here are expected revenues aka r for a given rod size aka s
@@ -63,4 +64,20 @@ s r
         }
         return helper[rodSize];
     }
+
+/*    static int rodCutBottomUp2024(int[] len, int n){
+        int[] ans= new int[n+1];
+
+        //generate dp array
+        for(int i=0;i<n;i++){
+            int fullCut=(i<len.length && i>=0 )?len[i]:0;
+            int particalCut=0;
+            for(int j=0;j<i;j++){
+                particalCut=Math.max(ans[j], ans[i-j]);
+            }
+            ans[i]=Math.max(fullCut, particalCut);
+        }
+        return ans[n];
+
+    }*/
 }
