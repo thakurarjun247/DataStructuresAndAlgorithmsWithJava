@@ -1,4 +1,4 @@
-package algorithms.sorting;
+package algorithms.sorting.oldimplementation;
 
 import util.ArrayUtil;
 //https://www.youtube.com/watch?v=COk73cpQbFQ

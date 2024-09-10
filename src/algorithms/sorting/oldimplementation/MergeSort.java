@@ -1,4 +1,4 @@
-package algorithms.sorting;
+package algorithms.sorting.oldimplementation;
 
 //https://www.youtube.com/watch?v=9oWd4VJOwr0
 //select the min element by scanning the datastructures.array

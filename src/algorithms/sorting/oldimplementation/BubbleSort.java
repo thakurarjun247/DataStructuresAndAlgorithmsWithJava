@@ -1,4 +1,4 @@
-package algorithms.sorting;
+package algorithms.sorting.oldimplementation;
 
 //https://www.youtube.com/watch?v=p__ETf2CKY4
 

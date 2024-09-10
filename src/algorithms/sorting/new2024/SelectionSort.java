@@ -1,4 +1,4 @@
-package algorithms.sorting;
+package algorithms.sorting.new2024;
 
 //https://www.youtube.com/watch?v=9oWd4VJOwr0
 //select the min element by scanning the datastructures.array
@@ -17,15 +17,8 @@ public class SelectionSort {
         if (a.length < 2)
             return a;
         for (int i = 0; i < a.length - 1; i++) {
-            System.out.println(i + "->" + (a.length - 1));
             int minIndex = getMinIndex(a, i, a.length - 1);
-
-            if (a[minIndex] < a[i]) {
-                int temp = a[minIndex];
-                a[minIndex] = a[i];
-                a[i] = temp;
-            }
-
+            ArrayUtil.swap(a, minIndex, i);
         }
         return a;
     }
@@ -40,7 +33,6 @@ public class SelectionSort {
                 minValue = a[i];
                 minIndex = i;
             }
-
         }
         return minIndex;
     }

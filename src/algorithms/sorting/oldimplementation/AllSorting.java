@@ -1,4 +1,4 @@
-package algorithms.sorting;
+package algorithms.sorting.oldimplementation;
 
 import util.ArrayUtil;
 
