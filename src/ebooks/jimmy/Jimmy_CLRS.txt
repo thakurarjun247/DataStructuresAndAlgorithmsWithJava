@@ -22,11 +22,7 @@ You will never be asked for RB-tree insert/delete unless the interviewer is "doi
    Also know that RB-trees are pretty space-efficient and some C++ STL containers are built
    as RB-trees usually (e.g. map/set).
 
-Chapter 14
 
-Might be worth skimming 14.2 just to know that you can augment data structures \
-and why it might be helpful. Otherwise do one or two simple problems on augmenting
-data structures and you're set here. I'd skip 14.1 and 14.3.
 
 Chapter 15
 
@@ -51,7 +47,8 @@ But other than that I'd skip this chapter.
 
 Chapter 32
 32.1 - Naive method - just read it quickly.
-32.2 - Rabin-Karp - I'd say you should know this, the rolling hash concept is very important and can be useful in many string- or search-related interview problems.
+32.2 - Rabin-Karp - I'd say you should know this, the rolling hash concept is very important and can be useful
+in many string- or search-related interview problems.
 
 Appendices
 
