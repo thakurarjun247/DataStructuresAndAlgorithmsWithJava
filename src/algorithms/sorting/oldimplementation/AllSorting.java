@@ -160,7 +160,7 @@ public class AllSorting {
     public static int[] countingSort(int[] arr, int k) {
         int[] output = new int[arr.length];
         int[] count = new int[k + 1];
-        Arrays.fill(count, 0);
+
         for (int i = 0; i < arr.length; i++) {
             count[arr[i]]++;
         }

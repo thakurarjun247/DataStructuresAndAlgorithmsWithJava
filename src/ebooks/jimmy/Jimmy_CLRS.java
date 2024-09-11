@@ -2,15 +2,6 @@ package ebooks.jimmy;
 
 //  https://docs.google.com/spreadsheets/d/14zUSvYf_LmbXFH-gzHIYkjsaPYzaQnzwlIJjs_IgfoU/edit#gid=0
 /*
-Chapter 1
-
-Interesting read, but you can skip it.
-
-Chapter 2
-
-2.1 Insertion Sort - To be honest you should probably know all major sorting algorithms, not just insertion sort. It's just basic knowledge and you never know when it can help.
-2.2 Analysis of Algorithms - you can skip the small intro, but know the rest.
-2.3 Designing algorithms - contains merge sort and its analysis as well as an overview of divide-and-conquer, very important stuff, so worth a read.
 
 Chapter 3
 
@@ -35,10 +26,9 @@ though the probability you have to deal with something like 7.4 in an interview 
 
 Chapter 8
 
-8.1 - Lower bounds on sorting - Yes. Basic knowledge. May be asked in a Google interview (though unlikely, I know of a case it happened in before).
 8.2 - Counting sort - Need-to-know in detail. It comes up in disguised forms.
 8.3 - Radix sort - Yup. It's an easy algorithm anyway.
-8.4 - Bucket sort - can skip.
+
 
 Chapter 9
 
