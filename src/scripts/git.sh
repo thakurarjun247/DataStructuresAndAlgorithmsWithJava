@@ -1,6 +1,5 @@
-#just run this file
+# just run this file
 # sh git.sh
-# git.sh is the filename
 cd /Users/arjthak/git/DataStructuresAndAlgorithmsWithJava/src
 git checkout master
 git pull
