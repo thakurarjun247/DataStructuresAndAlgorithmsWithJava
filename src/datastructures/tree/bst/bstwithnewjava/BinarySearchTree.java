@@ -8,12 +8,51 @@ public class BinarySearchTree {
         BinarySearchTree binarySearchTree = new BinarySearchTree();
         Node root = binarySearchTree.create(new int[]{2, 6, 3, 8, 4, 9, 1, 0, 77});
         binarySearchTree.setParentsLink(root);
-        binarySearchTree.inorderSuccessorPrinter(root.right.left.right);
-        binarySearchTree.inorderTraversal(root);
-       System.out.println("\n");
-       System.out.println(binarySearchTree.findMinimumChild(root.right));
-       System.out.println(binarySearchTree.findMaximumChild(root.left));
-        binarySearchTree.inorderSuccessorPrinter(root);
+        binarySearchTree.deleteAndPrint(root, root.right);
+
+
+    }
+
+    public void deleteAndPrint(Node root, Node node) {
+        System.out.println("before delete: ");
+        printTree(root);
+        System.out.println("deleting "+node+" ... ");
+        deleteANode(node);
+        printTree(root);
+    }
+    public void deleteANode(Node root) {
+        if(root==null)
+            return;
+        if(root.left==null && root.right==null)
+        {
+            root=null;
+            return;
+        }
+        //if only left is null
+        if(root.left==null){
+            //copy right to here
+            root=root.right;
+            //delete right
+            deleteANode(root.right);
+            return;
+        }
+
+        //do the same on the right side
+        if(root.right==null){
+            //copy left to here
+            root=root.left;
+            //delete right
+            deleteANode(root.left);
+            return;
+        }
+
+        //if both child present
+        //find the min in the right child, and copy that node here and delete that node.
+        Node minOnRight=findMinimumChild(root.right);
+        root=minOnRight;
+        //deleteANode(minOnRight);
+
+
     }
 
     void setParentsLink(Node root) {
@@ -53,25 +92,34 @@ public class BinarySearchTree {
         return originalRoot;
     }
 
-    void inorderTraversal(Node root) {
+    void printInorderSuccessorForAllNodes(Node root) {
         if (root != null) {
-            inorderTraversal(root.left);
+            printInorderSuccessorForAllNodes(root.left);
             // System.out.print(root.key+" ");
             inorderSuccessorPrinter(root);
 
-            inorderTraversal(root.right);
+            printInorderSuccessorForAllNodes(root.right);
+        }
+    }
+
+    void printTree(Node root){
+        if(root!=null)
+        {
+            printTree(root.left);
+            System.out.print(root+" ");
+            printTree(root.right);
         }
     }
 
     void inorderSuccessorPrinter(Node root) {
         System.out.print("inorder successor of " + root + " is: ");
-        Node node = inorderSuccessor(root);
+        Node node = findInorderSuccessor(root);
         System.out.println(node);
     }
 
 
 
-    Node inorderSuccessor(Node root) {
+    Node findInorderSuccessor(Node root) {
         //if there is a right child, find min in the right subtree.
         if (root.right != null)
             return findMinimumChild(root.right);
