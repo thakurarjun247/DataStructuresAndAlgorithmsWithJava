@@ -1,8 +1,6 @@
 https://docs.google.com/spreadsheets/d/14zUSvYf_LmbXFH-gzHIYkjsaPYzaQnzwlIJjs_IgfoU/edit#gid=0
 
 Chapter 8
-
-8.2 - Counting sort - Need-to-know in detail. It comes up in disguised forms.
 8.3 - Radix sort - Yup. It's an easy algorithm anyway.
 
 Chapter 12
