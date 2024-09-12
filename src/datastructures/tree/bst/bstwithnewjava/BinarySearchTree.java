@@ -44,7 +44,7 @@ public class BinarySearchTree {
             //copy left to here
             nodeToDelete=nodeToDelete.left;
 
-            return;
+            return null;
         }
 
         //if both child present
@@ -54,7 +54,7 @@ public class BinarySearchTree {
         nodeToDelete=minOnRight;
         //deleteANode(minOnRight);
 
-
+return null;
     }
 
     void setParentsLink(Node root) {
