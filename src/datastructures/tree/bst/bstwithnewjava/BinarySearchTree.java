@@ -8,48 +8,50 @@ public class BinarySearchTree {
         BinarySearchTree binarySearchTree = new BinarySearchTree();
         Node root = binarySearchTree.create(new int[]{2, 6, 3, 8, 4, 9, 1, 0, 77});
         binarySearchTree.setParentsLink(root);
-        binarySearchTree.deleteAndPrint(root, root.right);
+        binarySearchTree.printTree(root);
+        binarySearchTree.deleteANode(root.left.left);
+        binarySearchTree.printTree(root);
 
 
     }
 
-    public void deleteAndPrint(Node root, Node node) {
-        System.out.println("before delete: ");
-        printTree(root);
-        System.out.println("deleting "+node+" ... ");
-        deleteANode(node);
-        printTree(root);
-    }
-    public void deleteANode(Node root) {
-        if(root==null)
-            return;
-        if(root.left==null && root.right==null)
+
+    public Node deleteANode(Node nodeToDelete) {
+        if(nodeToDelete==null)
+            return null;
+
+        if(nodeToDelete.left==null && nodeToDelete.right==null)
         {
-            root=null;
-            return;
+            if(nodeToDelete.parent.left==nodeToDelete)
+                nodeToDelete.parent.left=null;
+            else
+                nodeToDelete.parent.right=null;
+           return null;
         }
-        //if only left is null
-        if(root.left==null){
-            //copy right to here
-            root=root.right;
-            //delete right
-            deleteANode(root.right);
-            return;
+        //if  left is null, has only right child
+        if(nodeToDelete.left==null){
+            if(nodeToDelete.parent==null)
+                nodeToDelete=nodeToDelete.right;
+            if(nodeToDelete.parent.left==nodeToDelete)
+                nodeToDelete.parent.left= nodeToDelete.right;
+            else
+                nodeToDelete.parent.right=nodeToDelete.right;
+            return null;
         }
 
         //do the same on the right side
-        if(root.right==null){
+        if(nodeToDelete.right==null){
             //copy left to here
-            root=root.left;
-            //delete right
-            deleteANode(root.left);
+            nodeToDelete=nodeToDelete.left;
+
             return;
         }
 
         //if both child present
         //find the min in the right child, and copy that node here and delete that node.
-        Node minOnRight=findMinimumChild(root.right);
-        root=minOnRight;
+        Node minOnRight=findMinimumChild(nodeToDelete.right);
+
+        nodeToDelete=minOnRight;
         //deleteANode(minOnRight);
 
 

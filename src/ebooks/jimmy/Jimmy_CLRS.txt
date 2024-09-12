@@ -1,32 +1,14 @@
 https://docs.google.com/spreadsheets/d/14zUSvYf_LmbXFH-gzHIYkjsaPYzaQnzwlIJjs_IgfoU/edit#gid=0
 
-
 Chapter 8
 
 8.2 - Counting sort - Need-to-know in detail. It comes up in disguised forms.
 8.3 - Radix sort - Yup. It's an easy algorithm anyway.
 
-
 Chapter 12
-12.3 -
-
-Insertion/Deletion
-
-
-Chapter 13
-
-This one is easy. Know what a Red-Black tree is, and what its worst-case
- height/insert/delete/find are. Read 13.1 and 13.2, and skip the rest.
-You will never be asked for RB-tree insert/delete unless the interviewer is "doing it wrong",
- or if the interviewer wants to see if you can re-derive the cases,
-  in which case knowing them won't help much anyway (and I doubt this would happen anyway).
-   Also know that RB-trees are pretty space-efficient and some C++ STL containers are built
-   as RB-trees usually (e.g. map/set).
-
-
+Deletion in BST
 
 Chapter 15
-
 DP! Must-know.
 15.1 - Rod-cutting. Standard DP problem, must-know.
 15.2 - Matrix-chain multiplication - same as 15.1, though I don't particularly like the way this section is written (it's rare for me to say that about CLRS).
@@ -38,26 +20,9 @@ Chapter 16
 16.3 - Huffman codes - I'd say read the problem and the algorithm, but that's enough. I've seen interview questions where the answer
 is Huffman coding (but the question will come up in a 'disguised form', so it won't be obvious.)
 
-
-Chapter 18
-
-You should probably have an idea of what B-Trees (and B+ trees) are, I've heard of cases where
- candidates were asked about them in a general sense (high-level questions about what they are and why they're awesome).
-But other than that I'd skip this chapter.
-
-
 Chapter 32
 32.1 - Naive method - just read it quickly.
 32.2 - Rabin-Karp - I'd say you should know this, the rolling hash concept is very important and can be useful
 in many string- or search-related interview problems.
-
-Appendices
-
-A - Summations
-Know the important summations for time complexity analysis.
-
-C - Counting and Probability
-Give C.4 a read if you don't know the material, Bernoulli trials may come up in problems (not explicitly, but you might use them, specifically for time analysis of questions that involve probability/coin flips).
-
 
 
