@@ -8,9 +8,10 @@ Chapter 8
 
 
 Chapter 12
-12.3 - Insertion/Deletion - Same as 12.2
-12.4 - Randomly built BSTs - just know Theorem 12.4 (expected height of random BST is
-O(logn) and an idea of why it's true.
+12.3 -
+
+Insertion/Deletion
+
 
 Chapter 13
 
