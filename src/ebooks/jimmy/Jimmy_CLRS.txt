@@ -1,8 +1,5 @@
 https://docs.google.com/spreadsheets/d/14zUSvYf_LmbXFH-gzHIYkjsaPYzaQnzwlIJjs_IgfoU/edit#gid=0
 
-Chapter 8
-8.3 - Radix sort - Yup. It's an easy algorithm anyway.
-
 Chapter 12
 Deletion in BST
 
@@ -10,17 +7,4 @@ Chapter 15
 DP! Must-know.
 15.1 - Rod-cutting. Standard DP problem, must-know.
 15.2 - Matrix-chain multiplication - same as 15.1, though I don't particularly like the way this section is written (it's rare for me to say that about CLRS).
-15.3 - Elements of DP - worth a read so that you understand DP properly, but I'd say it's less important than knowing what DP is (via the chapter introduction) and practicing on it (via the problems in this book and in interview preparation books).
 15.4 - LCS - same as 15.1
-15.5 - Optimal binary search trees - I've never read this section, so I can't argue for its importance, but I did fine without it.
-
-Chapter 16
-16.3 - Huffman codes - I'd say read the problem and the algorithm, but that's enough. I've seen interview questions where the answer
-is Huffman coding (but the question will come up in a 'disguised form', so it won't be obvious.)
-
-Chapter 32
-32.1 - Naive method - just read it quickly.
-32.2 - Rabin-Karp - I'd say you should know this, the rolling hash concept is very important and can be useful
-in many string- or search-related interview problems.
-
-
