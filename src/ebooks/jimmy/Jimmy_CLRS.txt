@@ -4,7 +4,6 @@ Chapter 12
 Deletion in BST
 
 Chapter 15
-DP! Must-know.
-15.1 - Rod-cutting. Standard DP problem, must-know.
-15.2 - Matrix-chain multiplication - same as 15.1, though I don't particularly like the way this section is written (it's rare for me to say that about CLRS).
-15.4 - LCS - same as 15.1
+15.2 - Matrix-chain multiplication - same as 15.1, though I don't particularly like the way this section is written
+ (it's rare for me to say that about CLRS).
+

@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class CoinChange {
     public static void main(String[] args) {
-        System.out.println(coinChange(new int[]{1, 5, 6, 8}, 12));
+        System.out.println(coinChange(new int[]{1, 5, 6, 8}, 11));
     }
 
     static int coinChange(int[] coins, int change) {
@@ -39,51 +39,4 @@ public class CoinChange {
     }
 }
 
-/*package algorithms.dp.bottomup2024;
 
-import java.util.Arrays;
-
-public class CoinChange {
-    public static void main(String[] args) {
-        System.out.println(coinChange(new int[]{1, 5, 6, 8}, 12));
-    }
-
-    static int coinChange(int[] coins, int change) {
-        int R = coins.length + 1;
-        int C = change + 1;
-        int[][] dp = new int[R][C];
-
-        // Initialize the DP array
-        for (int i = 0; i < R; i++) {
-            Arrays.fill(dp[i], Integer.MAX_VALUE);
-        }
-
-        // No coins are needed to make change for 0
-        for (int i = 0; i < R; i++) {
-            dp[i][0] = 0;
-        }
-
-        // Fill the DP table
-        for (int i = 1; i < R; i++) {
-            for (int j = 1; j < C; j++) {
-                // Case 1: Don't take the current coin
-                int leaveIt = dp[i - 1][j];
-
-                // Case 2: Take the current coin, if possible
-                if (coins[i - 1] <= j) {
-                    int takeIt = dp[i][j - coins[i - 1]];
-                    if (takeIt != Integer.MAX_VALUE) {
-                        dp[i][j] = Math.min(leaveIt, takeIt + 1);
-                    } else {
-                        dp[i][j] = leaveIt;
-                    }
-                } else {
-                    dp[i][j] = leaveIt;
-                }
-            }
-        }
-
-        // If dp[R-1][C-1] is still MAX_VALUE, it means we can't make the change
-        return dp[R - 1][C - 1] == Integer.MAX_VALUE ? -1 : dp[R - 1][C - 1];
-    }
-}*/
