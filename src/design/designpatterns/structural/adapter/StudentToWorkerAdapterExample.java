@@ -1,10 +1,15 @@
 package design.designpatterns.structural.adapter;
+/*Key Elements of the Adapter Pattern:
+        Target Interface (Worker): This defines the method paid() that the client expects.
 
-//target
+
+    Adaptee (Student): This is the existing class that doesn’t have the paid() method but instead has aboutme().
+
+        Adapter (StudentToWorkerAdapter): This is where the actual adaptation occurs.
+         It implements the Worker interface and translates the method paid() by calling aboutme() and then adding its own logic to adapt the behavior.
+//target*/
 interface Worker {
-    default void paid() {
-        System.out.println(" worker gets paid!");
-    }
+    void paid();
 }
 
 //application client
