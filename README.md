@@ -1,5 +1,4 @@
-**This repository contains:** </p>
-# Data Structures and Algorithms with Java
+# Data Structures and Algorithms with Java 21, Design Patterns for Tech Interviews
 
 This repository is a comprehensive resource for anyone looking to deepen their understanding of data structures and algorithms using Java. Here’s what you’ll find:
 
