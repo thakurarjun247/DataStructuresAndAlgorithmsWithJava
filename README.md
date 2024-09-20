@@ -1,5 +1,3 @@
-# Data Structures and Algorithms with Java
-
 **This repository contains:** </p>
 # Data Structures and Algorithms with Java
 
@@ -9,7 +7,7 @@ This repository is a comprehensive resource for anyone looking to deepen their u
 
 - **Dynamic Programming and Advanced Algorithms**: Delve into dynamic programming concepts with practical examples, including classic problems like the Subset Sum and Coin Change. The repository also includes implementations of algorithms like Dijkstra's, Bellman-Ford, and Kruskal's, along with various sorting algorithms like Merge Sort and Quick Sort.
 
-- **Java Language Features and Syntax**: Learn how Java features can be utilized effectively to tackle common problems on platforms like LeetCode. You'll find syntax tips, best practices, and specific language constructs that can enhance your coding efficiency.
+- **Java Language Features and Syntax**: Learn how Java features from Java 6 to Java 21, can be utilized effectively to tackle common problems on platforms like LeetCode. You'll find syntax tips, best practices, and specific language constructs that can enhance your coding efficiency.
 
 - **Design Patterns**: Gain insights into object-oriented design principles through various design patterns such as Adapter, Factory, Singleton, and Command patterns. Each pattern is illustrated with examples that demonstrate its practical applications.
 
@@ -18,8 +16,12 @@ This repository is a comprehensive resource for anyone looking to deepen their u
 - **Version Control and Scripts**: The repository also features scripts (e.g., git.bat, git.sh) for ease of setup and management. 
 
 - **Continuous Updates and Refactoring**: The repository is actively maintained, with regular updates to improve code quality and organization. Recent commits include enhancements to the table of contents, updates to documentation, and refactoring for better readability and maintainability.
-
-This repository is designed to be inclusive for beginners and experienced programmers alike. Whether you're preparing for coding interviews, looking to solidify your understanding of algorithms, or simply exploring Java's capabilities, you'll find valuable resources here..<p/>
+- The repository boasts a long history of active development, with continuous improvements, optimizations, and new content additions.
+Explore commits that cover topics like Huffman coding, disjoint sets, Kruskal's algorithm, Bellman-Ford algorithm, topological sort, Dijkstra's algorithm, union-find, adapter pattern, bridge pattern, observer pattern, and more.
+Stay up-to-date with the latest advancements in Java and data structures with frequent updates.
+**Commitment to Clarity and Learnability:**
+The repository prioritizes clear explanations and well-structured code, making it an excellent resource for anyone looking to learn and master data structures and algorithms in Java.
+- This repository is designed to be inclusive for beginners and experienced programmers alike. Whether you're preparing for coding interviews, looking to solidify your understanding of algorithms, or simply exploring Java's capabilities, you'll find valuable resources here..<p/>
 <b>How to download ? </b><p/>
 You can download the source code in either of the following two ways:<p/>
 Download the zip file from https://github.com/thakurarjun247/dsa/archive/master.zip<p/>
