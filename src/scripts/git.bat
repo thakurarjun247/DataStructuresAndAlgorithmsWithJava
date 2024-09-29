@@ -1,4 +1,4 @@
-@echo off
+xz6@echo off
 :: Change directory to your Git project folder
 cd /d D:\git\DataStructuresAndAlgorithmsWithJava\src
 
