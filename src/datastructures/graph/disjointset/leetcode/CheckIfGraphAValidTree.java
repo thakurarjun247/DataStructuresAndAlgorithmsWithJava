@@ -35,7 +35,7 @@ public class CheckIfGraphAValidTree {
 
     void init(int n, int[][] edges) {
         if (n < 1 || edges.length < 1)
-            System.out.print("Vertexless/Edgeless graph: is a tree? ");
+            System.out.print("Vertexless/Edgeless graph");
         parent = new int[n];
         size = new int[n];
         for (int i = 0; i < n; i++) {
@@ -50,7 +50,8 @@ public class CheckIfGraphAValidTree {
             //cycle detected?
             if (areTwoVerticesAlreadyConnected(edge[0], edge[1]))
                 return false;
-            else union(edge[0], edge[1]);
+            else
+                union(edge[0], edge[1]);
         }
         //even after all the connections if any of the two nodes are
         //disconnected, not having the same parents

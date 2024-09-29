@@ -13,7 +13,7 @@ public class TopologicalSortWithBFS {
         int n1 = 4;
         List<Integer> sortedList1 = topologicalSort(edges1, n1);
         System.out.println("Test Case 1:");
-        System.out.println(" Actual output: " + sortedList1);
+        System.out.println("Actual output: " + sortedList1);
         System.out.println("Expected output: [0, 1, 2, 3]");
 
 // Test Case 2: DAG with multiple sources and sinks
@@ -53,6 +53,7 @@ public class TopologicalSortWithBFS {
 
         while (!queue.isEmpty()) {
             Integer polledVertex = queue.poll();
+            //every polled vertex will have 0 indegree bcs every node is added to the q only after insuring this
             sortedList.add(polledVertex);
             //reduce indegree of the nodes, where the outdegree is from polledVertex
             //e.g. if polledVertex -> nextVertex, is an edge, reduce indegree of the nextVertex by 1

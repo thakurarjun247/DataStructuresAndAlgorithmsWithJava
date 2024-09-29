@@ -24,6 +24,7 @@ public class BridgePatterMessagingExample {
 }
 
 class JSON implements Format {
+    Integer integer;
 }
 
 class HTML implements Format {
