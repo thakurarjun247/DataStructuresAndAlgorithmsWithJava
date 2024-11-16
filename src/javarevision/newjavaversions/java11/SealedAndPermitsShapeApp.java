@@ -4,7 +4,7 @@ sealed interface Shape permits Circle, Rectangle {
     double area();
 }
 
-public class ShapeApp {
+public class SealedAndPermitsShapeApp {
     public static void main(String[] args) {
         System.out.println("output: " + new Circle((1)).area());
     }

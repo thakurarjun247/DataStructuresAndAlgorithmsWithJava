@@ -15,4 +15,4 @@ final class Cat extends Animal {
     // Class definition
 }
 //not allowed
-//final  class Bird extends Animal{}
+//final  class ToyBird extends Animal{}

@@ -10,7 +10,7 @@ public class RecordClassInAction {
         map.put(new MyRecordClass("A", 1), 100);
         map.put(new MyRecordClass("Z", 0), 300);
         map.put(new MyRecordClass("B", 2), 200);
-        System.out.println(map.containsKey(new MyRecordClass("A", 1)));
+        System.out.println(map.containsKey(new MyRecordClass("A", 1))); //true
         map
                 .forEach((k, v) -> System.out.println(k + " -> " + v));
 

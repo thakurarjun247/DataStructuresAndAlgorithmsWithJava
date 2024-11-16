@@ -17,5 +17,9 @@ public class OfMethod {
         //this will blast
         // fruits.add("bomb");
 
+        List<Boolean> booleans= List.of(true, false); //notice the () and not [] of python
+        //its a method
+        //booleans.add(true);
+
     }
 }

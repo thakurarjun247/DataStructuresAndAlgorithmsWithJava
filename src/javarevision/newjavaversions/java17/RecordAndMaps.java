@@ -8,23 +8,23 @@ public class RecordAndMaps {
     public static void main(String[] args) {
 
         // Create unsorted pairs
-        List<MyPair> unsortedPairs = List.of(
-                new MyPair("abc", 5),
-                new MyPair("xyz", 0),
-                new MyPair("cde", 6)
+        List<MyRecord> unsortedPairs = List.of(
+                new MyRecord("abc", 5),
+                new MyRecord("xyz", 0),
+                new MyRecord("cde", 6)
         );
 
         // Sort by value using a comparator
-        List<MyPair> sortedPairs = unsortedPairs
+        List<MyRecord> sortedPairs = unsortedPairs
                 .stream()
-                .sorted(Comparator.comparing(MyPair::value))
+                .sorted(Comparator.comparing(MyRecord::value))
                 .collect(Collectors.toList());
 
 // Print the sorted pairs
         sortedPairs.forEach(System.out::println);
     }
 
-    public record MyPair(String key, Integer value) {
+    public record MyRecord(String key, Integer value) {
     }
 }
 

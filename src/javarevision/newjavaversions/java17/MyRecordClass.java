@@ -36,8 +36,16 @@ It's worth noting that although record classes are final, you can still implemen
 *
 * */
 //NOTE there is no class keyword here.
+record Rectangle(int x, int y){}
+
 public record MyRecordClass(String name, Integer age) {
     public static void main(String[] args) {
+        Rectangle rect1= new Rectangle(2,3);
+        Rectangle rect2= new Rectangle(2,4);
+        Rectangle rect3= new Rectangle(2,3);
+        System.out.println(rect3==rect1); //false
+        System.out.println(rect3.equals(rect1)); //true
+
         Record record; //abstract base class that is parent of all java records
 /*        public abstract class Record
                 extends Object
@@ -47,18 +55,15 @@ This is the common base class of all Java language record classes.*/
         MyRecordClass r3 = new MyRecordClass("Yuvan", 6);
         //only 0 arg or complete arg constructor
         //not  partial ones.
-        // RecordClassDemo r4=new RecordClassDemo("OnlyName");
-        System.out.println(r1 == r2); //FALSE  //It should be true, but is false, hence can't use it as the hashmap key.
 
-        //r1==r2 is false because they are two diff objects. there hascode is same becuase they end up in the same
-        //bucket forming a linkedlist
-        //
         System.out.println(r1.equals(r2)); //TRUE
         System.out.println(r1.hashCode() == r2.hashCode()); //TRUE
         Set<MyRecordClass> set = new HashSet<>();
         set.add(r1);
         System.out.println(set.add(r2));
         System.out.println(set.add(r3));
+        System.out.println(set
+                .size()); // 2
     }
 }
 
