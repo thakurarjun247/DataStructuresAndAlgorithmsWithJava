@@ -115,7 +115,9 @@ public class FloydWashalAlgoImlementation {
             for (int r = 0; r < edges.length; r++) {
                 //relax every row and column
                 for (int c = 0; c < edges.length; c++) {
-                    edges[r][c] = Math.min(edges[r][c], (edges[r][currentVertex] == Integer.MAX_VALUE || edges[currentVertex][c] == Integer.MAX_VALUE) ? Integer.MAX_VALUE : edges[r][currentVertex] + edges[currentVertex][c]);
+                    edges[r][c] = Math.min(edges[r][c],
+                            (edges[r][currentVertex] == Integer.MAX_VALUE || edges[currentVertex][c] == Integer.MAX_VALUE) ?
+                                    Integer.MAX_VALUE : edges[r][currentVertex] + edges[currentVertex][c]);
                 }
             }
         }

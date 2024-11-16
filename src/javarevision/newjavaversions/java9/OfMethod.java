@@ -17,24 +17,5 @@ public class OfMethod {
         //this will blast
         // fruits.add("bomb");
 
-        // encode decode tree in codeonline.leetcode
-        List<Integer> integerArrayList = new ArrayList<>();
-        integerArrayList.add(100);
-        integerArrayList.add(null);
-        integerArrayList.add(200);
-
-        String encodedString = integerArrayList.toString();
-
-        String[] extractedNumbersInStringFormat = encodedString
-                .substring(1, encodedString.length() - 1)
-                .split(", ");
-
-        List<Integer> decodedIntegerList = new ArrayList<>();
-
-        for (String s : extractedNumbersInStringFormat)
-            decodedIntegerList.add(Integer.parseInt(s));
-        System.out.println(decodedIntegerList);
-
-
     }
 }

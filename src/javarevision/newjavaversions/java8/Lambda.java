@@ -3,12 +3,21 @@ package javarevision.newjavaversions.java8;
 public class Lambda {
 
     public static void main(String[] args) {
-        // TODO Auto-generated method stub
-        Thread t = new Thread(() ->
-                System.out.println("running..")
+        //implement runnable
+        Thread thread= new Thread(()-> System.out.println("there you go"));
+        thread.start();
+        //extend thread class
+        class MyThread extends Thread{
+            @Override
+            public void run() {
+                System.out.println("extended thread runs");
+            }
+        }
 
-        );
-        t.start();
+        MyThread myThread=new MyThread();
+        myThread.start();
+
+
 
     }
 

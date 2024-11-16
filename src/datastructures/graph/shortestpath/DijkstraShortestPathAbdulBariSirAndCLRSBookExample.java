@@ -10,9 +10,20 @@ import java.util.PriorityQueue;
 public class DijkstraShortestPathAbdulBariSirAndCLRSBookExample {
     // TODO: 01-09-2024 : see the video below for context, or page 659 of CLRS book
     //https://www.youtube.com/watch?v=XB4MIexjvY0
+
+/*   Dijkstra's algorithm can be applied to both DAGs (Directed Acyclic Graphs)
+ and non-DAGs (graphs that may contain cycles), but there are important distinctions
+  between how it's used and when it's optimal.
+
+    Dijkstra's Algorithm:
+    Type of Graph: Dijkstra’s algorithm is used to find the shortest paths from a single
+     source vertex to all other vertices in a graph, where all edge weights are non-negative.
+
+    It works for both directed and undirected graphs.
+    It can handle graphs with or without cycles as long as edge weights are non-negative.*/
     public static void main(String[] args) {
 
-        //graph 1 abdul bari example
+        //test case: graph 1 abdul bari example
         int numVerticesInGraph1 = 6;
         int startInGraph1 = 1;
         int[][] graph1 = {
@@ -28,7 +39,7 @@ public class DijkstraShortestPathAbdulBariSirAndCLRSBookExample {
 
         System.out.println(Arrays.toString(findShortestPathWithDijktraAlgo(graph1, startInGraph1, numVerticesInGraph1)));
 
-        //graph 2 clrs example page 659
+        //test case: graph 2 clrs example page 659
         int numVerticesInGraph2 = 5;
         int startInGraph2 = 1;
         int[][] graph2 = {

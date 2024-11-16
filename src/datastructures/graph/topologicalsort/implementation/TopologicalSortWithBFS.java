@@ -8,12 +8,20 @@ import java.util.Queue;
 public class TopologicalSortWithBFS {
     public static void main(String[] args) {
 
+        // Test Case 0: disconnected graph only vertices no edges
+        int[][] edges0 = {};
+        int n0 = 2;
+        List<Integer> sortedList1 = topologicalSort(edges0, n0);
+        System.out.println("Test Case 1:");
+        System.out.println("Actual output: " + sortedList1);
+        System.out.println("Expected output: [0, 1]");
+
         // Test Case 1: Simple directed acyclic graph (DAG)
         int[][] edges1 = {{0, 1}, {0, 2}, {1, 3}, {2, 3}};
         int n1 = 4;
-        List<Integer> sortedList1 = topologicalSort(edges1, n1);
+        List<Integer> sortedList0 = topologicalSort(edges1, n1);
         System.out.println("Test Case 1:");
-        System.out.println("Actual output: " + sortedList1);
+        System.out.println("Actual output: " + sortedList0);
         System.out.println("Expected output: [0, 1, 2, 3]");
 
 // Test Case 2: DAG with multiple sources and sinks

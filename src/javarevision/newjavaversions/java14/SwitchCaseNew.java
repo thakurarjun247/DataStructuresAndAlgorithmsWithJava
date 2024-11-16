@@ -1,4 +1,4 @@
-package javarevision.newjavaversions.alltopics;
+package javarevision.newjavaversions.java14;
 
 public class SwitchCaseNew {
     public static void main(String[] args) {
