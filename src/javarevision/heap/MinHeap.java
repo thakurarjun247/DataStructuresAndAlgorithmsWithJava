@@ -1,12 +1,15 @@
 package javarevision.heap;
 //Find the sum of largest three numbers in an datastructures.array
 
+import javarevision.collections.records.Plant;
+
 import java.util.PriorityQueue;
 
 public class MinHeap {
 
     public static void main(String[] args) {
         System.out.println(sumOfThreeLargestNum(new int[]{200, 8, 5, 4, 7, 3, 100}));
+
     }
 
     public static int sumOfThreeLargestNum(int[] a) {
