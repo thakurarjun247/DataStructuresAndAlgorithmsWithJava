@@ -3,11 +3,13 @@ package javarevision.newjavaversions.java17;
 public class SealedPermitsDemo {
 }
 
-abstract sealed class Animal permits Dog, Cat {
+sealed abstract  class Animal permits Dog, Cat {
     // Class definition
 }
 
-final class Dog extends Animal {
+sealed interface Limited permits Dog{}
+
+final class Dog extends Animal implements Limited {
     // Class definition
 }
 
