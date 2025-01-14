@@ -10,6 +10,11 @@ public class SortMapByValue {
         map.put("banana", 2);
         map.put("cherry", 5);
         map.put("durian", 1);
+        Map<String, Integer> anotherReverseValueOrder= map
+                .entrySet()
+                .stream()
+                .sorted((e1, e2) -> e2.getValue() - e1.getValue())
+                .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue,(e1,e2)->e1,LinkedHashMap::new));
 
         Map<String, Integer> reverseValueOrder= map
                 .entrySet()

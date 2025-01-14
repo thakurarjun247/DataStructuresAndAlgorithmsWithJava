@@ -15,6 +15,10 @@ public class MapOperations {
         numberToWords.put(4, "four");
         numberToWords.put(5, "five");
 
+        numberToWords.forEach((k,v)->{
+            System.out.print(v);
+        });
+
         //iterate
         //notice single arrow -> not double
         numberToWords.forEach((k, v) -> System.out.println(k + "->" + v));
@@ -25,8 +29,11 @@ public class MapOperations {
 
         //transform
         System.out.println("transform...");
-
-
+        numberToWords
+                .entrySet()
+                .stream()
+                .collect(Collectors.toMap(e->e.getKey()*e.getKey(), e->e.getValue()+e.getValue(), (a,b)->a, LinkedHashMap::new ));
+        //another way
         Map<Integer, String> squreMaps = numberToWords
                 .entrySet()
                 .stream()
@@ -60,7 +67,14 @@ public class MapOperations {
         //notice the keyset and values are collections hence these ops are applicable on collections as well
         int sumOfKeys = numberTo2xNumber.keySet().stream().reduce(0, Integer::sum);
         int sumOfValues = numberTo2xNumber.values().stream().reduce(0, Integer::sum);
+
         System.out.println(sumOfKeys + " " + sumOfValues);
+        var integers=List.of(1,2,3,4,5);
+        var max=integers.stream().reduce(0, Integer::max);
+        var sum=integers.stream().reduce(0, Integer::sum);
+        var sortedDesc=integers.stream().sorted((x,y)->y-x).collect(Collectors.toList());
+        System.out.println("max and sum for the "+integers+" are: "+max+", "+sum);
+        System.out.println("sorted in desc order: "+sortedDesc);
 
         //sort map in descending order of values
 

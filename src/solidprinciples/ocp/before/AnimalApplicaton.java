@@ -1,9 +1,11 @@
 package solidprinciples.ocp.before;
 
 public class AnimalApplicaton {
+
+    //this code is problematic, it's open for modification, violates OCP
+
     void animalAction(Object animal){
         if(animal instanceof Dragon)
-            //((Dragon) animal).breathe();
         {
             Dragon dragon= (Dragon) animal;
             dragon.breathe();
