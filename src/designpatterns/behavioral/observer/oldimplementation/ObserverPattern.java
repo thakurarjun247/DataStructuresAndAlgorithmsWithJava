@@ -1,7 +1,8 @@
-package designpatterns.behavioral.observer;
+package designpatterns.behavioral.observer.oldimplementation;
 
 import java.util.ArrayList;
 import java.util.List;
+
 
 interface Subject {
     void registerObserver(Observer observer);
