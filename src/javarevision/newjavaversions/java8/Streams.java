@@ -22,7 +22,7 @@ public class Streams {
         max.isPresent()
         Integer maxValue=max.orElse(0);
         try {
-            max.orElseThrow(()->new Exception("how can it be absent")); 
+            max.orElseThrow(()->new Exception("how can it be absent"));
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
