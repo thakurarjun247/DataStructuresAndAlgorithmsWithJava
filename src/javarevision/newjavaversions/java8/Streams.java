@@ -3,6 +3,8 @@ package javarevision.newjavaversions.java8;
 import datastructures.arraystring.fun.Basic;
 
 import java.util.*;
+import java.util.function.BiFunction;
+import java.util.function.Function;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -10,11 +12,12 @@ public class Streams {
     public static void main(String[] args) {
         var list=List.of(1,2,3,4,5,6,7,8,9);
         var evenSqured=list
-                .stream().map(item-> item*item)
+                .stream()
+                .map(item-> item*item)
                 .filter(item-> item%2==0)
                 .collect(Collectors.toList());
 
-        System.out.println(evenSqured);
+
         var sum=evenSqured.stream().mapToInt(Integer::intValue).sum();
         OptionalDouble average=evenSqured.stream().mapToInt(Integer::intValue).average();
         System.out.println(average.isPresent());
@@ -57,7 +60,26 @@ public class Streams {
         var count=list.parallelStream().count();
         var first3ItemsOfList=list.stream().limit(3).collect(Collectors.toList());
         var skipFirst3ItemsofList=list.stream().skip(3).collect(Collectors.toList() );
-        System.out.println();
+        //lambda
+
+        /*
+        * // Without lambda (Anonymous Class)
+            Function<Integer, Integer> doubleIt1 = new Function<Integer, Integer>() {
+                @Override
+                public Integer apply(Integer x) {
+                    return x * 2;
+                }
+            };
+
+            // With Lambda
+            Function<Integer, Integer> doubleIt2 = x -> x * 2;
+
+        */
+        Function<Integer, Integer> doubleIt= x->x*2;
+
+        BiFunction<Integer,Integer,Integer> addIt= (m, n)->m+n;
+
+        System.out.println(doubleIt.apply(10));
 
 
 /*
