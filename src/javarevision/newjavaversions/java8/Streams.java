@@ -48,41 +48,19 @@ public class Streams {
         var allMatchToEven=evens.stream().allMatch(x->x%2==0);//t
         var noneMatchToEven=odds.stream().noneMatch(x->x%2==0);//t
         var anyMatchToEven=list.stream().anyMatch(x->x%2==0);//t
-        System.out.println("end");
+        //gets you a map with boolean key, key 'true'  will have the elements that match the condition, i.e. evens
+        var evenOddPartitioing=list.stream().collect(Collectors.partitioningBy(item->item%2==0));
+        var partitionBy3=list.stream().collect(Collectors.partitioningBy(item->item%3==0));
+        var firstEvenOptional=list.stream().filter(item->item%2==0).findFirst();
+        var firstEvenValue=firstEvenOptional.orElse(-1);
+        var firstEvenValueAgain=firstEvenOptional.isPresent()?firstEvenOptional.get():-1;
+        var count=list.parallelStream().count();
+        var first3ItemsOfList=list.stream().limit(3).collect(Collectors.toList());
+        var skipFirst3ItemsofList=list.stream().skip(3).collect(Collectors.toList() );
+        System.out.println();
+
 
 /*
-
-        ---
-
-
-
-        ---
-
-### 2️⃣ **`allMatch()`, `anyMatch()`, `noneMatch()` - Checking Conditions**
-        These help when you need to check whether elements satisfy certain conditions.
-```java
-        boolean allEven = list.stream().allMatch(num -> num % 2 == 0);
-        boolean anyEven = list.stream().anyMatch(num -> num % 2 == 0);
-        boolean noneNegative = list.stream().noneMatch(num -> num < 0);
-```
-
-        ---
-
-### 3️⃣ **Grouping and Partitioning Using Collectors**
-        You can use `Collectors.groupingBy()` to classify elements into categories.
-```java
-        Map<Boolean, List<Integer>> evenOddPartition = list.stream()
-                .collect(Collectors.partitioningBy(n -> n % 2 == 0));
-        System.out.println(evenOddPartition);
-```
-        or group by number categories:
-```java
-        Map<Integer, List<Integer>> groupedByRemainder = list.stream()
-                .collect(Collectors.groupingBy(n -> n % 3));
-        System.out.println(groupedByRemainder);
-```
-
-        ---
 
 ### 4️⃣ **`flatMap()` - Flattening Nested Collections**
         If you have a list of lists and need to process all elements together:
@@ -92,57 +70,13 @@ public class Streams {
                 .flatMap(Collection::stream)
                 .collect(Collectors.toList());
         System.out.println(flattenedList); // [1, 2, 3, 4, 5, 6]
-```
 
-        ---
 
-### 5️⃣ **Finding First Element with `findFirst()` and `findAny()`**
-```java
-        Optional<Integer> firstEven = list.stream().filter(n -> n % 2 == 0).findFirst();
-        Optional<Integer> anyEven = list.parallelStream().filter(n -> n % 2 == 0).findAny();
-```
-        - `findFirst()` guarantees the first element in sequence.
-        - `findAny()` is optimized for parallel execution and returns any matching element.
-
-                ---
-
-### 6️⃣ **Counting Elements Using `count()`**
-        Instead of collecting into lists, just count occurrences:
-```java
-        long evenCount = list.stream().filter(n -> n % 2 == 0).count();
-        System.out.println("Even numbers count: " + evenCount);
-```
-
-        ---
-
-### 7️⃣ **Skipping and Limiting Elements (`skip()` and `limit()`)**
-        If you want to process only a subset of the stream:
-```java
-        List<Integer> limited = list.stream().limit(3).collect(Collectors.toList()); // First 3 elements
-        List<Integer> skipped = list.stream().skip(3).collect(Collectors.toList()); // Skip first 3 elements
-```
-
-        ---
-
-### **Extra: Minor Fixes**
-🔹 **Use `Comparator.comparing()` Instead of Custom Lambda for Sorting**
-```java
-        var sortedByValuesDesc = map.entrySet().stream()
-                .sorted(Map.Entry.<Integer, Integer>comparingByValue().reversed())
-                .collect(Collectors.toMap(
-                        Map.Entry::getKey,
-                        Map.Entry::getValue,
-                        (e1, e2) -> e1,
-                        LinkedHashMap::new));
-```
-        More concise and avoids potential integer overflow issues in subtraction.
-
-        ---
 
 ### **Final Thoughts**
         You've covered the core of Java 8 Streams quite well, but adding **reduce**, **flatMap**, **grouping**, and **counting** will make your understanding even stronger. 🚀
         */
-
+        System.out.println("end");
 
     }
 }
