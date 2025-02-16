@@ -54,7 +54,8 @@ public class CompleteableFutures {
         //thenRUn: like a callback
         squared.thenRun(()-> System.out.println("thenRUn: like a callback"));
 
-        //thenCompose:
+        //todo: more methods:thenCompose:
+        // runAsync, and thenApplyAsync
 
 
         //thenAccept: perform side effects such as print, write to a file.

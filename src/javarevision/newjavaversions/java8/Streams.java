@@ -20,7 +20,7 @@ public class Streams {
         System.out.println(average.isPresent());
 
         Optional<Integer> max = evenSqured.stream().max((x, y) -> x - y);
-
+        System.out.println("max: "+max);
         Integer maxValue = max.orElse(0);
         try {
             max.orElseThrow(() -> new Exception("how can it be absent"));
@@ -34,6 +34,9 @@ public class Streams {
         list.stream().forEach(item -> System.out.println(item + " -> " + Thread.currentThread().getName()));
 
         var map = Map.of(1, 10, 2, 20, 3, 30, 4, 40, 5, 50);
+        map.entrySet().stream().sorted((e1,e2)->e2.getValue()-e1.getValue()).collect(Collectors.toMap(e->(e.getKey(),e.getValue())))
+
+
         //descending order of values
         var mapIndescendingOrderOfValues = map
                 .entrySet()
