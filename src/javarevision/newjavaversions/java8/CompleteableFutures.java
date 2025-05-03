@@ -17,7 +17,7 @@ public class CompleteableFutures {
         ❌ Cannot combine multiple futures → No way to chain or merge async computations.
         ❌ Cannot handle exceptions gracefully → No built-in error handling.
 
-        CompletableFutures solve all this problems.
+        CompletableFutures solve all this lowleveldesign.problems.
             * */
 
     public static void main(String[] args) throws ExecutionException, InterruptedException {
