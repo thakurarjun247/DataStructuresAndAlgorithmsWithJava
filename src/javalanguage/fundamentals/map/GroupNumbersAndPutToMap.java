@@ -8,6 +8,18 @@ import java.util.stream.Collectors;
 public class GroupNumbersAndPutToMap {
     public static void main(String[] args) {
         int[] numbers = {1, 2, 3, 4, 5, 6, 7, 8, 9};
+        Map<Boolean, List<Integer>> map=Arrays.stream(numbers).boxed().collect(Collectors.partitioningBy(n->n%2==0));
+        System.out.println(map.get(true));
+        System.out.println(map.get(false));
+// Group by remainder when divided by 3 (i.e., 0, 1, 2)
+        Map<Integer, List<Integer>> groupedByModulo3 = Arrays.stream(numbers)
+                .boxed()
+                .collect(Collectors.groupingBy(n -> n % 3));
+
+        // Print the groups
+        groupedByModulo3.forEach((key, value) ->
+                System.out.println("Remainder " + key + ": " + value)
+        );
 
         Map<String, List<Integer>> groupedNumbers = groupByMultipleOfThree(numbers);
 
