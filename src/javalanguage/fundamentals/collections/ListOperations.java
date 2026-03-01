@@ -22,6 +22,8 @@ public class ListOperations {
         //reverse a list, returns void
         Collections.reverse(list);
 
+
+        marks.stream().mapToDouble(a->a).average().getAsDouble();
         Double average = marks
                 .stream()
                 .mapToDouble(a -> a)

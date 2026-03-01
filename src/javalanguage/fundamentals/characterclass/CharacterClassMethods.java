@@ -3,10 +3,16 @@ package javalanguage.fundamentals.characterclass;
 public class CharacterClassMethods {
     public static void main(String[] args) {
         String s = "123aSD%# ";
-        for (char c : s.toCharArray()) {
-            System.out.println(c + "Character.isAlphabetic(c)" + Character.isAlphabetic(c));
-            System.out.println(c + "Character.isDigit(c)" + Character.isDigit(c));
+        char c='x';
+        //important methods of character class
+        Character.isUpperCase('x');
+        Character.isLowerCase('x');
+        Character.isAlphabetic(c);
+        Character.isDigit(c);
 
+        for (char y : s.toCharArray()) {
+
+            System.out.println(y);
         }
     }
 }

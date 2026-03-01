@@ -10,6 +10,7 @@ public class Array {
     public static void main(String[] args) {
         Integer[] a = {20, 98, 12, 7, 35};
 
+
         //datastructures.array as key of a map
 
         Map<int[], Integer> map = new HashMap<>();

@@ -9,6 +9,12 @@ public class ComparatorComparable {
         final Employee emp2 = new Employee("b");
         final Employee emp3 = new Employee("c");
 
+        List<Employee> employees = List.of(emp1, emp2, emp3);
+        List<Employee> employeeList=new ArrayList<>(employees);
+        Collections.sort(employeeList, (e1,e2)->e1.getEmail().compareTo(e2.getEmail()));
+        //why cant i pass comparator to sort method of list interface?
+        Set<Employee> treeSet= new TreeSet<>();
+
         Map<String, String> map = new HashMap<>();
         map.put(null, null);
         map.put(null, "empty");
@@ -25,7 +31,7 @@ public class ComparatorComparable {
         System.out.println(emp1 == emp3);
         System.out.println(emp1.getEmail());
         System.out.println(emp1 == emp3);
-        Set<Employee> treeSet = new TreeSet<Employee>((Employee e1, Employee e2) -> {
+        Set<Employee> treeSet1 = new TreeSet<Employee>((Employee e1, Employee e2) -> {
             if (e1 == null || e2 == null || e1.getClass() != Employee.class || e2.getClass() != Employee.class) {
                 throw new ClassCastException("null");
             }
@@ -104,4 +110,14 @@ class Employee implements Comparable<Employee> {
     public int compareTo(Employee o) {
         return this.getEmail().compareTo(o.getEmail());
     }
+}
+
+class Phone implements Comparable<Phone>{
+    public double price;
+    @Override
+    public int compareTo(Phone that){
+        Comparator<Phone> phoneComparator= (p, q)->(int)(p.price-q.price);
+        return (int) (this.price-that.price);
+    }
+
 }

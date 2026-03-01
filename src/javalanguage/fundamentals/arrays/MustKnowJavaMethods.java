@@ -28,11 +28,16 @@ public class MustKnowJavaMethods {
 
 
         //String <----> Array
-
+        Arrays.toString(array);
         char[] charArray = string.toCharArray();
         System.out.println(array.toString());
         System.out.println(Arrays.toString(array));
+        StringBuilder builder= new StringBuilder();
+        for(int i=0;i<string.length();i++){
+            builder.append(string.charAt(i));
 
+        }
+        System.out.println(builder.toString());
         //Declare datastructures.array
         boolean[] a = new boolean[256];
 
